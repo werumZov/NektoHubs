@@ -172,7 +172,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub196f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub197f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
