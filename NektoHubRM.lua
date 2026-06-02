@@ -172,7 +172,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub197-12t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub197-13t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -813,7 +813,6 @@ end)
 _G.SpeedHack = false
 local function SpeedHack()
 	local tp_walk_cd = false
-
 	game:GetService("RunService").RenderStepped:Connect(function()
 		--if _G.SpeedHack == true then
 			if tp_walk_cd == false then
@@ -828,23 +827,22 @@ local function SpeedHack()
 	
 end
 
+
+Tab:AddToggle({
+	Name = "Speed Hack[GLOBAL]",
+	Callback = function(v)
+		_G.SpeedHack = v
+	end
+})
+
 spawn(function()
 	while wait() do
-		_G.SpeedHack = true
 		if _G.SpeedHack then
 			SpeedHack()
 			elseif not _G.SpeedHack then
 		end
 	end
 end)
-
-
-Tab:AddToggle({
-	Name = "Speed Hack[GLOBAL]",
-	Callback = function(v1)
-		_G.SpeedHack = v1
-	end
-})
 
 
 
