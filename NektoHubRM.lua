@@ -5,16 +5,17 @@ function ESPLib:CreateESPTag(params)
 	local player = game.Players.LocalPlayer
 	local camera = game:GetService("Workspace").CurrentCamera
 	
-
 	local Text = params.Text
 	local Part = params.Part
-	local TextSize = params.TextSize
-	local TextColor = params.TextColor
-	local BoxColor = params.BoxColor
-	local TracerColor = params.TracerColor or Color3.new(255, 255, 255)
-	local TracerWidth = params.TracerWidth or 3
+	local Character = Part.Parent
+	local TextSize = params.TextSize or 14
+	local TextColor = params.TextColor or Color3.new(1, 1, 1)
+	local BoxColor = params.BoxColor or Color3.new(0, 0, 1)
+	local BoxTransparency = params.BoxTransparency or 0.5 -- Прозрачность обводки
+	local TracerColor = params.TracerColor or Color3.new(1, 1, 1)
+	local TracerWidth = params.TracerWidth or 2
 	local TrailMode = params.TrailMode or false
-	local TrailColor = params.TrailColor or {Color3.new(255, 0, 0)} 
+	local TrailColor = params.TrailColor or {Color3.new(1, 0, 0)} 
 	local TrailWidth = params.TrailWidth or {2}
 
 	if #TrailColor < 2 then
@@ -22,13 +23,14 @@ function ESPLib:CreateESPTag(params)
 	end
 
 	if #TrailWidth < 2 then
-		TrailWidth[2] = TrailWidth[1] -- Duplicate the width if only one is provided
+		TrailWidth[2] = TrailWidth[1]
 	end
 
+	-- Создаем BillboardGui для текста
 	local esp = Instance.new("BillboardGui")
 	esp.Name = "esp"
 	esp.Size = UDim2.new(0, 200, 0, 50)
-	esp.StudsOffset = Vector3.new(0, Part.Size.Y + 2, 0) -- Adjusted offset for the label above the head
+	esp.StudsOffset = Vector3.new(0, 3, 0)
 	esp.Adornee = Part
 	esp.Parent = Part
 	esp.AlwaysOnTop = true
@@ -37,90 +39,140 @@ function ESPLib:CreateESPTag(params)
 	esplabelfr.Name = "esplabelfr"
 	esplabelfr.Size = UDim2.new(1, 0, 0, 70)
 	esplabelfr.BackgroundColor3 = Color3.new(0, 0, 0)
-	esplabelfr.TextColor3 = TextColor or Color3.fromRGB(255, 255, 255)
 	esplabelfr.BackgroundTransparency = 1
-	esplabelfr.TextStrokeTransparency = 0
+	esplabelfr.TextColor3 = TextColor
+	esplabelfr.TextStrokeTransparency = 0.3
 	esplabelfr.TextStrokeColor3 = Color3.new(0, 0, 0)
 	esplabelfr.TextSize = TextSize
 	esplabelfr.TextScaled = false
-	esplabelfr.Font = "Arcade"
+	esplabelfr.Font = Enum.Font.SourceSansBold
 	esplabelfr.Parent = esp
 
-	local box = Instance.new("BoxHandleAdornment")
-	box.Name = "box"
-	box.Size = Part.Size + Vector3.new(0.5, 0.5, 0.5)
-	box.Adornee = Part
-	box.AlwaysOnTop = true
-	box.Transparency = 0.6
-	box.Color3 = BoxColor or Color3.new(0, 0, 255)
-	box.ZIndex = 0
-	box.Parent = Part
+	-- Создаем обводки для всех частей тела
+	local boxes = {}
+	local partsToOutline = {
+		"Head", "Torso", "Left Arm", "Right Arm", "Left Leg", "Right Leg",
+		"HumanoidRootPart"
+	}
+	
+	for _, partName in pairs(partsToOutline) do
+		local bodyPart = Character:FindFirstChild(partName)
+		if bodyPart and bodyPart:IsA("BasePart") then
+			local box = Instance.new("BoxHandleAdornment")
+			box.Name = "box_" .. partName
+			box.Size = bodyPart.Size + Vector3.new(0.3, 0.3, 0.3)
+			box.Adornee = bodyPart
+			box.AlwaysOnTop = true
+			box.Transparency = BoxTransparency -- Прозрачность
+			box.Color3 = BoxColor
+			box.ZIndex = 0
+			box.Visible = true
+			box.Parent = bodyPart
+			table.insert(boxes, box)
+		end
+	end
 
+	-- Создаем линию трейсера
 	local tracerLine = Drawing.new("Line")
 	tracerLine.Visible = false
+	tracerLine.Transparency = 0.7 -- Делаем линию прозрачнее
 
-	local trail = Instance.new("Trail")
-	trail.Texture = "rbxassetid://188166667"
-	trail.Attachment0 = Instance.new("Attachment", game.Players.LocalPlayer.Character.Torso)
-	trail.Attachment1 = Instance.new("Attachment", Part)
-	trail.Enabled = false
-	trail.Color = ColorSequence.new(TrailColor[1], TrailColor[2])
-	trail.WidthScale = NumberSequence.new(TrailWidth[1], TrailWidth[2])
-	trail.Parent = Part
-	trail.Lifetime = 0.5
+	-- Создаем трейл
+	local trail = nil
+	if TrailMode then
+		trail = Instance.new("Trail")
+		trail.Texture = "rbxassetid://188166667"
+		trail.Lifetime = 0.5
+		trail.Color = ColorSequence.new(TrailColor[1], TrailColor[2])
+		trail.WidthScale = NumberSequence.new(TrailWidth[1], TrailWidth[2])
+		trail.Enabled = false
+		
+		local attachment = Instance.new("Attachment")
+		attachment.Parent = Part
+		trail.Attachment0 = attachment
+		
+		local playerAttachment = Instance.new("Attachment")
+		if player.Character and player.Character:FindFirstChild("Torso") then
+			playerAttachment.Parent = player.Character.Torso
+			trail.Attachment1 = playerAttachment
+		end
+		
+		trail.Parent = Part
+	end
 
 	local function updateesplabelfr()
 		if not Part or not Part:IsA("BasePart") or not Part.Parent then
-			-- Part no longer exists, delete ESP elements
+			-- Удаляем все ESP элементы
 			esp:Destroy()
 			tracerLine:Remove()
-			trail:Destroy()
+			if trail then trail:Destroy() end
+			for _, box in pairs(boxes) do
+				pcall(function() box:Destroy() end)
+			end
 			return
 		end
 
-		local playerPosition = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+		local character = player.Character
+		local playerPosition = character and character:FindFirstChild("HumanoidRootPart")
+		
 		if playerPosition then
 			local distance = (playerPosition.Position - Part.Position).Magnitude
-			esplabelfr.Text = string.format(Text .. ": %.2f", distance)
+			esplabelfr.Text = string.format("%s [%.1fm]", Text, distance)
 
 			local headPosition = Part.Position + Vector3.new(0, Part.Size.Y / 2, 0)
 			local screenPosition, onScreen = camera:WorldToScreenPoint(headPosition)
 
-			if onScreen or playerPosition.Position.Y > Part.Position.Y then
-				esp.Adornee = Part
+			-- Показываем ESP если игрок на экране или в пределах разумной дистанции
+			if onScreen or distance < 100 then
 				esp.Enabled = true
-				box.Adornee = Part
-				box.Visible = true
+				
+				-- Обновляем видимость всех боксов
+				for _, box in pairs(boxes) do
+					if box and box.Parent then
+						box.Visible = true
+						-- Анимируем прозрачность в зависимости от расстояния
+						local alpha = math.clamp(1 - (distance / 100), 0.2, 0.8)
+						box.Transparency = BoxTransparency * alpha
+					end
+				end
 
-				-- Update tracer line points
-				local tracerStart = camera:WorldToViewportPoint(player.Character.Head.Position)
-				local tracerEnd = camera:WorldToViewportPoint(Part.Position)
-				tracerLine.From = Vector2.new(tracerStart.X, tracerStart.Y)
-				tracerLine.To = Vector2.new(tracerEnd.X, tracerEnd.Y)
-				tracerLine.Color = TracerColor
-				tracerLine.Thickness = TracerWidth-- Adjust the thickness of the line (increased from 1)
-				tracerLine.Visible = not TrailMode
+				-- Обновляем линию трейсера
+				if character and character:FindFirstChild("Head") and onScreen then
+					local tracerStart = camera:WorldToViewportPoint(character.Head.Position)
+					local tracerEnd = camera:WorldToViewportPoint(Part.Position)
+					tracerLine.From = Vector2.new(tracerStart.X, tracerStart.Y)
+					tracerLine.To = Vector2.new(tracerEnd.X, tracerEnd.Y)
+					tracerLine.Color = TracerColor
+					tracerLine.Thickness = TracerWidth
+					tracerLine.Transparency = 0.5 -- Прозрачная линия
+					tracerLine.Visible = not TrailMode
+				else
+					tracerLine.Visible = false
+				end
 
-				-- Update trail
-				trail.Attachment1 = Part.Attachment
-				trail.Lifetime = 0.3
-				trail.Enabled = TrailMode
-				trail.Color = ColorSequence.new(TrailColor[1], TrailColor[2])
-				trail.WidthScale = NumberSequence.new(TrailWidth[1], TrailWidth[2])
+				-- Обновляем трейл
+				if trail and TrailMode then
+					trail.Enabled = true
+				end
 			else
 				esp.Enabled = false
-				box.Visible = false
+				for _, box in pairs(boxes) do
+					if box then box.Visible = false end
+				end
 				tracerLine.Visible = false
-				trail.Enabled = false
+				if trail then trail.Enabled = false end
 			end
 		else
 			esp.Enabled = false
-			box.Visible = false
+			for _, box in pairs(boxes) do
+				if box then box.Visible = false end
+			end
 			tracerLine.Visible = false
-			trail.Enabled = false
+			if trail then trail.Enabled = false end
 		end
 	end
 
+	-- Запускаем обновление
 	RunService.RenderStepped:Connect(updateesplabelfr)
 end
 
@@ -172,7 +224,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub197-17t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub197-18t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -223,7 +275,10 @@ Spirit:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
+			
 		}) 
 	end
 })
@@ -238,6 +293,8 @@ Spirit:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -253,6 +310,8 @@ Spirit:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -292,6 +351,8 @@ Mansion:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -307,6 +368,8 @@ MansionW:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -322,6 +385,8 @@ MansionW:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -337,6 +402,8 @@ MansionW:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -352,6 +419,8 @@ Mansion:AddButton({
 			TextColor = Color3.new(255,255,255),
 			BoxColor = Color3.new(255,255,255),
 			TracerColor = Color3.new(255,255,255),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -392,6 +461,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(255,255,255),
 			BoxColor = Color3.new(255,255,255),
 			TracerColor = Color3.new(255,255,255),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 4
 		}) 
 	end
@@ -429,6 +500,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 1
 		}) 
 	end
@@ -444,6 +517,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 1
 		}) 
 	end
@@ -459,6 +534,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 1
 		}) 
 	end
@@ -474,6 +551,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 1
 		}) 
 	end
@@ -494,6 +573,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(0,255,0),
 			BoxColor = Color3.new(0,255,0),
 			TracerColor = Color3.new(0,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 2
 		}) 
 	end
@@ -509,6 +590,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(0,0,255),
 			BoxColor = Color3.new(0,0,255),
 			TracerColor = Color3.new(0,0,255),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 2
 		}) 
 	end
@@ -524,6 +607,8 @@ Bunker:AddButton({
 			TextColor = Color3.new(0,255,0),
 			BoxColor = Color3.new(0,255,0),
 			TracerColor = Color3.new(0,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 1
 		}) 
 	end
@@ -541,6 +626,8 @@ Night3:AddButton({
 			TextColor = Color3.new(255,255,255),
 			BoxColor = Color3.new(255,255,255),
 			TracerColor = Color3.new(255,255,255),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -556,6 +643,8 @@ Night3:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -594,6 +683,8 @@ Night3:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 4
 		}) 
 	end
@@ -609,6 +700,8 @@ Night3:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 4
 		}) 
 	end
@@ -624,6 +717,8 @@ Night3:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 4
 		}) 
 	end
@@ -639,6 +734,8 @@ Night3:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 4
 		}) 
 	end
@@ -706,6 +803,8 @@ Night2:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -738,6 +837,8 @@ Tab:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -905,6 +1006,8 @@ Tab:AddButton({
 			TextColor = Color3.new(255,255,0),
 			BoxColor = Color3.new(255,255,0),
 			TracerColor = Color3.new(255,255,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -920,6 +1023,8 @@ Tab:AddButton({
 			TextColor = Color3.new(255,250,0),
 			BoxColor = Color3.new(255,250,0),
 			TracerColor = Color3.new(255,250,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
@@ -935,6 +1040,8 @@ Tab:AddButton({
 			TextColor = Color3.new(0,0,0),
 			BoxColor = Color3.new(0,0,0),
 			TracerColor = Color3.new(0,0,0),
+			BoxTransparency = 0.6,
+			Trail = false,
 			TracerWidth = 3
 		}) 
 	end
