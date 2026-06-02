@@ -352,36 +352,6 @@ Spirit:AddToggle({
 	end
 })
 
-Spirit:AddToggle({
-	Name = "Inf Sanity",
-	Default = false,
-	Callback = function(v)
-		_G.InfSanity = v
-		
-		if _G.SanityConnection then
-			_G.SanityConnection:Disconnect()
-		end
-		
-		if v then
-			local mt = getrawmetatable(game)
-			local old = mt.__newindex
-			
-			_G.SanityConnection = game:GetService("RunService").Heartbeat:Connect(function()
-				mt.__newindex = function(table, key, value)
-					if type(key) == "string" and string.lower(key):find("sanity") and type(value) == "number" then
-						return old(table, key, 999) 
-					end
-					return old(table, key, value)
-				end
-			end)
-		else
-			
-			local mt = getrawmetatable(game)
-			local old = mt.__newindex
-			mt.__newindex = old
-		end
-	end
-})
 
 Spirit:AddButton({
 	Name = "Anti Nightmare",
