@@ -321,7 +321,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-26t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-27t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -1616,20 +1616,11 @@ function FPSPINGLib:CreatePerformanceDisplay()
 		local player = Players.LocalPlayer
 		
 		
-			player.PlayerAdded:Connect(function(player)
-                task.wait(5) 
+			player.PlayerAdded:Connect(function(plr)
+                task.wait(5)
                 local ping = player:GetNetworkPing() * 1000
 				pingLabel.Text = "Ping: " .. ping .. "ms"
 				
-				
-				local pingValue = tonumber(ping) or 0
-				if pingValue <= 50 then
-					pingLabel.TextColor3 = Color3.fromRGB(0, 255, 0) 
-				elseif pingValue <= 150 then
-					pingLabel.TextColor3 = Color3.fromRGB(255, 255, 0) 
-				else
-					pingLabel.TextColor3 = Color3.fromRGB(255, 0, 0) 
-				end
 			end)
 		end
 	
@@ -1638,7 +1629,10 @@ function FPSPINGLib:CreatePerformanceDisplay()
 		updateFPS()
 	end)
 	
-	
+	game:GetService("RunService").RenderStepped:Connect(function()
+		updatePing()
+	end)
+
 	while true do
 		updatePing()
 		task.wait(1)
