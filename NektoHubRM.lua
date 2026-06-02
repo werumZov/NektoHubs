@@ -817,7 +817,7 @@ local function SpeedHack()
 	game:GetService("RunService").RenderStepped:Connect(function()
 			if tp_walk_cd == false then
 				tp_walk_cd = true
-				local tp = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * 3
+				local tp = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection - 2 / 1
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
 				wait(0.01)
 				tp_walk_cd = false
