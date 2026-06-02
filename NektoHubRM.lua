@@ -216,7 +216,7 @@ function ESPLib:CreateESPTag(params)
 
 
 	local function updateesplabelfr()
-		if not espActive or not Part or not Part:IsA("BasePart") or not Part.Parent then
+		if not Part or not Part:IsA("BasePart") or not Part.Parent then
 			-- Part no longer exists, delete ESP elements
 			esp:Destroy()
 			tracerLine:Remove()
@@ -321,7 +321,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-27t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-28t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -1569,18 +1569,6 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	fpsLabel.Parent = frame
 	
 	
-	local pingLabel = Instance.new("TextLabel")
-	pingLabel.Name = "PingLabel"
-	pingLabel.Size = UDim2.new(1, 0, 0.5, 0)
-	pingLabel.Position = UDim2.new(0, 0, 0.5, 0)
-	pingLabel.BackgroundTransparency = 1
-	pingLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
-	pingLabel.TextSize = 16
-	pingLabel.Font = Enum.Font.SourceSansBold
-	pingLabel.Text = "Ping: 0ms"
-	pingLabel.TextXAlignment = Enum.TextXAlignment.Center
-	pingLabel.Parent = frame
-	
 	
 	local frames = 0
 	local lastTime = tick()
@@ -1611,32 +1599,13 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	end
 	
 	
-	local function updatePing()
-		local Players = game:GetService("Players")
-		local player = Players.LocalPlayer
-		
-		
-			player.PlayerAdded:Connect(function(plr)
-                task.wait(5)
-                local ping = player:GetNetworkPing() * 1000
-				pingLabel.Text = "Ping: " .. ping .. "ms"
-				
-			end)
-		end
 	
 	
 	game:GetService("RunService").RenderStepped:Connect(function()
 		updateFPS()
 	end)
 	
-	game:GetService("RunService").RenderStepped:Connect(function()
-		updatePing()
-	end)
 
-	while true do
-		updatePing()
-		task.wait(1)
-	end
 end
 
 FPSPINGLib:CreatePerformanceDisplay()
