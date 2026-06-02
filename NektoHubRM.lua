@@ -172,7 +172,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub196f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.96"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub197f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -684,7 +684,7 @@ modif:AddButton({
 	Name = "Anti WeirdStrict[ONLY MULTIVERSAL]",
 	Callback = function()
       local sasynn33 = game.ReplicatedStorage.GameState
-			sasynn3.WeirdStrict.Value = false
+			sasynn33.WeirdStrict.Value = false
 	end
 })
 
@@ -810,6 +810,7 @@ spawn(function()
 end)
 
 
+_G.SpeedHack = false
 local function SpeedHack()
 	local tp_walk_cd = false
 
@@ -828,10 +829,18 @@ end
 
 Tab:AddToggle({
 	Name = "Speed Hack[GLOBAL]",
-	Callback = function()
-		SpeedHack()
+	Callback = function(v)
+		_G.SpeedHack = v
 	end
 })
+
+spawn(function()
+	while wait() do
+		if _G.SpeedHack then
+			SpeedHack()
+		end
+	end
+end)
 
 Tab:AddButton({
 	Name = "Unlimited FlashLight battery[GLOBAL]",
