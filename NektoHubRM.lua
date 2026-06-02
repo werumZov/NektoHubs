@@ -829,18 +829,18 @@ end
 
 Tab:AddToggle({
 	Name = "Speed Hack[GLOBAL]",
-	Callback = function(v)
-		_G.SpeedHack = v
+	Callback = function()
+		SpeedHack()
 	end
 })
 
-spawn(function()
-	while wait() do
-		if _G.SpeedHack then
-			SpeedHack()
-		end
-	end
-end)
+--spawn(function()
+	--while wait() do
+	--	if _G.SpeedHack then
+	--		SpeedHack()
+	--	end
+	--end
+--end)
 
 Tab:AddButton({
 	Name = "Unlimited FlashLight battery[GLOBAL]",
