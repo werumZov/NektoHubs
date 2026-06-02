@@ -1,5 +1,7 @@
 -- ping + fps
-local function CreatePerformanceDisplay()
+
+local FPSPINGLib = {}
+function FPSPINGLib:CreatePerformanceDisplay()
 	local player = game.Players.LocalPlayer
 	local gui = Instance.new("ScreenGui")
 	gui.Name = "PerformanceDisplay"
@@ -112,9 +114,6 @@ local function CreatePerformanceDisplay()
 		task.wait(1)
 	end
 end
-
-
-CreatePerformanceDisplay()
 
 
 
@@ -442,7 +441,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-23t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-24t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -461,6 +460,8 @@ local modif = Window:MakeTab({Name = "Modifers", Icon = "rbxassetid://4483345998
 
 local MansionW = Window:MakeTab({Name = "Windows Mansion", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
+
+FPSPINGLib:CreatePerformanceDisplay()
 
 
 local Section = Tab:AddSection({
