@@ -172,7 +172,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub196f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.96"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub196f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -808,6 +808,30 @@ spawn(function()
 		end
 	end
 end)
+
+
+local function SpeedHack()
+	local tp_walk_cd = false
+
+	game:GetService("RunService").RenderStepped:Connect(function()
+			if tp_walk_cd == false then
+				tp_walk_cd = true
+				local tp = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * 3.5
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
+				wait(0.01)
+				tp_walk_cd = false
+			end
+	end)
+	
+end
+
+
+Tab:AddButton({
+	Name = "Speed Hack[GLOBAL]",
+	Callback = function()
+		SpeedHack()
+	end
+})
 
 Tab:AddButton({
 	Name = "Unlimited FlashLight battery[GLOBAL]",
