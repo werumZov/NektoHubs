@@ -172,7 +172,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub197-11f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub197-12t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -815,7 +815,7 @@ local function SpeedHack()
 	local tp_walk_cd = false
 
 	game:GetService("RunService").RenderStepped:Connect(function()
-		if _G.SpeedHack == false then
+		--if _G.SpeedHack == true then
 			if tp_walk_cd == false then
 				tp_walk_cd = true
 				local tp = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * 4 / 3
@@ -823,10 +823,20 @@ local function SpeedHack()
 				wait(0.01)
 				tp_walk_cd = false
 			end
-		end
+		--end
 	end)
 	
 end
+
+spawn(function()
+	while wait() do
+		_G.SpeedHack = true
+		if _G.SpeedHack then
+			SpeedHack()
+			elseif not _G.SpeedHack then
+		end
+	end
+end)
 
 
 Tab:AddToggle({
@@ -836,14 +846,7 @@ Tab:AddToggle({
 	end
 })
 
-spawn(function()
-	while wait() do
-		if _G.SpeedHack then
-			SpeedHack()
-			elseif not _G.SpeedHack then
-		end
-	end
-end)
+
 
 Tab:AddButton({
 	Name = "Unlimited FlashLight battery[GLOBAL]",
