@@ -6,50 +6,17 @@ function ESPLib:CreateESPTag(params)
 	local RunService = game:GetService("RunService")
 	local player = game.Players.LocalPlayer
 	local camera = game:GetService("Workspace").CurrentCamera
-	
 
 	local Text = params.Text
 	local Part = params.Part
 	local TextSize = params.TextSize
 	local TextColor = params.TextColor
 	local BoxColor = params.BoxColor
-	local BoxTransparency = params.BoxTransparency or 0.5
 	local TracerColor = params.TracerColor or Color3.new(255, 255, 255)
 	local TracerWidth = params.TracerWidth or 3
 	local TrailMode = params.TrailMode or false
 	local TrailColor = params.TrailColor or {Color3.new(255, 0, 0)} 
 	local TrailWidth = params.TrailWidth or {2}
-	local OutlineThickness = params.OutlineThickness or 0.3
-
-
-	local espActive = true
-	local renderConnection = nil
-
-	local bodyParts = {
-		"Head",
-		"Torso",
-		"UpperTorso",
-		"LowerTorso",
-		"HumanoidRootPart",
-		"LeftArm",
-		"RightArm",
-		"LeftLeg",
-		"RightLeg",
-		"LeftHand",
-		"RightHand",
-		"LeftFoot",
-		"RightFoot",
-		"Neck",
-		"Spine",
-		"Hips"
-	}
-
-	local function getScreenCenter()
-		local viewportSize = camera.ViewportSize
-		return Vector2.new(viewportSize.X / 2, viewportSize.Y / 2)
-	end
-	
-	
 
 	if #TrailColor < 2 then
 		TrailColor[2] = TrailColor[1]
@@ -58,7 +25,6 @@ function ESPLib:CreateESPTag(params)
 	if #TrailWidth < 2 then
 		TrailWidth[2] = TrailWidth[1] -- Duplicate the width if only one is provided
 	end
-
 
 	local esp = Instance.new("BillboardGui")
 	esp.Name = "esp"
@@ -104,117 +70,6 @@ function ESPLib:CreateESPTag(params)
 	trail.Parent = Part
 	trail.Lifetime = 0.5
 
-	local centerDot = Drawing.new("Circle")
-	centerDot.Visible = false
-	centerDot.Radius = 3
-	centerDot.Filled = true
-	centerDot.Color = TracerColor
-	centerDot.Transparency = 0.5
-	centerDot.Thickness = 1
-
-		local function createBoxForPart(part)
-		if not part or not part:IsA("BasePart") then return nil end
-		local box = Instance.new("BoxHandleAdornment")
-	    box.Name = "box"
-	    box.Size = Part.Size + Vector3.new(0.5, 0.5, 0.5)
-	    box.Adornee = Part
-	    box.AlwaysOnTop = true
-	    box.Transparency = 0.6
-	    box.Color3 = BoxColor or Color3.new(0, 0, 255)
-	    box.ZIndex = 0
-	    box.Parent = Part
-		
-		return box
-	end
-	
-	
-	local function updateAllBoxes()
-		for _, boxData in pairs(boxes) do
-			pcall(function() boxData.box:Destroy() end)
-		end
-		boxes = {}
-		
-		for _, partName in pairs(bodyParts) do
-			local part = esp:FindFirstChild(partName)
-			if part and part:IsA("BasePart") then
-				local box = createBoxForPart(part)
-				if box then
-					table.insert(boxes, {
-						box = box,
-						part = part,
-						partName = partName
-					})
-				end
-			end
-		end
-		
-		
-		for _, child in pairs(esp:GetChildren()) do
-			if child:IsA("BasePart") and not child.Name:find("ESPBox") then
-				local alreadyBoxed = false
-				for _, boxData in pairs(boxes) do
-					if boxData.part == child then
-						alreadyBoxed = true
-						break
-					end
-				end
-				if not alreadyBoxed then
-					local box = createBoxForPart(child)
-					if box then
-						table.insert(boxes, {
-							box = box,
-							part = child,
-							partName = child.Name
-						})
-					end
-				end
-			end
-		end
-	end
-
-		local function updateBoxSizes()
-		for _, boxData in pairs(boxes) do
-			local box = boxData.box
-			local part = boxData.part
-			
-			if box and box.Parent and part and part.Parent then
-		
-				local newSize = part.Size + Vector3.new(OutlineThickness, OutlineThickness, OutlineThickness)
-				box.Size = newSize
-				
-			end
-		end
-	end
-
-		local function trackNewParts()
-		local connection
-		connection = esp.ChildAdded:Connect(function(child)
-			if child:IsA("BasePart") then
-				local alreadyBoxed = false
-				for _, boxData in pairs(boxes) do
-					if boxData.part == child then
-						alreadyBoxed = true
-						break
-					end
-				end
-				if not alreadyBoxed then
-					local box = createBoxForPart(child)
-					if box then
-						table.insert(boxes, {
-							box = box,
-							part = child,
-							partName = child.Name
-						})
-					end
-				end
-			end
-		end)
-		
-		return connection
-	end
-
-
-
 	local function updateesplabelfr()
 		if not Part or not Part:IsA("BasePart") or not Part.Parent then
 			-- Part no longer exists, delete ESP elements
@@ -239,19 +94,14 @@ function ESPLib:CreateESPTag(params)
 				box.Visible = true
 
 				-- Update tracer line points
-				local tracerStart = camera:WorldToViewportPoint(getScreenCenter)
+				local tracerStart = camera:WorldToViewportPoint(player.Character.Head.Position)
 				local tracerEnd = camera:WorldToViewportPoint(Part.Position)
 				tracerLine.From = Vector2.new(tracerStart.X, tracerStart.Y)
 				tracerLine.To = Vector2.new(tracerEnd.X, tracerEnd.Y)
 				tracerLine.Color = TracerColor
 				tracerLine.Thickness = TracerWidth-- Adjust the thickness of the line (increased from 1)
 				tracerLine.Visible = not TrailMode
-				centerDot.Position = screenCenter
-					centerDot.Visible = not TrailMode and onScreen
-					centerDot.Color = TracerColor
-					centerDot.Radius = 3
-					centerDot.Transparency = 0.5
-		
+
 				-- Update trail
 				trail.Attachment1 = Part.Attachment
 				trail.Lifetime = 0.3
@@ -273,12 +123,9 @@ function ESPLib:CreateESPTag(params)
 	end
 
 	RunService.RenderStepped:Connect(updateesplabelfr)
-
-	updateAllBoxes()
-	updateBoxSizes()
-
-
 end
+
+
 
 
 
@@ -321,7 +168,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-28t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-29t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -1542,7 +1389,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	
 	local frame = Instance.new("Frame")
 	frame.Name = "MainFrame"
-	frame.Size = UDim2.new(0, 150, 0, 50)
+	frame.Size = UDim2.new(0, 100, 0, 50)
 	frame.Position = UDim2.new(0, 10, 1, -60) -- Левый нижний угол
 	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	frame.BackgroundTransparency = 0.1
@@ -1558,8 +1405,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	
 	local fpsLabel = Instance.new("TextLabel")
 	fpsLabel.Name = "FPSLabel"
-	fpsLabel.Size = UDim2.new(1, 0, 0.5, 0)
-	fpsLabel.Position = UDim2.new(0, 0, 0, 0)
+	fpsLabel.Size = UDim2.new(1, 0, 0.649, 0)
+	fpsLabel.Position = UDim2.new(0, 0, 0.162, 0)
 	fpsLabel.BackgroundTransparency = 1
 	fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 	fpsLabel.TextSize = 16
