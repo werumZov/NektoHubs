@@ -19,7 +19,6 @@ function ESPLib:CreateESPTag(params)
 
 
 	local espActive = true
-	local renderConnection = nil
 
 	local function getScreenCenter()
 		local viewportSize = camera.ViewportSize
@@ -88,42 +87,14 @@ function ESPLib:CreateESPTag(params)
 	centerDot.Transparency = 0.5
 	centerDot.Thickness = 1
 
-		local function destroyESP()
-		if not espActive then return end
-		espActive = false
-		
-		
-		if renderConnection then
-			renderConnection:Disconnect()
-			renderConnection = nil
-		end
-		
-		
-		pcall(function() esp:Destroy() end)
-		pcall(function() box:Destroy() end)
-		
-		
-		if tracerLine then
-			pcall(function() tracerLine:Remove() end)
-		end
-		if centerDot then
-			pcall(function() centerDot:Remove() end)
-		end
-		
-		
-		if trail then
-			pcall(function() trail:Destroy() end)
-		end
-	end
 
 
 	local function updateesplabelfr()
 		if not espActive or not Part or not Part:IsA("BasePart") or not Part.Parent then
 			-- Part no longer exists, delete ESP elements
-			--esp:Destroy()
-			--tracerLine:Remove()
-			--trail:Destroy()
-			destroyESP()
+			esp:Destroy()
+			tracerLine:Remove()
+			trail:Destroy()
 			return
 		end
 
@@ -176,14 +147,6 @@ function ESPLib:CreateESPTag(params)
 	end
 
 	RunService.RenderStepped:Connect(updateesplabelfr)
-
-	local partAncestryChanged
-	partAncestryChanged = Part.AncestryChanged:Connect(function()
-		if not Part or not Part.Parent then
-			destroyESP()
-			partAncestryChanged:Disconnect()
-		end
-	end)
 
 end
 
