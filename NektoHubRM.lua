@@ -1,3 +1,4 @@
+-- esp
 local ESPLib = {}
 
 function ESPLib:CreateESPTag(params)
@@ -11,20 +12,42 @@ function ESPLib:CreateESPTag(params)
 	local TextSize = params.TextSize
 	local TextColor = params.TextColor
 	local BoxColor = params.BoxColor
+	local BoxTransparency = params.BoxTransparency or 0.5
 	local TracerColor = params.TracerColor or Color3.new(255, 255, 255)
 	local TracerWidth = params.TracerWidth or 3
 	local TrailMode = params.TrailMode or false
 	local TrailColor = params.TrailColor or {Color3.new(255, 0, 0)} 
 	local TrailWidth = params.TrailWidth or {2}
-	local ShowBox = params.ShowBox or false
+	local OutlineThickness = params.OutlineThickness or 0.3
 
 
 	local espActive = true
+	local renderConnection = nil
+
+	local bodyParts = {
+		"Head",
+		"Torso",
+		"UpperTorso",
+		"LowerTorso",
+		"HumanoidRootPart",
+		"LeftArm",
+		"RightArm",
+		"LeftLeg",
+		"RightLeg",
+		"LeftHand",
+		"RightHand",
+		"LeftFoot",
+		"RightFoot",
+		"Neck",
+		"Spine",
+		"Hips"
+	}
 
 	local function getScreenCenter()
 		local viewportSize = camera.ViewportSize
 		return Vector2.new(viewportSize.X / 2, viewportSize.Y / 2)
 	end
+	
 	
 
 	if #TrailColor < 2 then
@@ -57,21 +80,15 @@ function ESPLib:CreateESPTag(params)
 	esplabelfr.Font = "Arcade"
 	esplabelfr.Parent = esp
 
-	local MainPart = Target:IsA("Model") and Target:FindFirstChild("HumanoidRootPart") or Target
-	if not MainPart then return end
-
-
-	local box = nil
-	if ShowBox and MainPart then
-		box = Instance.new("BoxHandleAdornment")
-		box.Size = MainPart.Size + Vector3.new(0.5, 0.5, 0.5)
-		box.Adornee = MainPart
-		box.AlwaysOnTop = true
-		box.Transparency = 0.7
-		box.Color3 = BoxColor
-		box.ZIndex = 0
-		box.Parent = MainPart
-	end
+	local box = Instance.new("BoxHandleAdornment")
+	box.Name = "box"
+	box.Size = Part.Size + Vector3.new(0.5, 0.5, 0.5)
+	box.Adornee = Part
+	box.AlwaysOnTop = true
+	box.Transparency = 0.6
+	box.Color3 = BoxColor or Color3.new(0, 0, 255)
+	box.ZIndex = 0
+	box.Parent = Part
 
 	local tracerLine = Drawing.new("Line")
 	tracerLine.Visible = false
@@ -93,6 +110,107 @@ function ESPLib:CreateESPTag(params)
 	centerDot.Color = TracerColor
 	centerDot.Transparency = 0.5
 	centerDot.Thickness = 1
+
+		local function createBoxForPart(part)
+		if not part or not part:IsA("BasePart") then return nil end
+		local box = Instance.new("BoxHandleAdornment")
+	    box.Name = "box"
+	    box.Size = Part.Size + Vector3.new(0.5, 0.5, 0.5)
+	    box.Adornee = Part
+	    box.AlwaysOnTop = true
+	    box.Transparency = 0.6
+	    box.Color3 = BoxColor or Color3.new(0, 0, 255)
+	    box.ZIndex = 0
+	    box.Parent = Part
+		
+		return box
+	end
+	
+	
+	local function updateAllBoxes()
+		for _, boxData in pairs(boxes) do
+			pcall(function() boxData.box:Destroy() end)
+		end
+		boxes = {}
+		
+		for _, partName in pairs(bodyParts) do
+			local part = esp:FindFirstChild(partName)
+			if part and part:IsA("BasePart") then
+				local box = createBoxForPart(part)
+				if box then
+					table.insert(boxes, {
+						box = box,
+						part = part,
+						partName = partName
+					})
+				end
+			end
+		end
+		
+		
+		for _, child in pairs(esp:GetChildren()) do
+			if child:IsA("BasePart") and not child.Name:find("ESPBox") then
+				local alreadyBoxed = false
+				for _, boxData in pairs(boxes) do
+					if boxData.part == child then
+						alreadyBoxed = true
+						break
+					end
+				end
+				if not alreadyBoxed then
+					local box = createBoxForPart(child)
+					if box then
+						table.insert(boxes, {
+							box = box,
+							part = child,
+							partName = child.Name
+						})
+					end
+				end
+			end
+		end
+	end
+
+		local function updateBoxSizes()
+		for _, boxData in pairs(boxes) do
+			local box = boxData.box
+			local part = boxData.part
+			
+			if box and box.Parent and part and part.Parent then
+		
+				local newSize = part.Size + Vector3.new(OutlineThickness, OutlineThickness, OutlineThickness)
+				box.Size = newSize
+				
+			end
+		end
+	end
+
+		local function trackNewParts()
+		local connection
+		connection = esp.ChildAdded:Connect(function(child)
+			if child:IsA("BasePart") then
+				local alreadyBoxed = false
+				for _, boxData in pairs(boxes) do
+					if boxData.part == child then
+						alreadyBoxed = true
+						break
+					end
+				end
+				if not alreadyBoxed then
+					local box = createBoxForPart(child)
+					if box then
+						table.insert(boxes, {
+							box = box,
+							part = child,
+							partName = child.Name
+						})
+					end
+				end
+			end
+		end)
+		
+		return connection
+	end
 
 
 
@@ -153,31 +271,12 @@ function ESPLib:CreateESPTag(params)
 		end
 	end
 
-	
-
 	RunService.RenderStepped:Connect(updateesplabelfr)
 
+	updateAllBoxes()
+	updateBoxSizes()
 
-		local connection = RunService.RenderStepped:Connect(function()
-		if not MainPart or not MainPart.Parent then
-			esp:Destroy()
-			if box then box:Destroy() end
-			tracerLine:Remove()
-			centerDot:Remove()
-			connection:Disconnect()
-			return
-		end
-	
-	end)
-	
-	
-	return function()
-		connection:Disconnect()
-		esp:Destroy()
-		if box then box:Destroy() end
-		tracerLine:Remove()
-		centerDot:Remove()
-	end
+
 end
 
 
@@ -230,7 +329,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-21t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-22t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -346,6 +445,7 @@ Spirit:AddToggle({
 		end)
 	end
 })
+
 
 
 Spirit:AddButton({
