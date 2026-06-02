@@ -1,3 +1,4 @@
+
 local ESPLib = {}
 
 function ESPLib:CreateESPTag(params)
@@ -1528,6 +1529,121 @@ AboutTab:AddButton({
   	end    
 })
 
+-- ping + fps
+local FPSPINGLib = {}
+function FPSPINGLib:CreatePerformanceDisplay()
+	local player = game.Players.LocalPlayer
+	local gui = Instance.new("ScreenGui")
+	gui.Name = "PerformanceDisplay"
+	gui.Parent = player:WaitForChild("PlayerGui")
+	gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	
+	
+	local frame = Instance.new("Frame")
+	frame.Name = "MainFrame"
+	frame.Size = UDim2.new(0, 150, 0, 50)
+	frame.Position = UDim2.new(0, 10, 1, -60) -- Левый нижний угол
+	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	frame.BackgroundTransparency = 0.1
+	frame.BorderSizePixel = 1
+	frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	frame.Parent = gui
+	
+	
+	local corners = Instance.new("UICorner")
+	corners.CornerRadius = UDim.new(0, 5)
+	corners.Parent = frame
+	
+	
+	local fpsLabel = Instance.new("TextLabel")
+	fpsLabel.Name = "FPSLabel"
+	fpsLabel.Size = UDim2.new(1, 0, 0.5, 0)
+	fpsLabel.Position = UDim2.new(0, 0, 0, 0)
+	fpsLabel.BackgroundTransparency = 1
+	fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+	fpsLabel.TextSize = 16
+	fpsLabel.Font = Enum.Font.SourceSansBold
+	fpsLabel.Text = "FPS: 0"
+	fpsLabel.TextXAlignment = Enum.TextXAlignment.Center
+	fpsLabel.Parent = frame
+	
+	
+	local pingLabel = Instance.new("TextLabel")
+	pingLabel.Name = "PingLabel"
+	pingLabel.Size = UDim2.new(1, 0, 0.5, 0)
+	pingLabel.Position = UDim2.new(0, 0, 0.5, 0)
+	pingLabel.BackgroundTransparency = 1
+	pingLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+	pingLabel.TextSize = 16
+	pingLabel.Font = Enum.Font.SourceSansBold
+	pingLabel.Text = "Ping: 0ms"
+	pingLabel.TextXAlignment = Enum.TextXAlignment.Center
+	pingLabel.Parent = frame
+	
+	
+	local frames = 0
+	local lastTime = tick()
+	
+	
+	local function updateFPS()
+		frames = frames + 1
+		local currentTime = tick()
+		local delta = currentTime - lastTime
+		
+		if delta >= 1 then
+			local fps = frames / delta
+			frames = 0
+			lastTime = currentTime
+			
+			
+			fpsLabel.Text = string.format("FPS: %.1f", fps)
+			
+			
+			if fps >= 60 then
+				fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- Зелёный
+			elseif fps >= 30 then
+				fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 0) -- Жёлтый
+			else
+				fpsLabel.TextColor3 = Color3.fromRGB(255, 0, 0) -- Красный
+			end
+		end
+	end
+	
+	
+	local function updatePing()
+		local stats = game:GetService("Stats")
+		local network = stats:FindFirstChild("Network")
+		
+		if network then
+			local ping = network:FindFirstChild("Ping")
+			if ping then
+				local currentPing = ping:GetValueString()
+				pingLabel.Text = "Ping: " .. currentPing .. "ms"
+				
+				
+				local pingValue = tonumber(currentPing) or 0
+				if pingValue <= 50 then
+					pingLabel.TextColor3 = Color3.fromRGB(0, 255, 0) 
+				elseif pingValue <= 150 then
+					pingLabel.TextColor3 = Color3.fromRGB(255, 255, 0) 
+				else
+					pingLabel.TextColor3 = Color3.fromRGB(255, 0, 0) 
+				end
+			end
+		end
+	end
+	
+	
+	game:GetService("RunService").RenderStepped:Connect(function()
+		updateFPS()
+	end)
+	
+	
+	while true do
+		updatePing()
+		task.wait(1)
+	end
+end
 
 FPSPINGLib:CreatePerformanceDisplay()
 
