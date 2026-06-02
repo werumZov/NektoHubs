@@ -1,5 +1,7 @@
--- ping + fps
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 
+
+-- ping + fps
 local FPSPINGLib = {}
 function FPSPINGLib:CreatePerformanceDisplay()
 	local player = game.Players.LocalPlayer
@@ -440,7 +442,6 @@ end
 
 
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "NektoHub198-24t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
