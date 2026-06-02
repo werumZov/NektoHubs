@@ -172,7 +172,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub197-16t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub197-17t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -810,39 +810,50 @@ spawn(function()
 end)
 
 
-local Speed = false
-_G.SpeedHack = false
-local function SpeedHack()
-	local tp_walk_cd = false
-	game:GetService("RunService").RenderStepped:Connect(function()
-		--if _G.SpeedHack == true then
-			if tp_walk_cd == false then
-				tp_walk_cd = true
-				local tp = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection + 7 / 2
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
-				wait(0.02)
-				tp_walk_cd = false
-			end
-		--end
-	end)
-	
+local SpeedHackEnabled = false
+local connection = nil
+
+local function startSpeedHack()
+    if connection then return end
+    
+    local tp_walk_cd = false
+    connection = game:GetService("RunService").RenderStepped:Connect(function()
+        if SpeedHackEnabled and game.Players.LocalPlayer.Character then
+            if tp_walk_cd == false then
+                tp_walk_cd = true
+                local character = game.Players.LocalPlayer.Character
+                local hrp = character:FindFirstChild("HumanoidRootPart")
+                local humanoid = character:FindFirstChild("Humanoid")
+                
+                if hrp and humanoid then
+                    local tp = hrp.CFrame + humanoid.MoveDirection * 3.5  -- 7/2 = 3.5
+                    hrp.CFrame = tp
+                end
+                task.wait(0.02)
+                tp_walk_cd = false
+            end
+        end
+    end)
 end
 
+local function stopSpeedHack()
+    if connection then
+        connection:Disconnect()
+        connection = nil
+    end
+end
 
 Tab:AddToggle({
-	Name = "Speed Hack[GLOBAL]",
-	Callback = function(v)
-	_G.SpeedHack = v
-end
+    Name = "Speed Hack[GLOBAL]",
+    Callback = function(v)
+        SpeedHackEnabled = v
+        if v then
+            startSpeedHack()
+        else
+            stopSpeedHack()
+        end
+    end
 })
-
-spawn(function()
-	while wait() do
-		if _G.Noclip then
-			SpeedHack()
-		end
-	end
-end)
 
 
 
