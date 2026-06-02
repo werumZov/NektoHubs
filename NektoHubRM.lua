@@ -16,6 +16,7 @@ function ESPLib:CreateESPTag(params)
 	local TrailMode = params.TrailMode or false
 	local TrailColor = params.TrailColor or {Color3.new(255, 0, 0)} 
 	local TrailWidth = params.TrailWidth or {2}
+	local ShowBox = params.ShowBox or false
 
 
 	local espActive = true
@@ -56,15 +57,21 @@ function ESPLib:CreateESPTag(params)
 	esplabelfr.Font = "Arcade"
 	esplabelfr.Parent = esp
 
-	local box = Instance.new("BoxHandleAdornment")
-	box.Name = "box"
-	box.Size = Part.Size + Vector3.new(0.5, 0.5, 0.5)
-	box.Adornee = Part
-	box.AlwaysOnTop = true
-	box.Transparency = 0.6
-	box.Color3 = BoxColor or Color3.new(0, 0, 255)
-	box.ZIndex = 0
-	box.Parent = Part
+	local MainPart = Target:IsA("Model") and Target:FindFirstChild("HumanoidRootPart") or Target
+	if not MainPart then return end
+
+
+	local box = nil
+	if ShowBox and MainPart then
+		box = Instance.new("BoxHandleAdornment")
+		box.Size = MainPart.Size + Vector3.new(0.5, 0.5, 0.5)
+		box.Adornee = MainPart
+		box.AlwaysOnTop = true
+		box.Transparency = 0.7
+		box.Color3 = BoxColor
+		box.ZIndex = 0
+		box.Parent = MainPart
+	end
 
 	local tracerLine = Drawing.new("Line")
 	tracerLine.Visible = false
@@ -146,9 +153,34 @@ function ESPLib:CreateESPTag(params)
 		end
 	end
 
+	
+
 	RunService.RenderStepped:Connect(updateesplabelfr)
 
+
+		local connection = RunService.RenderStepped:Connect(function()
+		if not MainPart or not MainPart.Parent then
+			esp:Destroy()
+			if box then box:Destroy() end
+			tracerLine:Remove()
+			centerDot:Remove()
+			connection:Disconnect()
+			return
+		end
+	
+	end)
+	
+	
+	return function()
+		connection:Disconnect()
+		esp:Destroy()
+		if box then box:Destroy() end
+		tracerLine:Remove()
+		centerDot:Remove()
+	end
 end
+
+
 
 
 local function noclip()
@@ -198,7 +230,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-20t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-21t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
