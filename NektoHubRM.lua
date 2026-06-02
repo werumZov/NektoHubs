@@ -17,6 +17,16 @@ function ESPLib:CreateESPTag(params)
 	local TrailColor = params.TrailColor or {Color3.new(255, 0, 0)} 
 	local TrailWidth = params.TrailWidth or {2}
 
+
+	local espActive = true
+	local renderConnection = nil
+
+	local function getScreenCenter()
+		local viewportSize = camera.ViewportSize
+		return Vector2.new(viewportSize.X / 2, viewportSize.Y / 2)
+	end
+	
+
 	if #TrailColor < 2 then
 		TrailColor[2] = TrailColor[1]
 	end
@@ -24,6 +34,7 @@ function ESPLib:CreateESPTag(params)
 	if #TrailWidth < 2 then
 		TrailWidth[2] = TrailWidth[1] -- Duplicate the width if only one is provided
 	end
+
 
 	local esp = Instance.new("BillboardGui")
 	esp.Name = "esp"
@@ -77,12 +88,42 @@ function ESPLib:CreateESPTag(params)
 	centerDot.Transparency = 0.5
 	centerDot.Thickness = 1
 
+		local function destroyESP()
+		if not espActive then return end
+		espActive = false
+		
+		
+		if renderConnection then
+			renderConnection:Disconnect()
+			renderConnection = nil
+		end
+		
+		
+		pcall(function() esp:Destroy() end)
+		pcall(function() box:Destroy() end)
+		
+		
+		if tracerLine then
+			pcall(function() tracerLine:Remove() end)
+		end
+		if centerDot then
+			pcall(function() centerDot:Remove() end)
+		end
+		
+		
+		if trail then
+			pcall(function() trail:Destroy() end)
+		end
+	end
+
+
 	local function updateesplabelfr()
-		if not Part or not Part:IsA("BasePart") or not Part.Parent then
+		if not espActive or not Part or not Part:IsA("BasePart") or not Part.Parent then
 			-- Part no longer exists, delete ESP elements
-			esp:Destroy()
-			tracerLine:Remove()
-			trail:Destroy()
+			--esp:Destroy()
+			--tracerLine:Remove()
+			--trail:Destroy()
+			destroyESP()
 			return
 		end
 
@@ -101,14 +142,19 @@ function ESPLib:CreateESPTag(params)
 				box.Visible = true
 
 				-- Update tracer line points
-				local tracerStart = camera:WorldToViewportPoint(player.Character.Head.Position)
+				local tracerStart = camera:WorldToViewportPoint(getScreenCenter)
 				local tracerEnd = camera:WorldToViewportPoint(Part.Position)
 				tracerLine.From = Vector2.new(tracerStart.X, tracerStart.Y)
 				tracerLine.To = Vector2.new(tracerEnd.X, tracerEnd.Y)
 				tracerLine.Color = TracerColor
 				tracerLine.Thickness = TracerWidth-- Adjust the thickness of the line (increased from 1)
 				tracerLine.Visible = not TrailMode
-
+				centerDot.Position = screenCenter
+					centerDot.Visible = not TrailMode and onScreen
+					centerDot.Color = TracerColor
+					centerDot.Radius = 3
+					centerDot.Transparency = 0.5
+		
 				-- Update trail
 				trail.Attachment1 = Part.Attachment
 				trail.Lifetime = 0.3
@@ -130,6 +176,15 @@ function ESPLib:CreateESPTag(params)
 	end
 
 	RunService.RenderStepped:Connect(updateesplabelfr)
+
+	local partAncestryChanged
+	partAncestryChanged = Part.AncestryChanged:Connect(function()
+		if not Part or not Part.Parent then
+			destroyESP()
+			partAncestryChanged:Disconnect()
+		end
+	end)
+
 end
 
 
@@ -180,7 +235,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub197-17t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.97"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-17t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -189,15 +244,16 @@ local Night2 = Window:MakeTab({Name = "Night 2", Icon = "rbxassetid://4483345998
 
 local Night3 = Window:MakeTab({Name = "Night 3", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
-local modif = Window:MakeTab({Name = "Modifers", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+local Bunker = Window:MakeTab({Name = "Bunker[NEW]", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
 local Mansion = Window:MakeTab({Name = "Mansion", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+local modif = Window:MakeTab({Name = "Modifers", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
 local MansionW = Window:MakeTab({Name = "Windows Mansion", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
 local Spirit = Window:MakeTab({Name = "Spirit", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
-local Bunker = Window:MakeTab({Name = "Bunker[NEW]", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
 
 local Section = Tab:AddSection({
@@ -266,13 +322,33 @@ Spirit:AddButton({
 	end
 })
 
-Spirit:AddButton({
+Spirit:AddToggle({
 	Name = "Inf Lamp",
 	Default = false,
 	Callback = function()
-		local Lamp = game.Workspace.Lamp
-		Lamp.Heat.Value = -167
+		local Lamp = game.Workspace:FindFirstChild("Lamp")
+		if not Lamp then return end
 		
+		local Heat = Lamp:FindFirstChild("Heat")
+		if not Heat then return end
+		
+		
+		Heat.Value = -167
+		
+	
+		_G.KeepInfLamp = true
+		
+		
+		if _G.InfLampConnection then
+			_G.InfLampConnection:Disconnect()
+		end
+		
+		
+		_G.InfLampConnection = game:GetService("RunService").Heartbeat:Connect(function()
+			if _G.KeepInfLamp and Heat and Heat.Parent then
+				Heat.Value = -167
+			end
+		end)
 	end
 })
 
