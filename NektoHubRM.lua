@@ -1,4 +1,5 @@
 
+-- esp
 local ESPLib = {}
 
 function ESPLib:CreateESPTag(params)
@@ -320,7 +321,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-25t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-26t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -1611,17 +1612,17 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	
 	
 	local function updatePing()
-		local stats = game:GetService("Stats")
-		local network = stats:FindFirstChild("Network")
+		local Players = game:GetService("Players")
+		local player = Players.LocalPlayer
 		
-		if network then
-			local ping = network:FindFirstChild("Ping")
-			if ping then
-				local currentPing = ping:GetValueString()
-				pingLabel.Text = "Ping: " .. currentPing .. "ms"
+		
+			player.PlayerAdded:Connect(function(player)
+                task.wait(5) 
+                local ping = player:GetNetworkPing() * 1000
+				pingLabel.Text = "Ping: " .. ping .. "ms"
 				
 				
-				local pingValue = tonumber(currentPing) or 0
+				local pingValue = tonumber(ping) or 0
 				if pingValue <= 50 then
 					pingLabel.TextColor3 = Color3.fromRGB(0, 255, 0) 
 				elseif pingValue <= 150 then
@@ -1629,9 +1630,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 				else
 					pingLabel.TextColor3 = Color3.fromRGB(255, 0, 0) 
 				end
-			end
+			end)
 		end
-	end
 	
 	
 	game:GetService("RunService").RenderStepped:Connect(function()
@@ -1646,6 +1646,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 end
 
 FPSPINGLib:CreatePerformanceDisplay()
+
+
 
 
 
