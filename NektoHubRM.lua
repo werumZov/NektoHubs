@@ -838,6 +838,7 @@ spawn(function()
 	while wait() do
 		if _G.SpeedHack then
 			SpeedHack()
+			elseif not _G.SpeedHack then
 		end
 	end
 end)
