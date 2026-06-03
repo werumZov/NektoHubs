@@ -637,12 +637,27 @@ Night2:AddButton({
 	end
 })
 
+Night2:AddButton({
+	Name = "Rat ESP",
+	Callback = function()
+		ESPLib:CreateESPTag({
+			Text = "Rat[pidor]",
+			Part = game.Workspace:WaitForChild("Stalker").RootPart,
+			TextSize = 11,
+			TextColor = Color3.new(255,255,0),
+			BoxColor = Color3.new(255,255,0),
+			TracerColor = Color3.new(255,255,0),
+			TracerWidth = 3
+		}) 
+	end
+})
+
 
 
 
 -- Default(Night 1)
 Tab:AddButton({
-	Name = "Larry ESP",
+	Name = "Larry ESP[WORKS IN 1,2,3 NIGHTS - GLOBAL]",
 	Callback = function()
 		ESPLib:CreateESPTag({
 			Text = "Mutant",
@@ -1030,7 +1045,7 @@ spawn(function()
 		if itemgrab then
 			task.wait(1)
 			for i,v in pairs(game.Workspace:GetDescendants()) do
-				if v:IsA("Tool") or table.find({"Flashlight", "FlashLight", "Battery"}, v.Name) then
+				if v:IsA("Tool") or table.find({"Flashlight", "FlashLight", "Battery", "BloxyCola"}, v.Name) then
 					fireclickdetector(v:FindFirstChild("ClickDetector"))
 				end
 			end
