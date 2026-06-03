@@ -214,7 +214,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-34t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-35t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -776,6 +776,7 @@ Tab:AddButton({
 Tab:AddToggle({
 	Name = "3rd Person View In-House",
 	Flag = "toggle",
+	Save = true,
 	Callback = function()
 		game.Players.LocalPlayer.CameraMode = Enum.CameraMode.Classic
 	end
@@ -785,6 +786,7 @@ Tab:AddToggle({
 	Name = "Noclip[GLOBAL] (jump after disabling)",
 	Flag = "toggle",
 	Default = false,
+	Save = true,
 	Callback = function(v)
 		_G.Noclip = v
 	end
@@ -834,6 +836,7 @@ end
 Tab:AddToggle({
     Name = "Speed Hack[GLOBAL]",
 	Flag = "toggle",
+	Save = true,
     Callback = function(v)
         SpeedHackEnabled = v
         if v then
@@ -868,15 +871,17 @@ Tab:AddToggle({
 	Name = "Infinite Stam[GLOBAL]",
 	Default = false,
 	Flag = "toggle",
+	Save = true,
 	Callback = function(v)
 		_G.InfStam = v
 	end
 })
 
 Tab:AddToggle({
-	Name = "Infinite Oxygen",
+	Name = "Infinite Oxygen[GLOBAL - DONT WORKS IN BUNKER]",
 	Default = false,
 	Flag = "toggle",
+	Save = true,
 	Callback = function(v)
 		_G.InfO2 = v
 	end
