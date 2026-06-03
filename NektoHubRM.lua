@@ -65,16 +65,13 @@ function ESPLib:CreateESPTag(params)
 
 	local trail = Instance.new("Trail")
 	trail.Texture = "rbxassetid://188166667"
-	trail.Attachment0 = Instance.new("Attachment", game.Players.LocalPlayer.Character.Torso)
-	trail.Attachment1 = Instance.new("Attachment", Part)
 	trail.Enabled = false
 	trail.Color = ColorSequence.new(TrailColor[1], TrailColor[2])
 	trail.WidthScale = NumberSequence.new(TrailWidth[1], TrailWidth[2])
 	trail.Parent = Part
 	trail.Lifetime = 0.5
 
-	local attachment0 = nil
-	local attachment1 = nil
+
 
 
 	local function updateesplabelfr()
@@ -1438,7 +1435,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
     
     WatermarkLabel.TextColor3 = Color3.fromRGB(r, g, b)
     
-    task.wait(0.03)
+    task.wait()
 
         end
 	end
