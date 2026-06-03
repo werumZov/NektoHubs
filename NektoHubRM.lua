@@ -168,7 +168,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-30t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-31t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -1288,6 +1288,16 @@ AboutTab:AddButton({
   	end    
 })
 
+
+local NotifUpdLib = {}
+function NotifUpdLib:CreateNotificationUpdate()
+	game.StarterGui:SetCore("SendNotification", {
+			Title = "Update Info",
+			Text = "Update time: 03.06.2026",
+			Duration = 10
+		})
+end
+
 -- ping + fps
 local FPSPINGLib = {}
 function FPSPINGLib:CreatePerformanceDisplay()
@@ -1367,6 +1377,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 end
 
 FPSPINGLib:CreatePerformanceDisplay()
+NotifUpdLib:CreateNotificationUpdate()
 
 
 
