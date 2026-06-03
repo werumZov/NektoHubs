@@ -1352,6 +1352,26 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	frame.BorderSizePixel = 1
 	frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
 	frame.Parent = gui
+
+	local frameU = Instance.new("Frame")
+	frameU.Name = "MainFrameU"
+	frameU.Size = UDim2.new(0, 200, 0, 37)
+	frameU.Position = UDim2.new(0, 0, 0.163, 0) 
+	frameU.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	frameU.BackgroundTransparency = 0.1
+	frameU.BorderSizePixel = 1
+	frameU.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	frameU.Parent = gui
+
+	local WaterMarkFrame = Instance.new("Frame")
+	WaterMarkFrame.Name = "MainFrameW"
+	WaterMarkFrame.Size = UDim2.new(0.112, 0, 0.034, 0)
+	WaterMarkFrame.Position = UDim2.new(0.724, 0, -0.001, 0) 
+	WaterMarkFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	WaterMarkFrame.BackgroundTransparency = 0.1
+	WaterMarkFrame.BorderSizePixel = 1
+	WaterMarkFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	WaterMarkFrame.Parent = gui
 	
 	
 	local corners = Instance.new("UICorner")
@@ -1370,6 +1390,30 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	fpsLabel.Text = "FPS: 0"
 	fpsLabel.TextXAlignment = Enum.TextXAlignment.Center
 	fpsLabel.Parent = frame
+
+	local UpdLabel = Instance.new("TextLabel")
+	UpdLabel.Name = "UPDLabel"
+	UpdLabel.Size = UDim2.new(1, 0, 0.649, 0)
+	UpdLabel.Position = UDim2.new(0, 0, 0.162, 0)
+	UpdLabel.BackgroundTransparency = 1
+	UpdLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+	UpdLabel.TextSize = 16
+	UpdLabel.Font = Enum.Font.SourceSansBold
+	UpdLabel.Text = "Last Update Time: 03.06.2026"
+	UpdLabel.TextXAlignment = Enum.TextXAlignment.Center
+	UpdLabel.Parent = frameU
+
+	local WatermarkLabel = Instance.new("TextLabel")
+	WatermarkLabel.Name = "UPDLabel"
+	WatermarkLabel.Size = UDim2.new(1.765, 0, 0.249, 0)
+	WatermarkLabel.Position = UDim2.new(11.383, 0, -0.009, 0)
+	WatermarkLabel.BackgroundTransparency = 1
+	WatermarkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+	WatermarkLabel.TextSize = 16
+	WatermarkLabel.Font = Enum.Font.SourceSansBold
+	WatermarkLabel.Text = "NektoHub | Residence Massacre"
+	WatermarkLabel.TextXAlignment = Enum.TextXAlignment.Center
+	WatermarkLabel.Parent = WaterMarkFrame
 	
 	
 	
