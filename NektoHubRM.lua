@@ -168,7 +168,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-31t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-32t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -782,7 +782,7 @@ local function startSpeedHack()
                 local humanoid = character:FindFirstChild("Humanoid")
                 
                 if hrp and humanoid then
-                    local tp = hrp.CFrame + humanoid.MoveDirection * 3.5  -- 7/2 = 3.5
+                    local tp = hrp.CFrame + humanoid.MoveDirection  -- 7/2 = 3.5 - значение не используется
                     hrp.CFrame = tp
                 end
                 task.wait(0.02)
