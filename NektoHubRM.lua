@@ -1396,7 +1396,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	WatermarkLabel.Size = UDim2.new(0, 182, 0, 28)
 	WatermarkLabel.Position = UDim2.new(-0.001, 0, 0, 0)
 	WatermarkLabel.BackgroundTransparency = 1
-	WatermarkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+	WatermarkLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	WatermarkLabel.TextSize = 16
 	WatermarkLabel.Font = Enum.Font.SourceSansBold
 	WatermarkLabel.Text = "            NektoHub | Residence Massacre"
@@ -1434,7 +1434,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	end
 
 
-local function updateWT()
+local function updateWT() -- не юзабельно, хз когда оптимизирую
 	local speed = 0.5 
 	local lastUpdate = 0
 	local updateInterval = 0.05 
@@ -1475,7 +1475,7 @@ end
 		updateFPS()
 	end)
 
-	updateWT()
+	
 	
 
 end
