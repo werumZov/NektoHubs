@@ -78,7 +78,11 @@ function ESPLib:CreateESPTag(params)
 		if not Part or not Part:IsA("BasePart") or not Part.Parent then
 			-- Part no longer exists, delete ESP elements
 			esp:Destroy()
-			tracerLine:Remove()
+			pcall(function()
+			if tracerLine then
+				tracerLine:Remove()
+			end
+		end)
 			trail:Destroy()
 			return
 		end
@@ -1430,25 +1434,39 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	end
 
 
-	local function updateWT()
-       local speed = 1
-
-
-        while true do
-        local time = os.clock() * speed
-    
-    
-        local r = math.floor((math.sin(time) + 1) * 127.5)
-        local g = math.floor((math.sin(time + 2) + 1) * 127.5)
-        local b = math.floor((math.sin(time + 4) + 1) * 127.5)
-    
-    
-    WatermarkLabel.TextColor3 = Color3.fromRGB(r, g, b)
-    
-    task.wait()
-
-        end
+local function updateWT()
+	local speed = 0.5 
+	local lastUpdate = 0
+	local updateInterval = 0.05 
+	
+	
+	while true do
+		local currentTime = tick()
+		
+		if currentTime - lastUpdate >= updateInterval then
+			lastUpdate = currentTime
+			
+			local time = os.clock() * speed
+			
+			
+			local sinVal = math.sin
+			local floorVal = math.floor
+			
+			local r = floorVal((sinVal(time) + 1) * 127.5)
+			local g = floorVal((sinVal(time + 2) + 1) * 127.5)
+			local b = floorVal((sinVal(time + 4) + 1) * 127.5)
+			
+			
+			local newColor = Color3.fromRGB(r, g, b)
+			if WatermarkLabel.TextColor3 ~= newColor then
+				WatermarkLabel.TextColor3 = newColor
+			end
+		end
+		
+		
+		task.wait(0.024) -- ~240 FPS
 	end
+end
 	
 	
 	
