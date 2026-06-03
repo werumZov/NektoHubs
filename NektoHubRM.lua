@@ -190,7 +190,40 @@ local Mansion = Window:MakeTab({Name = "Mansion", Icon = "rbxassetid://448334599
 
 local Spirit = Window:MakeTab({Name = "Spirit", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
+local Tab2 = Window:MakeTab({Name = "Teleports", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
 local modif = Window:MakeTab({Name = "Modifers", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+local misc = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local plr = Window:MakeTab({
+	Name = "Players",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+local mn = Window:MakeTab({
+	Name = "Monster Gamemode",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local RandomTab = Window:MakeTab({
+	Name = "Visual",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local AboutTab = Window:MakeTab({
+	Name = "About",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
 
 
@@ -198,7 +231,7 @@ local modif = Window:MakeTab({Name = "Modifers", Icon = "rbxassetid://4483345998
 
 
 local Section = Tab:AddSection({
-	Name = "Dildasik"
+	Name = "Main - GLOBAL FUNCTIONS"
 })
 
 
@@ -921,7 +954,7 @@ spawn(function()
 end)
 
 
-local Tab2 = Window:MakeTab({Name = "Teleports", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
 
 local Section1 = Tab2:AddSection({
 	Name = "Night 1"
@@ -1013,11 +1046,6 @@ end)
 
 
 
-local mn = Window:MakeTab({
-	Name = "Monster Gamemode",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
 
 local InfBlood = false
 
@@ -1049,11 +1077,7 @@ mn:AddButton({
 	end
 })
 
-local misc = Window:MakeTab({
-	Name = "Misc",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+
 
 local itemgrab = false
 
@@ -1078,11 +1102,6 @@ spawn(function()
 	end)
 end)
 
-local plr = Window:MakeTab({
-	Name = "Players",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
 
 local players = {}
 
@@ -1230,11 +1249,7 @@ plr:AddButton({
 })
 
 --VISUAL
-local RandomTab = Window:MakeTab({
-	Name = "Visual",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+
 RandomTab:AddButton({
 	Name = "Press me!",
 	Callback = function()
@@ -1271,11 +1286,6 @@ RandomTab:AddButton({
 })
 
 
-local AboutTab = Window:MakeTab({
-	Name = "About",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
 
 
 AboutTab:AddButton({
