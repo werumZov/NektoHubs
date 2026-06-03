@@ -322,14 +322,27 @@ Mansion:AddButton({
 })
 
 Mansion:AddButton({
-	Name = "Zero Danger(CLICK ONCE)",
+	Name = "Zero Danger",
 	Default = false,
-	Callback = function()
-		--local plr = game.Players.LocalPlayer.Character
-		--plr.Danger.Value = -167
-		 local danger = player:FindFirstChild("Danger")
-		 if danger and danger:IsA("NumberValue") then
-			danger.Value = -167
+	Callback = function(v)
+		_G.ZeroDangerActive = v
+		
+		if _G.ZeroDangerConnection then
+			_G.ZeroDangerConnection:Disconnect()
+			_G.ZeroDangerConnection = nil
+		end
+		
+		if v then
+			_G.ZeroDangerConnection = game:GetService("RunService").Heartbeat:Connect(function()
+				local character = game.Players.LocalPlayer.Character
+				if character then
+					local danger = character:FindFirstChild("Danger")
+					if danger and danger:IsA("NumberValue") then
+						danger.Value = 0
+					end
+				end
+			end)
+		else
 		end
 	end
 })
