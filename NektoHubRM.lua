@@ -90,18 +90,7 @@ function ESPLib:CreateESPTag(params)
 		if playerPosition then
 			local distance = (playerPosition.Position - Part.Position).Magnitude
 			esplabelfr.Text = string.format(Text .. ": %.2f", distance)
-			attachment1 = Instance.new("Attachment")
-		    attachment1.Parent = Part
-		    trail.Attachment1 = attachment1
-			local character = player.Character
-		    if character then
-			local torso = character:FindFirstChild("Torso") or character:FindFirstChild("HumanoidRootPart")
-			if torso then
-				attachment0 = Instance.new("Attachment")
-				attachment0.Parent = torso
-				trail.Attachment0 = attachment0
-			end
-		    end
+			
 	
 
 			local headPosition = Part.Position + Vector3.new(0, Part.Size.Y / 2, 0)
@@ -189,7 +178,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-36t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-37t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -1399,7 +1388,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	WatermarkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 	WatermarkLabel.TextSize = 16
 	WatermarkLabel.Font = Enum.Font.SourceSansBold
-	WatermarkLabel.Text = "           NektoHub | Residence Massacre"
+	WatermarkLabel.Text = "            NektoHub | Residence Massacre"
 	WatermarkLabel.TextXAlignment = Enum.TextXAlignment.Center
 	WatermarkLabel.Parent = WaterMarkFrame
 	
