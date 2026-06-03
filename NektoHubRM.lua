@@ -1370,8 +1370,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 
 	local WaterMarkFrame = Instance.new("Frame")
 	WaterMarkFrame.Name = "MainFrameW"
-	WaterMarkFrame.Size = UDim2.new(0.118, 0, 0.034, 0)
-	WaterMarkFrame.Position = UDim2.new(0.009, 0, 0.22, 0) 
+	WaterMarkFrame.Size = UDim2.new(0.126, 0, 0.034, 0)
+	WaterMarkFrame.Position = UDim2.new(0, 0, 0.22, 0)
 	WaterMarkFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	WaterMarkFrame.BackgroundTransparency = 0.1
 	WaterMarkFrame.BorderSizePixel = 1
@@ -1418,8 +1418,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 
 	local WatermarkLabel = Instance.new("TextLabel")
 	WatermarkLabel.Name = "WTLabel"
-	WatermarkLabel.Size = UDim2.new(0, 213, 0, 28)
-	WatermarkLabel.Position = UDim2.new(-0.145, 0, 0, 0)
+	WatermarkLabel.Size = UDim2.new(0, 207, 0, 28)
+	WatermarkLabel.Position = UDim2.new(-0.036, 0, 0, 0)
 	WatermarkLabel.BackgroundTransparency = 1
 	WatermarkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 	WatermarkLabel.TextSize = 16
@@ -1460,7 +1460,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 
 
 	local function updateWT()
-       local speed = 2
+       local speed = 1
 
 
         while true do
@@ -1474,8 +1474,9 @@ function FPSPINGLib:CreatePerformanceDisplay()
     
     WatermarkLabel.TextColor3 = Color3.fromRGB(r, g, b)
     
-    task.wait()
-          end
+    task.wait(0.03)
+
+        end
 	end
 	
 	
@@ -1483,6 +1484,9 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	
 	game:GetService("RunService").RenderStepped:Connect(function()
 		updateFPS()
+	end)
+
+	game:GetService("RunService").RenderStepped:Connect(function()
 		updateWT()
 	end)
 	
