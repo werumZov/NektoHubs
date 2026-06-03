@@ -18,6 +18,9 @@ function ESPLib:CreateESPTag(params)
 	local TrailColor = params.TrailColor or {Color3.new(255, 0, 0)} 
 	local TrailWidth = params.TrailWidth or {2}
 
+	local isActive = true
+	local renderConnection = nil
+
 	if #TrailColor < 2 then
 		TrailColor[2] = TrailColor[1]
 	end
@@ -70,6 +73,28 @@ function ESPLib:CreateESPTag(params)
 	trail.Parent = Part
 	trail.Lifetime = 0.5
 
+	local attachment0 = nil
+	local attachment1 = nil
+
+	local function cleanup()
+		if not isActive then return end
+		isActive = false
+		
+		if renderConnection then
+			renderConnection:Disconnect()
+			renderConnection = nil
+		end
+		
+		pcall(function() esp:Destroy() end)
+		pcall(function() box:Destroy() end)
+		pcall(function() tracerLine:Remove() end)
+		pcall(function() 
+			if trail then trail:Destroy() end
+			if attachment0 then attachment0:Destroy() end
+			if attachment1 then attachment1:Destroy() end
+		end)
+	end
+
 	local function updateesplabelfr()
 		if not Part or not Part:IsA("BasePart") or not Part.Parent then
 			-- Part no longer exists, delete ESP elements
@@ -83,6 +108,19 @@ function ESPLib:CreateESPTag(params)
 		if playerPosition then
 			local distance = (playerPosition.Position - Part.Position).Magnitude
 			esplabelfr.Text = string.format(Text .. ": %.2f", distance)
+			attachment1 = Instance.new("Attachment")
+		    attachment1.Parent = Part
+		    trail.Attachment1 = attachment1
+			local character = player.Character
+		    if character then
+			local torso = character:FindFirstChild("Torso") or character:FindFirstChild("HumanoidRootPart")
+			if torso then
+				attachment0 = Instance.new("Attachment")
+				attachment0.Parent = torso
+				trail.Attachment0 = attachment0
+			end
+		    end
+	
 
 			local headPosition = Part.Position + Vector3.new(0, Part.Size.Y / 2, 0)
 			local screenPosition, onScreen = camera:WorldToScreenPoint(headPosition)
@@ -122,7 +160,15 @@ function ESPLib:CreateESPTag(params)
 		end
 	end
 
-	RunService.RenderStepped:Connect(updateesplabelfr)
+	local ancestryConnection
+	ancestryConnection = Part.AncestryChanged:Connect(function()
+		if not Part or not Part.Parent then
+			cleanup()
+			if ancestryConnection then ancestryConnection:Disconnect() end
+		end
+	end)
+
+	renderConnection = RunService.RenderStepped:Connect(updateesplabelfr)
 end
 
 
@@ -168,7 +214,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-33t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-34t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
