@@ -1301,7 +1301,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	local frame = Instance.new("Frame")
 	frame.Name = "MainFrame"
 	frame.Size = UDim2.new(0, 100, 0, 50)
-	frame.Position = UDim2.new(0, 10, 1, -60) 
+	frame.Position = UDim2.new(0, 0, 0.109, 0) 
 	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	frame.BackgroundTransparency = 0.1
 	frame.BorderSizePixel = 1
