@@ -1365,8 +1365,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 
 	local WaterMarkFrame = Instance.new("Frame")
 	WaterMarkFrame.Name = "MainFrameW"
-	WaterMarkFrame.Size = UDim2.new(0.112, 0, 0.034, 0)
-	WaterMarkFrame.Position = UDim2.new(0.724, 0, -0.001, 0) 
+	WaterMarkFrame.Size = UDim2.new(0.118, 0, 0.034, 0)
+	WaterMarkFrame.Position = UDim2.new(0.009, 0, 0.22, 0) 
 	WaterMarkFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	WaterMarkFrame.BackgroundTransparency = 0.1
 	WaterMarkFrame.BorderSizePixel = 1
@@ -1377,6 +1377,14 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	local corners = Instance.new("UICorner")
 	corners.CornerRadius = UDim.new(0, 5)
 	corners.Parent = frame
+
+	local cornersU = Instance.new("UICorner")
+	cornersU.CornerRadius = UDim.new(0, 5)
+	cornersU.Parent = frameU
+
+	local cornersW = Instance.new("UICorner")
+	cornersW.CornerRadius = UDim.new(0, 5)
+	cornersW.Parent = WaterMarkFrame
 	
 	
 	local fpsLabel = Instance.new("TextLabel")
@@ -1404,9 +1412,9 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	UpdLabel.Parent = frameU
 
 	local WatermarkLabel = Instance.new("TextLabel")
-	WatermarkLabel.Name = "UPDLabel"
-	WatermarkLabel.Size = UDim2.new(1.765, 0, 0.249, 0)
-	WatermarkLabel.Position = UDim2.new(11.383, 0, -0.009, 0)
+	WatermarkLabel.Name = "WTLabel"
+	WatermarkLabel.Size = UDim2.new(0, 213, 0, 28)
+	WatermarkLabel.Position = UDim2.new(-0.145, 0, 0, 0)
 	WatermarkLabel.BackgroundTransparency = 1
 	WatermarkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 	WatermarkLabel.TextSize = 16
@@ -1444,12 +1452,33 @@ function FPSPINGLib:CreatePerformanceDisplay()
 			end
 		end
 	end
+
+
+	local function updateWT()
+       local speed = 2
+
+
+        while true do
+        local time = os.clock() * speed
+    
+    
+        local r = math.floor((math.sin(time) + 1) * 127.5)
+        local g = math.floor((math.sin(time + 2) + 1) * 127.5)
+        local b = math.floor((math.sin(time + 4) + 1) * 127.5)
+    
+    
+    WatermarkLabel.TextColor3 = Color3.fromRGB(r, g, b)
+    
+    task.wait()
+          end
+	end
 	
 	
 	
 	
 	game:GetService("RunService").RenderStepped:Connect(function()
 		updateFPS()
+		updateWT()
 	end)
 	
 
