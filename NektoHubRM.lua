@@ -133,7 +133,7 @@ end
 local function noclip()
 	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 		if v:IsA"Part" then
-			v.CanCollide = false0
+			v.CanCollide = false
 		end
 	end
 end
@@ -168,7 +168,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-29t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-30t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -177,7 +177,7 @@ local Night2 = Window:MakeTab({Name = "Night 2", Icon = "rbxassetid://4483345998
 
 local Night3 = Window:MakeTab({Name = "Night 3", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
-local Bunker = Window:MakeTab({Name = "Bunker[NEW]", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+local Bunker = Window:MakeTab({Name = "Bunker", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
 local Mansion = Window:MakeTab({Name = "Mansion", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
@@ -287,17 +287,6 @@ Spirit:AddToggle({
 	end
 })
 
-
-
-Spirit:AddButton({
-	Name = "Anti Nightmare",
-	Default = false,
-	Callback = function()
-		local night = game.ReplicatedStorage.Nightmare
-		night.Value = false
-		
-	end
-})
 	
 	
 
@@ -391,15 +380,6 @@ Mansion:AddButton({
 	end
 })
 
-Mansion:AddButton({
-	Name = "Unpause Time",
-	Default = false,
-	Callback = function()
-		local pidars = game.ReplicatedStorage.PauseTime
-			pidars.Value = false
-		
-	end
-})
 
 -- Bunker
 local SectionM = Bunker:AddSection({
@@ -508,20 +488,6 @@ local SectionO = Bunker:AddSection({
 	Name = "Other"
 })
 
-Bunker:AddButton({
-	Name = "Ventelation ESP",
-	Callback = function()
-		ESPLib:CreateESPTag({
-			Text = "Ventelation",
-			Part = game.Workspace.Ventelation:WaitForChild("Main"),
-			TextSize = 9,
-			TextColor = Color3.new(0,255,0),
-			BoxColor = Color3.new(0,255,0),
-			TracerColor = Color3.new(0,255,0),
-			TracerWidth = 2
-		}) 
-	end
-})
 
 Bunker:AddButton({
 	Name = "JerryCan ESP",
@@ -585,24 +551,6 @@ Night3:AddButton({
 	end
 })
 
-Night3:AddButton({
-	Name = "Unlimited Heater Battery",
-	Callback = function()
-			game.Workspace.Heaters.Heater.BatteryValue = 9999
-		
-		
-	end
-})
-
-Night3:AddButton({
-	Name = "Unlimited Ammo",
-	Callback = function()
-		local dayn = game.ReplicatedStorage.Items.Shotgun.Ammo
-		dayn.Value = 9999
-		
-		
-	end
-})
 
 local SectionO2 = Night3:AddSection({
 	Name = "Ammo Piles"
@@ -735,21 +683,6 @@ Night2:AddButton({
 	end
 })
 
-Night2:AddButton({
-	Name = "Anti AlarmDown",
-	Callback = function()
-      local sasynn = game.ReplicatedStorage.GameState
-			sasynn.AlarmsDown.Value = false
-	end
-})
-
-Night2:AddButton({
-	Name = "Inf Money(NW)",
-	Callback = function()
-      local sasynn = game.ReplicatedStorage.GameState
-			sasynn.Money.Value = 9999
-	end
-})
 
 -- Default
 Tab:AddButton({
@@ -802,7 +735,7 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "Remove Fog(TEST)",
+	Name = "Remove Fog(TEST) - [GLOBAL]",
 	Callback = function()
 		FogR()
 	end
@@ -839,7 +772,6 @@ local connection = nil
 
 local function startSpeedHack()
     if connection then return end
-    
     local tp_walk_cd = false
     connection = game:GetService("RunService").RenderStepped:Connect(function()
         if SpeedHackEnabled and game.Players.LocalPlayer.Character then
@@ -1065,9 +997,6 @@ b("TP to left ammo 2(cabin 3)", function()
 	tp(CFrame.new(48.6963272, 2.4266336, 282.75, 1, 0, 0, 0, 1, 0, 0, 0, 1))
 end)
 
-b("TP to the lodge(in door)", function()
-	tp(CFrame.new(-227.511276, 18.5499916, 53.5, -1, 0, 0, 0, 1, 0, 0, 0, -1))
-end)
 
 local Section3 = Tab2:AddSection({
 	Name = "Bunker"
@@ -1339,24 +1268,6 @@ RandomTab:AddButton({
       		game.ReplicatedStorage.Mutant:Destroy()
   	end    
 })
---VISUAL!!!
-local AnticheatTab = Window:MakeTab({
-	Name = "AntiCheat",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-AnticheatTab:AddButton({
-	Name = "Disable AntiCheat(DANGEROUS!!!)",
-	Callback = function()
-		game.Player.LocalPlayer.Character.LocalScript:Destroy()	
-		game.StarterGui:SetCore("SendNotification", {
-			Title = "Disable AntiCheat",
-			Text = "Succesfully!",
-			Duration = 9
-		})
-  	end    
-})
 
 
 local AboutTab = Window:MakeTab({
@@ -1390,7 +1301,7 @@ function FPSPINGLib:CreatePerformanceDisplay()
 	local frame = Instance.new("Frame")
 	frame.Name = "MainFrame"
 	frame.Size = UDim2.new(0, 100, 0, 50)
-	frame.Position = UDim2.new(0, 10, 1, -60) -- Левый нижний угол
+	frame.Position = UDim2.new(0, 10, 1, -60) 
 	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	frame.BackgroundTransparency = 0.1
 	frame.BorderSizePixel = 1
@@ -1436,11 +1347,11 @@ function FPSPINGLib:CreatePerformanceDisplay()
 			
 			
 			if fps >= 60 then
-				fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- Зелёный
+				fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 			elseif fps >= 30 then
-				fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 0) -- Жёлтый
+				fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
 			else
-				fpsLabel.TextColor3 = Color3.fromRGB(255, 0, 0) -- Красный
+				fpsLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
 			end
 		end
 	end
