@@ -799,10 +799,8 @@ local function stopSpeedHack()
     end
 end
 
-Tab:AddBind({
+Tab:AddToggle({
     Name = "Speed Hack[GLOBAL]",
-	Default = Enum.KeyCode.K,
-	Hold = false,
     Callback = function(v)
         SpeedHackEnabled = v
         if v then
