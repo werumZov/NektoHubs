@@ -1345,8 +1345,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 
 	local WaterMarkFrame = Instance.new("Frame")
 	WaterMarkFrame.Name = "MainFrameW"
-	WaterMarkFrame.Size = UDim2.new(0.126, 0, 0.034, 0)
-	WaterMarkFrame.Position = UDim2.new(-0.013, 0,0.216, 0)
+	WaterMarkFrame.Size = UDim2.new(0.123, 0, 0.034, 0)
+	WaterMarkFrame.Position = UDim2.new(-0.006, 0, 0.221, 0)
 	WaterMarkFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	WaterMarkFrame.BackgroundTransparency = 0.1
 	WaterMarkFrame.BorderSizePixel = 1
@@ -1393,8 +1393,8 @@ function FPSPINGLib:CreatePerformanceDisplay()
 
 	local WatermarkLabel = Instance.new("TextLabel")
 	WatermarkLabel.Name = "WTLabel"
-	WatermarkLabel.Size = UDim2.new(0, 207, 0, 28)
-	WatermarkLabel.Position = UDim2.new(-0.001, 0, 0, 0)
+	WatermarkLabel.Size = UDim2.new(0, 194, 0, 28)
+	WatermarkLabel.Position = UDim2.new(0.05, 0, 0, 0)
 	WatermarkLabel.BackgroundTransparency = 1
 	WatermarkLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 	WatermarkLabel.TextSize = 16
