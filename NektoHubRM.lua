@@ -168,7 +168,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-32t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "MineSim", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-32t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -799,8 +799,10 @@ local function stopSpeedHack()
     end
 end
 
-Tab:AddToggle({
+Tab:AddBind({
     Name = "Speed Hack[GLOBAL]",
+	Default = Enum.KeyCode.K,
+	Hold = false,
     Callback = function(v)
         SpeedHackEnabled = v
         if v then
