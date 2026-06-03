@@ -168,7 +168,7 @@ end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "NektoHub198-32t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
+local Window = OrionLib:MakeWindow({Name = "NektoHub198-33t-f", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.98"})
 
 
 local Tab = Window:MakeTab({Name = "Night 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
@@ -185,7 +185,6 @@ local Spirit = Window:MakeTab({Name = "Spirit", Icon = "rbxassetid://4483345998"
 
 local modif = Window:MakeTab({Name = "Modifers", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
-local MansionW = Window:MakeTab({Name = "Windows Mansion", Icon = "rbxassetid://4483345998", PremiumOnly = false })
 
 
 
@@ -302,51 +301,6 @@ Mansion:AddButton({
 			TextColor = Color3.new(255,0,0),
 			BoxColor = Color3.new(255,0,0),
 			TracerColor = Color3.new(255,0,0),
-			TracerWidth = 3
-		}) 
-	end
-})
-
-MansionW:AddButton({
-	Name = "Window Monster ESP(1)",
-	Callback = function()
-		ESPLib:CreateESPTag({
-			Text = "Window Monster",
-			Part = game.Workspace.Windows:WaitForChild("Window").Monster.RootPart,
-			TextSize = 9,
-			TextColor = Color3.new(255,255,0),
-			BoxColor = Color3.new(255,255,0),
-			TracerColor = Color3.new(255,255,0),
-			TracerWidth = 3
-		}) 
-	end
-})
-
-MansionW:AddButton({
-	Name = "Window Monster ESP(2)",
-	Callback = function()
-		ESPLib:CreateESPTag({
-			Text = "Window Monster",
-			Part = game.Workspace:WaitForChild("Window").Monster.RootPart,
-			TextSize = 9,
-			TextColor = Color3.new(255,255,0),
-			BoxColor = Color3.new(255,255,0),
-			TracerColor = Color3.new(255,255,0),
-			TracerWidth = 3
-		}) 
-	end
-})
-
-MansionW:AddButton({
-	Name = "Window Monster ESP(2)",
-	Callback = function()
-		ESPLib:CreateESPTag({
-			Text = "Window Monster",
-			Part = game.Workspace:WaitForChild("Window").Monster.RootPart,
-			TextSize = 9,
-			TextColor = Color3.new(255,255,0),
-			BoxColor = Color3.new(255,255,0),
-			TracerColor = Color3.new(255,255,0),
 			TracerWidth = 3
 		}) 
 	end
@@ -684,7 +638,9 @@ Night2:AddButton({
 })
 
 
--- Default
+
+
+-- Default(Night 1)
 Tab:AddButton({
 	Name = "Larry ESP",
 	Callback = function()
@@ -743,8 +699,9 @@ Tab:AddButton({
 
 
 
-Tab:AddButton({
+Tab:AddToggle({
 	Name = "3rd Person View In-House",
+	Flag = "toggle",
 	Callback = function()
 		game.Players.LocalPlayer.CameraMode = Enum.CameraMode.Classic
 	end
@@ -752,6 +709,7 @@ Tab:AddButton({
 
 Tab:AddToggle({
 	Name = "Noclip[GLOBAL] (jump after disabling)",
+	Flag = "toggle",
 	Default = false,
 	Callback = function(v)
 		_G.Noclip = v
@@ -801,6 +759,7 @@ end
 
 Tab:AddToggle({
     Name = "Speed Hack[GLOBAL]",
+	Flag = "toggle",
     Callback = function(v)
         SpeedHackEnabled = v
         if v then
@@ -834,6 +793,7 @@ _G.InfFood = false
 Tab:AddToggle({
 	Name = "Infinite Stam[GLOBAL]",
 	Default = false,
+	Flag = "toggle",
 	Callback = function(v)
 		_G.InfStam = v
 	end
@@ -842,6 +802,7 @@ Tab:AddToggle({
 Tab:AddToggle({
 	Name = "Infinite Oxygen",
 	Default = false,
+	Flag = "toggle",
 	Callback = function(v)
 		_G.InfO2 = v
 	end
