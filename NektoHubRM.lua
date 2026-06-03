@@ -1475,9 +1475,7 @@ end
 		updateFPS()
 	end)
 
-	game:GetService("RunService").RenderStepped:Connect(function()
-		updateWT()
-	end)
+	updateWT()
 	
 
 end
