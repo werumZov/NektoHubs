@@ -1,2 +1,2874 @@
--- This script was generated using the MoonVeil Obfuscator v1.4.5 [https://moonveil.cc]
-local H,ra,Fb,xe,Ye,Uc=getmetatable,type,bit32.bxor,pairs local Kd,Qd,Xc,Fc,o_,Of,Oa,ue,Db,wd,Sb,kf,Ie,Ff,vc,ob,If,Aa,Ke,nb,Zd,gd,Tb,hc,Ze,P,na,bc,Ta,kc,Jd,rc,He,Zc,Dd,gf,oa,r_,xb,la,Je,Od,Qc,sd;He=(getfenv());bc,Of,vc=(string.char),(string.byte),(bit32 .bxor);Od=function(vb,p)local zf,ge,ja,Fd,ga,Tc,Le,X;Le,ga=function(M,B,Ld)ga[M]=Fb(Ld,22523)-Fb(B,20227)return ga[M]end,{};zf=ga[26960]or Le(26960,8224,66613)repeat if zf>=48081 then if zf<49245 then if(X>=0 and Tc>ge)or((X<0 or X~=X)and Tc<ge)then zf=ga[8607]or Le(8607,26662,45177)else zf=15713 end elseif zf<=49245 then return Fd else Fd='';X,Tc,ge,zf=1,148,(#vb-1)+148,18175 end elseif zf>15713 then ja=Tc if ge~=ge then zf=49245 else zf=ga[-30020]or Le(-30020,30934,42077)end elseif zf<=11973 then Tc=Tc+X;ja=Tc if Tc~=Tc then zf=ga[8633]or Le(8633,6910,82337)else zf=48081 end else zf,Fd=ga[-30980]or Le(-30980,64164,45975),Fd..bc(vc(Of(vb,(ja-148)+1),Of(p,(ja-148)%#p+1)))end until zf==31884 end;o_=(select);Sb=(function(...)return{[1]={...},[2]=o_('#',...)}end);Zc=((function()local function Gc(mc,ua,dd)if ua>dd then return end return mc[ua],Gc(mc,ua+1,dd)end return Gc end)());Ke,r_=(string.gsub),(string.char);gf=(function(wc)wc=Ke(wc,'[^ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=]','')return(wc:gsub('.',function(Ed)if(Ed=='=')then return''end local tf,ia='',(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'):find(Ed)-1)for b_=6,1,-1 do tf=tf..(ia%2^b_-ia%2^(b_-1)>0 and'1'or'0')end return tf end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(Cd)if(#Cd~=8)then return''end local Bf=0 for rf=1,8 do Bf=Bf+(Cd:sub(rf,rf)=='1'and 2^(8-rf)or 0)end return r_(Bf)end))end);xb,Tb,hc,Fc,Aa,Dd,Ta,Xc=He[Od('\213$\215\207>\194','\166P\165')][Od('\243B\149\231O\142','\134,\229')],He[Od("Y\240\50C\234\'",'*\132@')][Od('\201\207\216','\186')],He[Od('\248\162\158\226\184\139','\139\214\236')][Od('2#$?','PZ')],He[Od('\252\128\234\218\172','\158\233')][Od('h:ym/e','\4I\17')],He[Od('\145\162\135\248\193','\243\203')][Od('I \216R5\196',';S\176')],He[Od('0\"&x\96','RK')][Od('(N$K','J/')],He[Od('\181B\163O\164','\193#')][Od(' 8\146 6\136','CW\252')],{};Ze=(function(Hb)local Te=Xc[Hb]if Te then return Te end local rb,af,Id,Ab,Ha=Fc(1,11),Fc(1,5),1,{},''while Id<=#Hb do local uc=hc(Hb,Id);Id=Id+1 for Xd=17,(8)+16 do local Td=nil if not(Dd(uc,1)~=0)then if Id+1<=#Hb then local aa=xb(Od('$S(','\26'),Hb,Id);Id=Id+2 local Ub,D=#Ha-Aa(aa,5),Dd(aa,(af-1))+3;Td=Tb(Ha,Ub,Ub+D-1)end else if Id<=#Hb then Td=Tb(Hb,Id,Id);Id=Id+1 end end uc=Aa(uc,1)if Td then Ab[#Ab+1]=Td;Ha=Tb(Ha..Td,-rb)end end end local Ic=Ta(Ab);Xc[Hb]=Ic return Ic end);la=(function()local E,Nf,S,h,yf,Me,ze,yd,Ea,md,pf,Md=He[Od('\135\201\145\147\215','\229\160')][Od('\254\231\243\237','\156\159')],He[Od('\240\194\230\152\160','\146\171')][Od('\192\51\204\54','\162R')],He[Od('\179\165\165\255\227','\209\204')][Od(']PM','?')],He[Od('\"(4rr','@A')][Od('|\212\96y\193|','\16\167\b')],He[Od('\181\178\163\232\229','\215\219')][Od('\96\215\28{\194\0','\18\164t')],He[Od('\241UT\235OA','\130!&')][Od('\237\235\252','\158')],He[Od('Q\232;K\242.','\"\156I')][Od('\184\49\171;','\200P')],He[Od('dH\155~R\142','\23<\233')][Od('m\173ey\160~','\24\195\21')],He[Od('\131I\134\153S\147','\240=\244')][Od("\'\48%",'U')],He[Od('\185\137\175\132\168','\205\232')][Od('\242V\225\\','\130\55')],He[Od('v\230\96\235g','\2\135')][Od('\182+\19\162&\b','\195Ec')],He[Od('\206\233\216\228\223','\186\136')][Od('\220\30C\208\2D','\181p0')]local function hf(Kf,a_,jd,Bc,wf)local lb,ad,_f,Yc=Kf[a_],Kf[jd],Kf[Bc],Kf[wf]local Hd;lb=Nf(lb+ad,4294967295);Hd=E(Yc,lb);Yc=Nf(S(h(Hd,16),yf(Hd,16)),4294967295);_f=Nf(_f+Yc,4294967295);Hd=E(ad,_f);ad=Nf(S(h(Hd,12),yf(Hd,20)),4294967295);lb=Nf(lb+ad,4294967295);Hd=E(Yc,lb);Yc=Nf(S(h(Hd,8),yf(Hd,24)),4294967295);_f=Nf(_f+Yc,4294967295);Hd=E(ad,_f);ad=Nf(S(h(Hd,7),yf(Hd,25)),4294967295);Kf[a_],Kf[jd],Kf[Bc],Kf[wf]=lb,ad,_f,Yc return Kf end local Rd,Yb={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}local Jf=function(Pb,Ve,ef)Rd[1],Rd[2],Rd[3],Rd[4]=3657673507,2026940001,3537041233,2936181384 for wa=22,(8)+21 do Rd[(wa-21)+4]=Pb[(wa-21)]end Rd[13]=Ve for ld=170,(3)+169 do Rd[(ld-169)+13]=ef[(ld-169)]end for oc=211,(16)+210 do Yb[(oc-210)]=Rd[(oc-210)]end for Wa=193,(10)+192 do hf(Yb,1,5,9,13);hf(Yb,2,6,10,14);hf(Yb,3,7,11,15);hf(Yb,4,8,12,16);hf(Yb,1,6,11,16);hf(Yb,2,7,12,13);hf(Yb,3,8,9,14);hf(Yb,4,5,10,15)end for Kb=200,(16)+199 do Rd[(Kb-199)]=Nf(Rd[(Kb-199)]+Yb[(Kb-199)],4294967295)end return Rd end local function sc(lc,ed,ma,Mf,Pc)local Va=#Mf-Pc+1 if Va<64 then local Ob=Me(Mf,Pc);Mf=Ob..Ea(Od('8','8'),64-Va);Pc=1 end He[Od('\193l\154\197m\157','\160\31\233')](#Mf>=64)local qf,de=md(yd(Od('\154\190\198\14\146\n\v\57\146\4\220\221\190b\137j\146\190\198\14\146\n\v\57\146\4\220\221\190b\137j\146','\166\247\242G\166C?p\166M\232\148\138+\189#'),Mf,Pc)),Jf(lc,ed,ma)for ta=170,(16)+169 do qf[(ta-169)]=E(qf[(ta-169)],de[(ta-169)])end local Ad=ze(Od("\219G\237\188\'\249t*\237\133j\246\129\22>\2\211G\237\188\'\249t*\237\133j\246\129\22>\2\211",'\231\14\217\245\19\176@c\217\204^\191\181_\nK'),pf(qf))if Va<64 then Ad=Me(Ad,1,Va)end return Ad end local function F(l_)local Da=''for Se=110,(#l_)+109 do Da=Da..l_[(Se-109)]end return Da end local function rd(Pa,ea,ub,ke)local Ka,s_,Oe,Ge=md(yd(Od("\'i\200|Y/\208\16/i\200|Y/\208\16/",'\27 \252\53mf\228Y'),Pa)),md(yd(Od('\208\252\220\165\129\161\216','\236\181\232'),ub)),{},1 while Ge<=#ke do Md(Oe,sc(Ka,ea,s_,ke,Ge));Ge=Ge+64;ea=ea+1 end return F(Oe)end return function(dc,u_,Lc)return rd(Lc,0,u_,dc)end end)();ue=(function()local Qa,Fe,ic,Ca,yc,fb,Ib,Wc,we,Ae,od=He[Od('\236\53\250o\188','\142\\')][Od('\254\200\243\210','\156\166')],He[Od('n\151x\205>','\f\254')][Od('A\aL\r','#\127')],He[Od('\162\1\180[\242','\192h')][Od('\30V\255\5C\227','l%\151')],He[Od('\238e\248?\190','\140\f')][Od('\196H0\193],','\168;X')],He[Od('ncx9>','\f\n')][Od('iHeM','\v)')],He[Od('*,<vz','HE')][Od("*\':",'H')],He[Od('\222\230\200\235\207','\170\135')][Od('\31\57\147\19%\148','vW\224')],He[Od('\143J\153G\158','\251+')][Od('-h(9e3','X\6X')],He[Od('\132\49\231\158+\242','\247E\149')][Od('\213\194\215','\167')],He[Od('\196@\222\222Z\203','\183\52\172')][Od('u\2w\24','\22j')],He[Od('6\214s,\204f','E\162\1')][Od('\153\255\143\227','\251\134')]local function Ga(Kc,zd)local pd,sa=ic(Kc,zd),Ca(Kc,32-zd)return yc(fb(pd,sa),4294967295)end local id=function(fc)local O={1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298}local function eb(sf)local Eb=#sf local Sc=Eb*8;sf=sf..Od('h','\232')local mf=64-((Eb+9)%64)if mf~=64 then sf=sf..we(Od('\227','\227'),mf)end sf=sf..Ae(yc(ic(Sc,56),255),yc(ic(Sc,48),255),yc(ic(Sc,40),255),yc(ic(Sc,32),255),yc(ic(Sc,24),255),yc(ic(Sc,16),255),yc(ic(Sc,8),255),yc(Sc,255))return sf end local function bf(Bb)local Rc={}for Rf=229,(#Bb)+228,64 do Ib(Rc,Bb[Od(',*=','_')](Bb,(Rf-228),(Rf-228)+63))end return Rc end local function Vb(Re,Za)local Na={}for yb=61,(64)+60 do if not((yb-60)<=16)then local Y,Vd=Fe(Ga(Na[(yb-60)-15],7),Ga(Na[(yb-60)-15],18),ic(Na[(yb-60)-15],3)),Fe(Ga(Na[(yb-60)-2],17),Ga(Na[(yb-60)-2],19),ic(Na[(yb-60)-2],10));Na[(yb-60)]=yc(Na[(yb-60)-16]+Y+Na[(yb-60)-7]+Vd,4294967295)else Na[(yb-60)]=fb(Ca(od(Re,((yb-60)-1)*4+1),24),Ca(od(Re,((yb-60)-1)*4+2),16),Ca(od(Re,((yb-60)-1)*4+3),8),od(Re,((yb-60)-1)*4+4))end end local nf,ec,I,ye,ae,le,qd,Pd=Wc(Za)for Ne=88,(64)+87 do local z,se_=Fe(Ga(ae,6),Ga(ae,11),Ga(ae,25)),Fe(yc(ae,le),yc(Qa(ae),qd))local f_,Cc,U=yc(Pd+z+se_+O[(Ne-87)]+Na[(Ne-87)],4294967295),Fe(Ga(nf,2),Ga(nf,13),Ga(nf,22)),Fe(yc(nf,ec),yc(nf,I),yc(ec,I))local y=yc(Cc+U,4294967295);Pd=qd;qd=le;le=ae;ae=yc(ye+f_,4294967295);ye=I;I=ec;ec=nf;nf=yc(f_+y,4294967295)end return yc(Za[1]+nf,4294967295),yc(Za[2]+ec,4294967295),yc(Za[3]+I,4294967295),yc(Za[4]+ye,4294967295),yc(Za[5]+ae,4294967295),yc(Za[6]+le,4294967295),yc(Za[7]+qd,4294967295),yc(Za[8]+Pd,4294967295)end fc=eb(fc)local qe,Jc,of=bf(fc),{1779033703,3144134277,1013904242,2773480762,1359893119,2600822924,528734635,1541459225},''for Zb,A in He[Od('l9\96l;r','\5I\1')](qe)do Jc={Vb(A,Jc)}end for Sa,Ue in He[Od('\26l=\26n/','s\28\\')](Jc)do of=of..Ae(yc(ic(Ue,24),255));of=of..Ae(yc(ic(Ue,16),255));of=of..Ae(yc(ic(Ue,8),255));of=of..Ae(yc(Ue,255))end return of end return id end)()local Lb,Gf,Z,Cf,Ia,vf,Ya,jf,xa,ie,Qe,Ee,Hf,qa,k,fd,Ud,Sd,Qf,da,Ua,Ba,Gd,We,Be,Ja,wb,nc,Pf,L=He[Od('l\154h\134','\24\227')],He[Od('\154\223\139\208\134','\234\188')],He[Od('nhyuy','\v\26')],He[Od('\t\179\253w\16\190\246p','}\220\147\2')],He[Od('\135\255-\131\254*','\230\140^')],He[Od('\v\250\248\29\252\224','x\159\148')],He[Od('3\186y\\\156\231!\171lS\149\246','@\223\r\49\249\147')],He[Od('0\130K*\152^','C\246\57')][Od('\239\180k\228\186m','\137\219\25')],He[Od('\223\164d\197\190q','\172\208\22')][Od('\n\196\243\30\201\232','\127\170\131')],He[Od('9\t\255#\19\234','J}\141')][Od('ect','\22')],He[Od('8\178\186\"\168\175','K\198\200')][Od('\208r\198n','\178\v')],He[Od('4\236\155.\246\142','G\152\233')][Od('\241\\\243F','\146\52')],He[Od('\248\247\238\250\233','\140\150')][Od('R\149I\159','?\250')],He[Od('\241%\231(\224','\133D')][Od('x\vk\1','\bj')],He[Od('\15:\25\55\30','{[')][Od('W\189}U\187}','4\207\24')],He[Od('\240\247\230\250\225','\132\150')][Od('\f\160W\0\188P','e\206$')],He[Od('\135b\145o\150','\243\3')][Od('\141\18h\141\28r','\238}\6')],He[Od('\227\171\178\169\245\176\169\168\229','\128\196\192\198')][Od('\192\\\232\194Z\232','\163.\141')],He[Od('\151\205A\175\129\214Z\174\145','\244\162\51\192')][Od('\217u\197p\196','\160\28')],He[Od('+\177ie=\170rd-','H\222\27\n')][Od('\243\220i\244\212\127','\129\185\26')],He[Od('\254a\26e\232z\1d\248','\157\14h\n')][Od('\"U.J$','A9')],He[Od('\210w~\211wd\195','\181\18\n')],He[Od('\250\48\236j\170','\152Y')][Od('\226\239\242','\128')],He[Od(')\23?My','K~')][Od('\253\208\240\218','\159\168')],He[Od('t\149b\207$','\22\252')][Od('\195\133\207\128','\161\228')],He[Od('\234\210\252\136\186','\136\187')][Od('\240W\247P\230','\146#')],He[Od('\16\56\6b@','rQ')][Od(']\141\128F\152\156','/\254\232')],He[Od('\238.\248t\190','\140G')][Od('\143#\206\138\54\210','\227P\166')],He[Od('\3u\21/S','a\28')][Od('#\223I4\198^2','F\167=')],{[29580]={},[46787]={},[10126]={{10,3,true},{4,3,false},{10,9,false},{8,5,true},{8,8,false},{6,2,true},{10,7,false},{8,10,false},{3,5,false},{8,3,true},{4,1,false},{3,1,false},{8,4,true},{10,1,true},{10,8,false},{10,8,false},{4,3,false},{10,8,false},{6,10,false},{6,1,true},{9,5,false},{10,8,false},{4,7,false},{8,8,false},{10,8,false},{3,2,false},{8,8,false},{10,8,false},{10,3,true},{9,1,false},{10,8,false},{3,3,false},{8,2,false},{10,8,false},{10,7,false},{3,2,false},{8,9,true},{9,4,true},{9,5,true},{3,3,true},{8,7,false},{8,2,true},{6,2,false},{10,7,false},{8,8,true},{10,3,true},{10,8,false},{9,10,false},{9,10,false},{8,1,true},{9,7,true},{9,3,false},{8,8,false},{9,4,true},{3,9,false},{10,8,false},{10,3,true},{4,2,true},{10,8,false},{3,4,false},{10,9,false},{4,8,true},{6,9,false},{6,4,false},{8,8,false},{10,8,false},{6,10,true},{8,8,true},{10,2,false},{8,8,true},{10,8,false},{3,10,true},{10,5,false},{3,5,true},{10,9,false},{9,1,false},{10,8,false},{10,3,true},{6,10,false},{6,2,true},{9,5,false},{6,4,true},{10,3,true},{4,4,true},{8,8,false},{8,1,false},{6,8,true},{9,3,true},{10,8,false},{9,4,false},{10,9,false},{10,3,false},{6,9,false},{10,2,true},{6,9,false},{8,9,false},{9,8,true},{4,5,true},{10,7,false},{10,7,false},{10,3,true},{8,1,true},{3,10,true},{10,8,false},{4,8,false},{3,2,false},{6,8,false},{6,8,false},{9,9,false},{4,2,true},{10,8,false},{10,3,false},{6,3,true},{4,2,false},{8,3,false},{8,2,true},{10,8,false},{8,2,false},{8,2,false},{9,2,true},{9,10,false},{3,7,true},{8,3,false},{10,0,false},{6,10,true},{9,5,true},{8,1,true},{10,8,true},{9,3,true},{4,3,true},{3,8,false},{9,1,true},{10,5,true},{10,8,false},{10,3,true},{3,4,false},{3,4,false},{10,1,true},{9,9,false},{10,8,true},{4,3,true},{10,9,false},{10,8,false},{6,8,false},{3,8,true},{10,10,false},{6,10,false},{10,8,false},{9,2,true},{10,5,true},{6,3,false},{9,4,true},{10,8,false},{8,5,true},{10,10,false},{3,7,false},{4,1,true},{10,10,true},{10,8,false},{10,10,true},{10,8,true},{10,7,false},{8,8,false},{3,8,true},{3,10,true},{6,10,true},{8,9,true},{6,1,true},{8,8,false},{4,8,false},{4,9,false},{8,8,false},{6,4,true},{8,5,false},{8,5,false},{10,8,true},{6,8,false},{8,4,false},{8,8,true},{4,4,false},{8,8,false},{10,8,false},{10,2,true},{10,5,false},{6,7,true},{10,8,false},{6,10,false},{10,10,true},{10,10,true},{6,4,false},{8,10,true},{8,2,false},{9,1,true},{8,8,false},{6,8,false},{4,1,false},{3,8,false},{3,10,false},{10,2,true},{8,8,false},{10,8,true},{10,8,false},{3,1,true},{10,8,false},{4,2,true},{10,8,false},{10,10,true},{10,10,false},{9,1,true},{10,1,false},{8,8,false},{10,8,false},{8,7,true},{10,3,true},{3,3,false},{10,8,false},{9,10,true},{4,1,true},{6,4,false},{9,8,false},{10,5,true},{9,9,false},{8,8,true},{9,3,false},{8,7,true},{9,9,true},{10,3,false},{10,7,false},{8,4,true},{10,5,false},{10,8,false},{10,3,false},{4,5,false},{10,0,false},{3,6,false},{6,8,true},{6,2,false},{4,5,true},{10,5,true},{8,8,true},{9,3,true},{6,1,false},{8,5,true},{10,3,false},{10,8,false},{10,8,false},{6,3,false},{10,9,true},{4,7,false},{10,8,false},{9,4,false},{10,7,false},{10,1,false},{3,3,true},{9,2,true},{8,10,false}}}local K=(function(hb)local ya=L[46787][hb]if ya then return ya end local nd=1 local function ka()local R,Wd,gc,Fa,Nc,Mb,df,_c,je,ve,bb,Cb,be,ab,xd,g,Df,fe,ne,Rb,cb,he,kd,Xb,Gb,ff,Ac,j,lf,xc,Yd,zc;Gb,Df=function(tc,c,Lf)Df[c]=Fb(Lf,60265)-Fb(tc,40558)return Df[c]end,{};gc=Df[-18226]or Gb(35817,-18226,123048)repeat if gc<32799 then if gc>14983 then if gc<=22646 then if gc<20220 then if gc<16913 then if gc<=16258 then if gc>15994 then gc,df=Df[-10796]or Gb(33265,-10796,112),nil elseif gc<=15990 then xc=Be(wb(g,10),1023);ne[8028],gc=zc[xc+1],Df[20576]or Gb(542,20576,2773)else gc,Xb=Df[2946]or Gb(30284,2946,7436),nil end else Mb,gc=false,Df[-15102]or Gb(22163,-15102,84198)end elseif gc>=17740 then if gc<=17740 then fe=fe+Cb;j=fe if fe~=fe then gc=43625 else gc=Df[13018]or Gb(38513,13018,55302)end else gc,zc[(j-102)]=Df[2311]or Gb(13457,2311,120315),g end elseif gc<=16913 then if Xb then gc=Df[2222]or Gb(9659,2222,105792)continue end gc=Df[-3193]or Gb(31207,-3193,85261)else if(je==1)then gc=Df[15462]or Gb(5203,15462,30934)continue else gc=Df[-12362]or Gb(38644,-12362,2930)continue end gc=Df[16202]or Gb(10039,16202,5562)end elseif gc<21668 then if gc<=20477 then if gc<=20275 then if gc<=20220 then cb=Wd;Xb=Gd(Xb,nc(Be(cb,127),(xd-124)*7))if(not Ja(cb,128))then gc=Df[12009]or Gb(56744,12009,30549)continue else gc=Df[32478]or Gb(54920,32478,1404)continue end gc=Df[8818]or Gb(50514,8818,125698)else Fa=xa(Od('q','3'),hb,nd);nd,gc=nd+1,Df[-15447]or Gb(51652,-15447,33629)end else xc,df=Be(wb(g,10),1023),Be(wb(g,0),1023);ne[8028]=zc[xc+1];ne[20040],gc=zc[df+1],Df[5139]or Gb(18935,5139,128908)end else he=he+ve;bb=he if he~=he then gc=Df[7400]or Gb(48971,7400,127232)else gc=Df[-1681]or Gb(41837,-1681,39012)end end elseif gc>21778 then if gc>22189 then gc=Df[10679]or Gb(48438,10679,49951)continue else gc,Cb[(g-16)]=Df[-14554]or Gb(16534,-14554,4547),ka()end elseif gc>=21712 then if gc>21712 then gc,g=Df[-9070]or Gb(10552,-9070,6073),nil else Yd=g;R=Gd(R,nc(Be(Yd,127),(je-173)*7))if not Ja(Yd,128)then gc=Df[-1774]or Gb(54065,-1774,120134)continue end gc=Df[19211]or Gb(17739,19211,109771)end else R=0;j,gc,Cb,ne=177,1727,173,1 end elseif gc<27259 then if gc<26549 then if gc>25948 then if g==8 then gc=Df[32270]or Gb(3741,32270,32663)continue elseif g==10 then gc=Df[-18350]or Gb(13973,-18350,17437)continue end gc=Df[-14288]or Gb(7331,-14288,12215)elseif gc>23848 then gc,g=Df[-4467]or Gb(33174,-4467,36379),Zc(Yd[1],1,Yd[2])elseif gc<=22998 then gc,df=Df[-23712]or Gb(53367,-23712,4156),kd continue else gc,zc=58604,We(fe,60)continue end elseif gc<=26947 then if gc<=26765 then if gc>26549 then ab=xa(Od('\148','\214'),hb,nd);gc,nd=35218,nd+1 else ne[12900],gc=zc[ne[33947]+1],Df[-3249]or Gb(52883,-3249,32032)end else gc,Wd=Df[3585]or Gb(44924,3585,27495),We(cb,60)continue end else if(je>=0 and j>ne)or((je<0 or je~=je)and j<ne)then gc=Df[-5767]or Gb(47490,-5767,24500)else gc=Df[27922]or Gb(17182,27922,122740)end end elseif gc>30096 then if gc<31031 then gc,fe=61252,We(R,2096773624)continue elseif gc<=31031 then fe,gc,R,Cb=134,51076,(be)+133,1 else ne=j;bb=Gd(bb,nc(Be(ne,127),(Cb-116)*7))if not Ja(ne,128)then gc=Df[20386]or Gb(52567,20386,122182)continue end gc=Df[26910]or Gb(23622,26910,95474)end elseif gc<=28448 then if gc<27773 then j=xa(Od('T!\\','h'),hb,nd);gc,nd=Df[-18556]or Gb(25327,-18556,123058),nd+4 elseif gc<=27773 then Cb=Cb+ne;je=Cb if Cb~=Cb then gc=Df[-20346]or Gb(28766,-20346,102295)else gc=Df[2214]or Gb(56124,2214,125272)end else lf,gc=We(Nc,60),52494 continue end elseif gc<=29052 then gc,g=Df[18831]or Gb(24990,18831,110083),Zc(Yd[1],1,Yd[2])else kd=xa(Od("/Z\'",'\19'),hb,nd);gc,nd=Df[6263]or Gb(1032,6263,94177),nd+4 end elseif gc>=9887 then if gc<11998 then if gc<=11088 then if gc>=10473 then if gc>10587 then if(Cb>=0 and fe>R)or((Cb<0 or Cb~=Cb)and fe<R)then gc=43625 else gc=Df[14139]or Gb(54220,14139,120977)end elseif gc>10473 then if(kd>=0 and xc>df)or((kd<0 or kd~=kd)and xc<df)then gc=Df[-705]or Gb(15826,-705,17331)else gc=55988 end else je=xa(Od('o','-'),hb,nd);nd,gc=nd+1,Df[-8984]or Gb(49052,-8984,42103)end elseif gc<=9887 then kd=df;xc[33947]=kd;fd(he,{});gc=Df[-25488]or Gb(9585,-25488,103059)else j,gc=We(ne,60),Df[-23297]or Gb(2295,-23297,129150)continue end elseif gc>=11564 then if gc<=11564 then ne,gc=We(je,60),45385 continue else ab=cb;xc=Gd(xc,nc(Be(ab,127),(Wd-47)*7))if not Ja(ab,128)then gc=Df[-10646]or Gb(4959,-10646,121182)continue end gc=Df[-1150]or Gb(45471,-1150,127193)end else if je==3 then gc=Df[28969]or Gb(7046,28969,1780)continue elseif je==7 then gc=Df[-7421]or Gb(47084,-7421,56858)continue elseif(je==1)then gc=Df[25812]or Gb(50955,25812,107704)continue else gc=Df[-24467]or Gb(52472,-24467,31883)continue end gc=Df[-675]or Gb(15700,-675,1007)end elseif gc<12794 then if gc<=12420 then if gc<12243 then if je==3 then gc=Df[223]or Gb(1972,223,1413)continue end gc=Df[20348]or Gb(14347,20348,182)elseif gc<=12243 then if Mb then gc=Df[-22535]or Gb(28999,-22535,121630)continue else gc=Df[13449]or Gb(63884,13449,129396)continue end gc=Df[-17661]or Gb(22796,-17661,84637)else j=Cb;ne=Be(j,255);je=L[10126][ne+1];g,Yd,Xb=je[1],je[2],je[3];xc={[8028]=0,[50059]=0,[8297]=nil,[12900]=0,[43368]=0,[6536]=0,[57381]=0,[43810]=0,[20040]=0,[33947]=0,[17254]=0,[30244]=ne,[4292]=0,[6332]=Yd,[50330]=0};fd(he,xc)if(g==3)then gc=Df[15452]or Gb(4948,15452,130039)continue else gc=Df[-4003]or Gb(29555,-4003,112837)continue end gc=16913 end else ve,gc=nil,49437 end elseif gc>=13834 then if gc>=14101 then if gc<=14101 then gc=Df[4435]or Gb(23392,4435,87355)continue else g=ne[33947];Yd,Xb=wb(g,30),Be(wb(g,20),1023);ne[12900]=zc[Xb+1];ne[50059]=Yd if Yd==2 then gc=Df[22544]or Gb(52103,22544,32566)continue elseif(Yd==3)then gc=Df[27012]or Gb(61786,27012,21592)continue else gc=Df[-30135]or Gb(24481,-30135,126066)continue end gc=Df[22506]or Gb(36896,22506,47347)end else if(ve>=0 and he>Mb)or((ve<0 or ve~=ve)and he<Mb)then gc=Df[-10647]or Gb(23216,-10647,87371)else gc=45341 end end elseif gc>12794 then Xb=xa(Od('\179\235','\143'),hb,nd);gc,nd=Df[32174]or Gb(12052,32174,92446),nd+8 else gc,g=Df[3954]or Gb(23993,3954,13886),nil end elseif gc>3651 then if gc<=6528 then if gc<5279 then if gc<=3930 then Cb,gc=We(j,-300538574),Df[-27892]or Gb(29858,-27892,127033)continue else _c,gc=We(Fa,60),62572 continue end elseif gc>5593 then Yd=xa(Od('\135','\197'),hb,nd);nd,gc=nd+1,46769 elseif gc<=5279 then xd=xc if df~=df then gc=Df[22285]or Gb(31538,22285,275)else gc=10587 end else gc,j=Df[-29430]or Gb(8856,-29430,90611),nil end elseif gc<7661 then j=j+je;g=j if j~=j then gc=Df[-19458]or Gb(941,-19458,115165)else gc=Df[11321]or Gb(59495,11321,2872)end elseif gc>7661 then gc,ne[12900]=Df[14318]or Gb(33592,14318,35275),zc[ne[17254]+1]else g=j if ne~=ne then gc=Df[9654]or Gb(17429,9654,101381)else gc=Df[2043]or Gb(56385,2043,18206)end end elseif gc>1657 then if gc>3057 then xc=0;gc,xd,df,kd=Df[-19775]or Gb(43721,-19775,7788),1,47,51 elseif gc>=2434 then if gc<=2434 then Yd,gc=Sb(nil),60230 else gc,ne[12900]=Df[15371]or Gb(56898,15371,28177),zc[ne[50330]+1]end else je=Cb if j~=j then gc=Df[8477]or Gb(21347,8477,108722)else gc=48351 end end elseif gc>1310 then if gc<=1407 then if(je==6)then gc=Df[8282]or Gb(47210,8282,42765)continue else gc=Df[7521]or Gb(3864,7521,21996)continue end gc=Df[-29960]or Gb(17852,-29960,117367)else xc[43810]=Be(wb(j,8),255);xc[50330]=Be(wb(j,16),255);gc,xc[4292]=Df[10177]or Gb(65361,10177,18489),Be(wb(j,24),255)end elseif gc>=1035 then if gc<=1035 then xc[43810]=Be(wb(j,8),255);df=Be(wb(j,16),65535);xc[6536]=df;kd=nil;kd=if df<32768 then df else df-65536;gc,xc[57381]=Df[-25130]or Gb(44356,-25130,40530),kd else Yd,gc=Sb(We(Xb,2096773624)),Df[-25697]or Gb(12278,-25697,116861)continue end else be=0;Mb,gc,he,ve=64,Df[-31643]or Gb(2405,-31643,96979),60,1 end elseif gc<51624 then if gc<42246 then if gc>37047 then if gc>38515 then if gc<=40983 then if gc<=40714 then Nc=xa(Od('\250','\184'),hb,nd);nd,gc=nd+1,28448 else Cb=zc if fe~=fe then gc=Df[-15308]or Gb(2055,-15308,116661)else gc=Df[-19]or Gb(59147,-19,105989)end end else Yd,gc=Sb'',25948 continue end elseif gc<37779 then if gc>37580 then if(xd>=0 and df>kd)or((xd<0 or xd~=xd)and df<kd)then gc=Df[-19350]or Gb(22240,-19350,76278)else gc=Df[2416]or Gb(37133,2416,16037)end else ff,gc,Rb=Ac,Df[4261]or Gb(4552,4261,31596),nil end elseif gc>38180 then ve,gc=We(bb,2096773624),34140 continue elseif gc>37779 then if(Cb>=0 and fe>R)or((Cb<0 or Cb~=Cb)and fe<R)then gc=Df[24975]or Gb(62705,24975,2239)else gc=48094 end else fe=fe+Cb;j=fe if fe~=fe then gc=Df[7966]or Gb(44494,7966,18366)else gc=38180 end end elseif gc>34619 then if gc<=36081 then if gc>35218 then return{[859]=Fa,[58422]=ff,[43036]=Nc,[46573]=he,[12899]=Cb,[22492]=''}elseif gc>35176 then gc,cb=11719,We(ab,60)continue else g,gc=Yd,Df[-11775]or Gb(9912,-11775,5433)end else ff=xa(Od('\237','\175'),hb,nd);gc,nd=54653,nd+1 end elseif gc>33636 then if gc>34140 then Yd,gc=nil,Df[20116]or Gb(45244,20116,35404)else bb=ve;zc=k(bb);R,gc,Cb,fe=(bb)+102,56610,1,103 end elseif gc<=33301 then if gc>32799 then gc,Mb=Df[29423]or Gb(16709,29423,86740),R else fe=xa(Od('\244','\182'),hb,nd);gc,nd=23848,nd+1 end else df,kd=Be(wb(j,8),16777215),nil;kd=if df<8388608 then df else df-16777216;gc,xc[17254]=Df[-21924]or Gb(51974,-21924,31760),kd end elseif gc<=46769 then if gc>43625 then if gc<45385 then if gc<=44348 then gc,Yd=Df[-32040]or Gb(65299,-32040,11696),Sb(df)continue else zc,gc=nil,32799 end elseif gc<=45385 then je=ne if(je==6)then gc=Df[-16045]or Gb(64261,-16045,1999)continue else gc=Df[28369]or Gb(22986,28369,123100)continue end gc=17786 else g,gc=We(Yd,60),21712 continue end elseif gc>=43305 then if gc>43579 then fe,gc=nil,21668 elseif gc<=43305 then if(zc>=0 and ve>bb)or((zc<0 or zc~=zc)and ve<bb)then gc=12425 else gc=12243 end else R,gc=nil,54592 end elseif gc>42246 then xc=xc+kd;xd=xc if xc~=xc then gc=Df[-30442]or Gb(38489,-30442,58940)else gc=Df[-15718]or Gb(27220,-15718,128764)end else gc=Df[10172]or Gb(16476,10172,78634)continue end elseif gc<49246 then if gc<48351 then if gc>47700 then gc,ne=10473,nil else df,gc=nil,Df[-16307]or Gb(14924,-16307,127707)end elseif gc<=48351 then if(ne>=0 and Cb>j)or((ne<0 or ne~=ne)and Cb<j)then gc=Df[32417]or Gb(6537,32417,5596)else gc=12794 end else R,gc=Xb,Df[-24385]or Gb(23803,-24385,110531)continue end elseif gc>50793 then j=fe if R~=R then gc=43625 else gc=11088 end elseif gc>49437 then gc,cb=Df[-9657]or Gb(25609,-9657,100765),nil elseif gc<=49246 then Wd=df if kd~=kd then gc=Df[3469]or Gb(27265,3469,66665)else gc=Df[21937]or Gb(59213,21937,123038)end else bb=0;gc,zc,R,fe=Df[1058]or Gb(57080,1058,3012),116,1,120 end elseif gc<59938 then if gc>55169 then if gc<56691 then if gc>56041 then j=fe if R~=R then gc=Df[14694]or Gb(58479,14694,6225)else gc=38180 end elseif gc>=55988 then if gc<=55988 then Wd,gc=nil,62486 else fe=ve if bb~=bb then gc=Df[-14065]or Gb(64590,-14065,31168)else gc=Df[16387]or Gb(49552,16387,123470)end end else ve=ve+zc;fe=ve if ve~=ve then gc=12425 else gc=43305 end end elseif gc>58604 then ne=he[(j-133)];je=ne[6332]if je==4 then gc=Df[-25216]or Gb(26433,-25216,75201)continue elseif je==10 then gc=Df[17164]or Gb(24851,17164,119149)continue elseif je==0 then gc=Df[20359]or Gb(42149,20359,118108)continue elseif(je==2)then gc=Df[25039]or Gb(40145,25039,6926)continue else gc=Df[23856]or Gb(45401,23856,57311)continue end gc=Df[-25436]or Gb(16351,-25436,3476)elseif gc>58102 then fe=zc;be=Gd(be,nc(Be(fe,127),(bb-60)*7))if(not Ja(fe,128))then gc=Df[21171]or Gb(7115,21171,22483)continue else gc=Df[-28957]or Gb(31652,-28957,122009)continue end gc=Df[8750]or Gb(5937,8750,12524)elseif gc>56691 then gc=Df[29294]or Gb(27588,29294,92020)continue else zc=zc+R;Cb=zc if zc~=zc then gc=Df[1886]or Gb(58465,1886,130027)else gc=64519 end end elseif gc>=53501 then if gc>54649 then if gc>54653 then if(je==5)then gc=Df[-30676]or Gb(11128,-30676,83816)continue else gc=Df[14992]or Gb(15871,14992,14598)continue end gc=Df[30671]or Gb(53321,30671,30920)else Ac,gc=We(ff,60),Df[-22002]or Gb(61811,-22002,125568)continue end elseif gc>54592 then ne[12900]=zc[Pf(ne[33947],0,24)+1];gc,ne[43368]=Df[17466]or Gb(59087,17466,22148),Pf(ne[33947],31,1)==1 elseif gc<=53501 then Yd,gc=Xb,Df[4347]or Gb(25611,4347,92324)continue else gc,Cb=27259,nil end elseif gc<52494 then if gc>51624 then kd=xa(Od('%','F')..xc,hb,nd);nd,gc=nd+xc,22998 else xc=Xb if(xc==0)then gc=Df[-32342]or Gb(35139,-32342,21163)continue else gc=Df[20405]or Gb(28488,20405,121793)continue end gc=Df[15539]or Gb(23041,15539,125312)end elseif gc>52494 then ne=xa(Od('\15','M'),hb,nd);gc,nd=10370,nd+1 else Nc,_c,gc=lf,nil,Df[28717]or Gb(3764,28717,2916)end elseif gc>62572 then if gc>64017 then if gc>=64519 then if gc<=64519 then if(R>=0 and zc>fe)or((R<0 or R~=R)and zc<fe)then gc=Df[-24419]or Gb(29249,-24419,92619)else gc=Df[-18602]or Gb(50209,-18602,39745)end else be=Rb;he,Mb=k(be),false;bb,ve,gc,zc=(be)+209,210,Df[-25224]or Gb(18943,-25224,88339),1 end else bb=he if Mb~=Mb then gc=Df[-5239]or Gb(9803,-5239,88576)else gc=Df[19149]or Gb(11722,19149,711)end end elseif gc<=63211 then if gc>63084 then Yd,gc=Sb(nil),Df[-8357]or Gb(51974,-8357,30859)elseif gc>63034 then ne[12900],gc=Pf(ne[33947],0,16),Df[-14828]or Gb(64926,-14828,16981)else lf,gc=nil,40714 end elseif gc<=63812 then gc,Rb=Df[20821]or Gb(16597,20821,79182),We(be,2096773624)continue else Xb,gc=We(xc,2096773624),51624 continue end elseif gc>=60840 then if gc<61648 then if gc>60840 then R=fe;Cb=k(R);ne,je,j,gc=(R)+16,1,17,7661 else ne[12900],gc=zc[ne[57381]+1],Df[30652]or Gb(17904,30652,117635)end elseif gc>=62486 then if gc<=62486 then cb=xa(Od('\182','\244'),hb,nd);nd,gc=nd+1,Df[-26382]or Gb(34462,-26382,26970)else Fa,Ac,gc=_c,nil,37047 end else gc=Df[-4187]or Gb(33067,-4187,32122)continue end elseif gc>60266 then df=df+xd;Wd=df if df~=df then gc=Df[-25596]or Gb(58835,-25596,106151)else gc=37588 end elseif gc<60230 then gc,df=Df[14249]or Gb(18986,14249,4490),We(kd,-300538574)continue elseif gc<=60230 then Xb=0;kd,df,gc,xc=1,128,5279,124 else gc,ne[12900]=Df[-9172]or Gb(51330,-9172,30545),zc[ne[43810]+1]end until gc==3959 end local ee=ka();L[46787][hb]=ee return ee end)local bd=(function(za,sb)za=K(za)local jc=Ba()local function Ef(V,mb)local te=(function(...)return{...},vf('#',...)end)local ce;ce=(function(pc,Nd,me)if Nd>me then return end return pc[Nd],ce(pc,Nd+1,me)end)local function cf(La,T,va,tb)local Q,C,ca,cc,G,cd,db,w_,N,Ce,xf,jb,Pe,t_,ud,W,Af,zb,n_,d_,_e,Ra,De,_b;cc,Ce={},function(ba,kb,Qb)cc[ba]=Fb(Qb,34887)-Fb(kb,27109)return cc[ba]end;ca=cc[10514]or Ce(10514,52368,73377)repeat if ca>=33083 then if ca>50513 then if ca<=58749 then if ca>54959 then if ca>=56744 then if ca>57901 then if ca<=58559 then if ca>58054 then n_+=_b[57381];ca=cc[-26765]or Ce(-26765,53820,129101)else La[C+1]=jb;ca,N=cc[5666]or Ce(5666,22279,25089),jb end else W,ca=ud,cc[16248]or Ce(16248,6233,15187)continue end elseif ca>57485 then if ca<=57838 then _b[30244]=163;n_+=1;ca=cc[-21713]or Ce(-21713,6003,113280)else n_+=1;ca=cc[20536]or Ce(20536,54081,124562)end elseif ca<=57264 then if ca>56744 then C,d_,G=We(_b[4292],254),We(_b[43810],41),We(_b[50330],150);W,N=d_==0 and _e-C or d_-1,La[C];db,ud=te(N(ce(La,C+1,C+W)))if G==0 then ca=cc[-24169]or Ce(-24169,2712,61532)continue else ca=cc[9646]or Ce(9646,60495,122644)continue end ca=cc[2697]or Ce(2697,52513,71588)else _b=va[n_];ca,t_=cc[-29375]or Ce(-29375,8746,118210),_b[30244]end else C=_b[12900];La[_b[4292]][C]=La[_b[50330]];n_+=1;ca=cc[-27403]or Ce(-27403,3893,103238)end elseif ca<=56007 then if ca>55703 then if t_>23 then ca=cc[2244]or Ce(2244,54843,22563)continue else ca=cc[-23900]or Ce(-23900,19870,28889)continue end ca=cc[-13041]or Ce(-13041,63953,117794)elseif ca>=55132 then if ca<=55132 then if(Q>=0 and ud>jb)or((Q<0 or Q~=Q)and ud<jb)then ca=cc[22299]or Ce(22299,61744,19280)else ca=cc[-7384]or Ce(-7384,60907,98514)end else if t_>118 then ca=cc[-20427]or Ce(-20427,23833,52117)continue else ca=cc[-22824]or Ce(-22824,4715,11167)continue end ca=cc[-13595]or Ce(-13595,56387,123280)end else if t_>142 then ca=cc[1514]or Ce(1514,23368,52542)continue else ca=cc[27877]or Ce(27877,29847,56397)continue end ca=cc[31644]or Ce(31644,16142,99163)end elseif ca<56516 then d_,G,W=xf if(ra(d_)~=Od(')s\170N;o\171C','O\6\196-'))then ca=cc[-18984]or Ce(-18984,26139,6824)continue else ca=cc[22098]or Ce(22098,36765,107494)continue end ca=cc[-22891]or Ce(-22891,29664,55145)elseif ca>56516 then if t_>134 then ca=cc[29593]or Ce(29593,65379,106483)continue else ca=cc[-4841]or Ce(-4841,39765,96601)continue end ca=cc[-16760]or Ce(-16760,8485,29878)else if(t_>215)then ca=cc[15981]or Ce(15981,22523,31088)continue else ca=cc[6048]or Ce(6048,18387,10305)continue end ca=cc[24432]or Ce(24432,57724,111757)end elseif ca>=53449 then if ca>=54112 then if ca>=54426 then if ca<54759 then Ra=Q if Af~=Af then ca=cc[-25239]or Ce(-25239,40134,72303)else ca=cc[-2791]or Ce(-2791,25917,32053)end elseif ca<=54759 then if t_>152 then ca=cc[-12478]or Ce(-12478,44556,72910)continue else ca=cc[-25985]or Ce(-25985,15889,113665)continue end ca=cc[2691]or Ce(2691,37448,75673)else C,ca,d_,G=_b[50059],cc[-865]or Ce(-865,1054,4473),va[n_+1],nil end elseif ca<=54112 then jb=va[n_];n_+=1;Q=jb[43810]if Q==0 then ca=cc[13720]or Ce(13720,2082,119087)continue elseif(Q==2)then ca=cc[-27485]or Ce(-27485,19800,26441)continue else ca=cc[-15106]or Ce(-15106,49196,17591)continue end ca=cc[-21783]or Ce(-21783,39563,106194)else if t_>12 then ca=cc[13980]or Ce(13980,62748,25470)continue else ca=cc[-15308]or Ce(-15308,17193,104214)continue end ca=cc[19212]or Ce(19212,35776,73233)end elseif ca>=53673 then if ca<=53673 then ca,ud=cc[-23596]or Ce(-23596,27498,30185),G-1 else W=La[C];ca,ud,db,N=6237,1,d_,C+1 end elseif ca<=53449 then C,d_=nil,We(_b[6536],46283);C=if d_<32768 then d_ else d_-65536;G=C;W=T[G+1];N=W[58422];db=k(N);La[We(_b[43810],28)]=Ef(W,db);ud,jb,ca,Q=13,(N)+12,26177,1 else if t_>249 then ca=cc[-8040]or Ce(-8040,21603,13958)continue else ca=cc[23839]or Ce(23839,141,103475)continue end ca=cc[-784]or Ce(-784,29949,22798)end elseif ca<=52384 then if ca>=51793 then if ca>=52257 then if ca>52257 then La[_b[43810]],ca=-La[_b[50330]],cc[5146]or Ce(5146,35179,72952)else if(t_>44)then ca=cc[29085]or Ce(29085,51788,66583)continue else ca=cc[32511]or Ce(32511,17554,17618)continue end ca=cc[1983]or Ce(1983,28980,17733)end else G[(ud-36)],ca=mb[jb[50330]+1],cc[20407]or Ce(20407,7790,4853)end elseif ca<=51415 then jb=jb+Af;w_=jb if jb~=jb then ca=cc[12361]or Ce(12361,23255,108157)else ca=cc[-4073]or Ce(-4073,18063,61262)end else zb={[1]=De,[2]=La};xf[De],ca=zb,cc[-6269]or Ce(-6269,2910,7514)end elseif ca>=52957 then if ca>52957 then C,d_=_b[43810],_b[50330]-1 if d_==-1 then ca=cc[12911]or Ce(12911,5878,127787)continue end ca=cc[-14544]or Ce(-14544,57653,31510)else return ce(La,C,C+W-1)end else d_,G,W=cd if(ra(d_)~=Od('\178\49\252\255\160-\253\242','\212D\146\156'))then ca=cc[22145]or Ce(22145,17587,52201)continue else ca=cc[-21390]or Ce(-21390,2613,120544)continue end ca=cc[14782]or Ce(14782,21524,110735)end elseif ca<=63219 then if ca>=61176 then if ca>=62597 then if ca>=62781 then if ca<=62781 then if(not(jb<=d_))then ca=cc[-7482]or Ce(-7482,15410,634)continue else ca=cc[-29548]or Ce(-29548,63447,121380)continue end ca=cc[-6699]or Ce(-6699,31783,16820)else N,db=d_[8028],_b[8028];db=Od('_#\176\175\141\182','\214\218N')..db;ud='';ca,Q,Af,jb=12712,(#N-1)+201,1,201 end elseif ca>62597 then W,ca=_e-C+1,cc[-7171]or Ce(-7171,26442,21963)else if t_>4 then ca=cc[-9803]or Ce(-9803,65349,105119)continue else ca=cc[6866]or Ce(6866,32670,13910)continue end ca=cc[-13329]or Ce(-13329,14529,101650)end elseif ca>61809 then C=mb[_b[50330]+1];La[_b[43810]],ca=C[2][C[1]],cc[10004]or Ce(10004,17762,26879)elseif ca<61276 then n_-=1;ca,va[n_]=cc[-26412]or Ce(-26412,26144,19377),{[30244]=249,[43810]=We(_b[43810],87),[50330]=We(_b[50330],114),[4292]=0}elseif ca>61276 then _e,n_,xf,cd,Pe,ca=-1,1,Ya({},{[Od('\127\216DO\227L',' \135)')]=Od('\204\201','\186')}),Ya({},{[Od('n>\5^\5\r','1ah')]=Od('c{','\b')}),false,46129 else n_+=_b[57381];ca=cc[7085]or Ce(7085,23658,24967)end elseif ca>59747 then if ca>=60060 then if ca>60060 then if(d_<=W)then ca=cc[-11639]or Ce(-11639,19013,56440)continue else ca=cc[-15902]or Ce(-15902,33850,76375)continue end ca=cc[-21873]or Ce(-21873,45067,67160)else ca,jb=cc[-18112]or Ce(-18112,55490,23282),jb..Ee(We(Qe(db,(Ra-161)+1),Qe(ud,(Ra-161)%#ud+1)))end else C,d_=_b[43810],_b[12900];_e=C+6;G,W=La[C],nil;W=Lb(G)==Od("\'{\17\232\53g\16\229",'A\14\127\139')if(W)then ca=cc[-22786]or Ce(-22786,19704,8776)continue else ca=cc[3683]or Ce(3683,2762,16088)continue end ca=cc[-12313]or Ce(-12313,17936,27745)end elseif ca>=59546 then if ca>59559 then if t_>110 then ca=cc[9895]or Ce(9895,28624,22411)continue else ca=cc[5344]or Ce(5344,42991,22898)continue end ca=cc[-31139]or Ce(-31139,56659,123040)elseif ca<=59546 then if(w_>=0 and Q>Af)or((w_<0 or w_~=w_)and Q<Af)then ca=cc[12551]or Ce(12551,27155,10428)else ca=60060 end else if t_>52 then ca=cc[22491]or Ce(22491,11400,53191)continue else ca=cc[-14561]or Ce(-14561,2500,23538)continue end ca=cc[-28926]or Ce(-28926,8362,30151)end elseif ca<=58761 then if(db>=0 and W>N)or((db<0 or db~=db)and W<N)then ca=cc[-23524]or Ce(-23524,30820,19957)else ca=54112 end else C,d_=nil,La[_b[43810]];C=Lb(d_)==Od(';\174~\194)\178\127\207',']\219\16\161')if(not C)then ca=cc[-1543]or Ce(-1543,48165,88709)continue else ca=cc[26495]or Ce(26495,56504,29413)continue end ca=cc[-27802]or Ce(-27802,23267,61452)end elseif ca<64287 then if ca>64032 then if ca>64215 then W,ca=ud,1543 continue elseif ca<=64048 then n_+=_b[57381];ca=cc[-25684]or Ce(-25684,921,104170)else N,db=d_(G,W);W=N if W==nil then ca=7478 else ca=12315 end end elseif ca<=63926 then if ca<63783 then Af={[3]=La[jb[50330]],[1]=3};Af[2]=Af;G[(ud-36)],ca=Af,cc[32169]or Ce(32169,59738,11169)elseif ca>63783 then Pe=false;n_+=1 if t_>123 then ca=cc[28896]or Ce(28896,26879,11609)continue else ca=cc[10749]or Ce(10749,1898,769)continue end ca=cc[-26698]or Ce(-26698,25346,14175)else G,ca=_e-d_+1,cc[-8523]or Ce(-8523,42256,119923)end else n_-=1;ca,va[n_]=cc[887]or Ce(887,42305,67730),{[30244]=46,[43810]=We(_b[43810],182),[50330]=We(_b[50330],15),[4292]=0}end elseif ca<64859 then if ca>64601 then Z'';ca=cc[20098]or Ce(20098,8676,1281)elseif ca<64594 then Hf(db,1,ud,C,La);ca=cc[-32699]or Ce(-32699,53457,124194)elseif ca>64594 then d_=tb[49727];_e,ca=C+d_-1,cc[-27647]or Ce(-27647,4669,28190)else if(_b[4292]==160)then ca=cc[10673]or Ce(10673,19905,45430)continue else ca=cc[-32332]or Ce(-32332,31777,27893)continue end ca=cc[-24762]or Ce(-24762,491,103544)end elseif ca>=65268 then if ca<=65268 then db=db+jb;Q=db if db~=db then ca=cc[-25268]or Ce(-25268,8912,3464)else ca=cc[12826]or Ce(12826,55056,107632)end else Z'';ca=cc[-18865]or Ce(-18865,30390,100958)end elseif ca<=64859 then C=T[_b[12900]+1];d_=C[58422];G=k(d_);La[_b[43810]]=Ef(C,G);N,db,ca,W=(d_)+36,1,cc[-29842]or Ce(-29842,15247,60729),37 else if(t_>127)then ca=cc[-28313]or Ce(-28313,57233,112859)continue else ca=cc[-18272]or Ce(-18272,24725,14074)continue end ca=cc[-9402]or Ce(-9402,63819,117912)end elseif ca>41869 then if ca>=45849 then if ca<=47282 then if ca>46413 then if ca>47191 then d_[12900]=G if(C==2)then ca=cc[-28804]or Ce(-28804,36673,127484)continue else ca=cc[14393]or Ce(14393,43026,129810)continue end ca=57838 elseif ca>=46972 then if ca>46972 then La[_b[4292]],ca=La[_b[43810]]/_b[12900],cc[-23979]or Ce(-23979,23319,28516)else w_=va[n_];n_+=1;Ra=w_[43810]if Ra==0 then ca=cc[31859]or Ce(31859,65354,4168)continue elseif Ra==1 then ca=cc[-30536]or Ce(-30536,2478,368)continue elseif Ra==2 then ca=cc[4067]or Ce(4067,44566,117491)continue end ca=cc[2034]or Ce(2034,30537,49817)end else Q=db if ud~=ud then ca=cc[-7346]or Ce(-7346,22668,58436)else ca=27970 end end elseif ca<46073 then if ca>45849 then if(t_>88)then ca=cc[15040]or Ce(15040,24183,24519)continue else ca=cc[2972]or Ce(2972,18277,18721)continue end ca=cc[25115]or Ce(25115,65294,115547)else C,d_,G=_b[12900],_b[43368],La[_b[43810]]if((G==C)~=d_)then ca=cc[11598]or Ce(11598,58401,10847)continue else ca=cc[30701]or Ce(30701,18237,51961)continue end ca=cc[-18508]or Ce(-18508,53956,124693)end elseif ca>46129 then La[_b[50330]]=k(_b[33947]);n_+=1;ca=cc[14298]or Ce(14298,29479,18100)elseif ca>46073 then if not Pe then ca=cc[-26319]or Ce(-26319,53112,68610)continue end ca=cc[15311]or Ce(15311,54243,80891)else if t_>171 then ca=cc[29698]or Ce(29698,45848,117557)continue else ca=cc[-30696]or Ce(-30696,11058,25770)continue end ca=cc[20699]or Ce(20699,938,104135)end elseif ca>49038 then if ca<50140 then N,db=d_(G,W);W=N if W==nil then ca=52477 else ca=21151 end elseif ca<=50140 then if not La[_b[43810]]then ca=cc[21317]or Ce(21317,46773,99859)continue end ca=cc[7494]or Ce(7494,31867,16776)else cd[_b]=nil;n_+=1;ca=cc[-17354]or Ce(-17354,33296,75873)end elseif ca<=48160 then if ca>47968 then n_+=_b[57381];ca=cc[-9748]or Ce(-9748,50217,125370)elseif ca<=47814 then d_,G,W=xe(d_);ca=cc[4888]or Ce(4888,29320,59601)else n_+=_b[57381];ca=cc[-28406]or Ce(-28406,7273,107002)end else C,d_=_b[50330],_b[43810];G,W=Gf(Ud,La,'',C,d_)if(not G)then ca=cc[-25718]or Ce(-25718,13775,107932)continue else ca=cc[30494]or Ce(30494,22016,20129)continue end ca=cc[-27206]or Ce(-27206,45538,120655)end elseif ca<43876 then if ca<42902 then if ca<42189 then if(t_>185)then ca=cc[-25083]or Ce(-25083,21597,56408)continue else ca=cc[-4306]or Ce(-4306,2685,100680)continue end ca=cc[-4289]or Ce(-4289,30911,19916)elseif ca<=42189 then if _b[4292]==129 then ca=cc[-2495]or Ce(-2495,35753,129148)continue else ca=cc[997]or Ce(997,41546,121049)continue end ca=cc[-28541]or Ce(-28541,4845,108414)else w_=jb if Q~=Q then ca=cc[-23674]or Ce(-23674,20062,109188)else ca=cc[-13995]or Ce(-13995,10680,65467)end end elseif ca<=43542 then if ca<43500 then if(La[_b[43810]])then ca=cc[-5612]or Ce(-5612,61327,16155)continue else ca=cc[1765]or Ce(1765,62510,121275)continue end ca=cc[18912]or Ce(18912,27158,12387)elseif ca>43500 then if t_>163 then ca=cc[-17745]or Ce(-17745,16058,106607)continue else ca=cc[-12837]or Ce(-12837,3771,24442)continue end ca=cc[7021]or Ce(7021,52281,119370)else if(t_>34)then ca=cc[-9457]or Ce(-9457,55074,107826)continue else ca=cc[-19480]or Ce(-19480,27905,59577)continue end ca=cc[-7896]or Ce(-7896,29640,17945)end else La[_b[43810]],ca=nil,cc[27049]or Ce(27049,30991,19804)end elseif ca<=45406 then if ca>=44935 then if ca>=45266 then if ca<=45266 then if(Af>=0 and jb>Q)or((Af<0 or Af~=Af)and jb<Q)then ca=cc[568]or Ce(568,24583,26392)else ca=33483 end else if C==3 then ca=cc[31830]or Ce(31830,20853,46466)continue end ca=cc[26832]or Ce(26832,63578,130026)end else if(C==2)then ca=cc[-19717]or Ce(-19717,27463,58382)continue else ca=cc[-16295]or Ce(-16295,155,101250)continue end ca=cc[4610]or Ce(4610,10058,20421)end elseif ca<=43876 then jb,Q=La[C+2],nil;Af=jb;Q=Lb(Af)==Od('\1\234>\r\250!','o\159S')if not Q then ca=cc[16163]or Ce(16163,63318,103292)continue end ca=cc[-9895]or Ce(-9895,8154,11298)else if t_>98 then ca=cc[4757]or Ce(4757,42759,77826)continue else ca=cc[-6677]or Ce(-6677,47479,106415)continue end ca=cc[-6174]or Ce(-6174,64635,115080)end elseif ca>45547 then if _b[4292]==193 then ca=cc[25184]or Ce(25184,39443,110554)continue elseif(_b[4292]==196)then ca=cc[23360]or Ce(23360,65263,32760)continue else ca=cc[-2849]or Ce(-2849,64330,114299)continue end ca=cc[131]or Ce(131,46418,71855)elseif ca>45476 then db[3]=db[2][db[1]];db[2]=db;db[1]=3;xf[N],ca=nil,cc[6357]or Ce(6357,19648,57865)else n_-=1;ca,va[n_]=cc[-12442]or Ce(-12442,25819,18728),{[30244]=203,[43810]=We(_b[43810],221),[50330]=We(_b[50330],253),[4292]=0}end elseif ca<=36844 then if ca>34034 then if ca>36335 then if ca<=36700 then if ca>36671 then if(La[_b[43810]]==La[_b[33947]])then ca=cc[-31640]or Ce(-31640,45407,72797)continue else ca=cc[771]or Ce(771,19821,64782)continue end ca=cc[-11187]or Ce(-11187,42709,68390)else Hf(La,d_,d_+G-1,_b[33947],La[C]);n_+=1;ca=cc[10950]or Ce(10950,58020,112437)end else n_+=_b[57381];ca=cc[5671]or Ce(5671,11985,29474)end elseif ca<34561 then if ca<=34226 then if(t_>65)then ca=cc[3228]or Ce(3228,37604,66074)continue else ca=cc[3512]or Ce(3512,42544,102238)continue end ca=cc[-3999]or Ce(-3999,26305,19218)else if(t_>199)then ca=cc[7603]or Ce(7603,14,1207)continue else ca=cc[4902]or Ce(4902,49697,104046)continue end ca=cc[26782]or Ce(26782,13077,100198)end elseif ca>=36263 then if ca<=36263 then ca,W=cc[13582]or Ce(13582,23784,101293),d_-1 else n_-=1;va[n_],ca={[30244]=215,[43810]=We(_b[43810],79),[50330]=We(_b[50330],204),[4292]=0},cc[-28586]or Ce(-28586,31416,20425)end else La[_b[4292]],ca=W,cc[-6030]or Ce(-6030,31133,19694)end elseif ca<33701 then if ca>33483 then C=H(d_)if C~=nil and C[Od('\226\238\172\201\212\183','\189\177\197')]~=nil then ca=cc[31812]or Ce(31812,18349,6440)continue elseif(ra(d_)==Od('\20\20\2\25\5','\96u'))then ca=cc[-3680]or Ce(-3680,57345,117997)continue else ca=cc[3047]or Ce(3047,19609,58082)continue end ca=cc[-19290]or Ce(-19290,4974,14323)elseif ca>33381 then ca,ud=cc[26675]or Ce(26675,57980,26171),ud..Ee(We(Qe(N,(w_-201)+1),Qe(db,(w_-201)%#db+1)))elseif ca>33083 then d_,G,W=xe(d_);ca=cc[28608]or Ce(28608,46629,86736)else ca,La[_b[43810]]=cc[-8021]or Ce(-8021,52946,119599),La[_b[4292]]*_b[12900]end elseif ca<=33927 then if ca<=33831 then if ca>33701 then if(t_>45)then ca=cc[26824]or Ce(26824,46660,127457)continue else ca=cc[1517]or Ce(1517,30215,57489)continue end ca=cc[-24300]or Ce(-24300,60859,110792)else La[_b[50330]]=_b[4292]==1;n_+=_b[43810];ca=cc[-30559]or Ce(-30559,61318,111315)end else ca,db=cc[12741]or Ce(12741,40506,102153),db..Ee(We(Qe(W,(Af-140)+1),Qe(N,(Af-140)%#N+1)))end elseif ca>34031 then N={G(La[C+1],La[C+2])};Hf(N,1,d_,C+3,La)if La[C+3]~=nil then ca=cc[-1643]or Ce(-1643,54448,21142)continue else ca=cc[13354]or Ce(13354,14555,113452)continue end ca=cc[-2832]or Ce(-2832,13659,104616)else C,d_=_b[43810],_b[50330];G=d_-1 if G==-1 then ca=cc[23952]or Ce(23952,52399,70245)continue else ca=cc[-22167]or Ce(-22167,63792,103995)continue end ca=52957 end elseif ca<=40197 then if ca<=38055 then if ca<=37636 then if ca>37606 then N,db=La[C+1],nil;ud=N;db=Lb(ud)==Od('\20\207\226\24\223\253','z\186\143')if(not db)then ca=cc[14312]or Ce(14312,21297,15585)continue else ca=cc[24022]or Ce(24022,63484,115002)continue end ca=43876 elseif ca<=36852 then if(t_>181)then ca=cc[-19914]or Ce(-19914,19510,101828)continue else ca=cc[-18894]or Ce(-18894,48174,111414)continue end ca=cc[24532]or Ce(24532,63674,118231)else if(t_>84)then ca=cc[4779]or Ce(4779,25573,16841)continue else ca=cc[13262]or Ce(13262,50505,129231)continue end ca=cc[14078]or Ce(14078,18016,27633)end elseif ca<=37655 then ca,W=38055,nil else N,db=d_[8028],_b[8028];db=Od('\133\192\4un\2','\f\57\250')..db;ud='';Q,Af,ca,jb=(#N-1)+186,1,cc[8840]or Ce(8840,43462,126504),186 end elseif ca<=40121 then if ca>=39495 then if ca>39495 then if t_>46 then ca=cc[31910]or Ce(31910,45385,84637)continue else ca=cc[-1674]or Ce(-1674,49597,107576)continue end ca=cc[13157]or Ce(13157,32876,71165)else if C==3 then ca=cc[26079]or Ce(26079,43004,111681)continue end ca=cc[-28330]or Ce(-28330,7980,26587)end else ca,La[_b[43810]]=cc[15302]or Ce(15302,51025,125602),#La[_b[50330]]end else ca,N=cc[10395]or Ce(10395,29898,59747),jb continue end elseif ca<=40942 then if ca>=40734 then if ca>40734 then ca,La[_b[4292]]=cc[-20591]or Ce(-20591,34626,76447),La[_b[43810]]-_b[12900]else if t_>24 then ca=cc[11162]or Ce(11162,59847,107081)continue else ca=cc[19914]or Ce(19914,40322,83817)continue end ca=cc[30378]or Ce(30378,10408,32057)end elseif ca<=40272 then d_,G,W=C[Od('\239\50\0\196\b\27','\176mi')](d_);ca=cc[-25699]or Ce(-25699,53876,81455)else if t_>161 then ca=cc[510]or Ce(510,22734,58724)continue else ca=cc[889]or Ce(889,21180,105042)continue end ca=cc[-14394]or Ce(-14394,37623,75524)end elseif ca>=41234 then if ca<=41234 then Z'';ca=cc[12181]or Ce(12181,62,64776)else if _b[4292]==249 then ca=cc[20863]or Ce(20863,58912,65954)continue else ca=cc[6448]or Ce(6448,21861,2822)continue end ca=cc[29018]or Ce(29018,4442,107703)end else if(t_>178)then ca=cc[-27975]or Ce(-27975,30164,9306)continue else ca=cc[-9451]or Ce(-9451,63497,118178)continue end ca=cc[20092]or Ce(20092,23236,28437)end elseif ca<=15002 then if ca>=7548 then if ca<12001 then if ca>10962 then if ca<11314 then if ca>=11075 then if ca<=11075 then W,N=d_[12900],_b[12900];N=Od('H-\17\184\131\23','\193\212\239')..N;db='';ud,ca,Q,jb=140,24098,1,(#W-1)+140 else if(t_>203)then ca=cc[24737]or Ce(24737,20359,101217)continue else ca=cc[-22548]or Ce(-22548,58908,105892)continue end ca=cc[-19756]or Ce(-19756,47105,69202)end else C=H(d_)if C~=nil and C[Od('\17\18\208:(\203','NM\185')]~=nil then ca=cc[23517]or Ce(23517,26485,49428)continue elseif ra(d_)==Od('\204;\218\54\221','\184Z')then ca=cc[11405]or Ce(11405,5588,1707)continue end ca=cc[11015]or Ce(11015,16595,25471)end elseif ca<=11814 then if ca<=11577 then if ca<=11314 then ud=ud+Q;Af=ud if ud~=ud then ca=cc[26250]or Ce(26250,25428,13989)else ca=32738 end else ca,La[_b[50330]]=cc[20224]or Ce(20224,41934,128539),La[_b[43810]][La[_b[4292]]]end else if N>0 then ca=cc[1448]or Ce(1448,63461,72570)continue else ca=cc[-12370]or Ce(-12370,34214,108200)continue end ca=cc[-13844]or Ce(-13844,58709,116902)end else C=_b[43810];d_,G=La[C],La[C+1];W=La[C+2]+G;La[C+2]=W if(G>0)then ca=cc[-5495]or Ce(-5495,35210,120294)continue else ca=cc[-9601]or Ce(-9601,5372,123107)continue end ca=cc[24157]or Ce(24157,2743,106436)end elseif ca<8999 then if ca<8590 then if ca<=7548 then La[C+2]=La[C+3];n_+=_b[57381];ca=cc[-15552]or Ce(-15552,9415,100628)else N=N+ud;jb=N if N~=N then ca=cc[-15084]or Ce(-15084,50884,114277)else ca=10962 end end elseif ca<=8590 then Q=Q+w_;Ra=Q if Q~=Q then ca=cc[25182]or Ce(25182,47375,124328)else ca=59546 end else if _b[4292]==45 then ca=cc[18490]or Ce(18490,13939,14861)continue elseif _b[4292]==117 then ca=cc[-5842]or Ce(-5842,17169,47650)continue elseif _b[4292]==244 then ca=cc[-16459]or Ce(-16459,60179,17013)continue else ca=cc[-18640]or Ce(-18640,20521,27777)continue end ca=cc[-20717]or Ce(-20717,39853,77374)end elseif ca<10476 then if ca>8999 then ca,La[_b[43810]]=cc[11467]or Ce(11467,65350,115347),_b[12900]else W=W+db;ud=W if W~=W then ca=cc[-24500]or Ce(-24500,44682,127975)else ca=58761 end end elseif ca>=10818 then if ca<=10818 then ca,G=47282,db continue else if(ud>=0 and N>db)or((ud<0 or ud~=ud)and N<db)then ca=cc[-30449]or Ce(-30449,46631,126596)else ca=cc[5197]or Ce(5197,16465,6669)end end else De=w_[50330];zb=xf[De]if(zb==nil)then ca=cc[19034]or Ce(19034,65194,125154)continue else ca=cc[-10694]or Ce(-10694,21811,59263)continue end ca=12898 end elseif ca>=12898 then if ca<=14045 then if ca>=13414 then if ca>=13976 then if ca>13976 then n_+=1;ca=cc[18567]or Ce(18567,47377,68962)else if(t_>139)then ca=cc[25823]or Ce(25823,47556,109760)continue else ca=cc[29702]or Ce(29702,40042,88804)continue end ca=cc[264]or Ce(264,38708,80709)end else n_+=_b[57381];ca=cc[-19297]or Ce(-19297,58242,112351)end elseif ca<=12898 then db[(Af-12)],ca=zb,cc[2882]or Ce(2882,48165,100789)else n_-=1;ca,va[n_]=cc[21504]or Ce(21504,17939,27744),{[30244]=158,[43810]=We(_b[43810],225),[50330]=We(_b[50330],201),[4292]=0}end elseif ca>14239 then d_,ca=N,cc[-24545]or Ce(-24545,49560,30734)continue elseif ca<=14148 then if(t_>64)then ca=cc[7962]or Ce(7962,5852,113453)continue else ca=cc[22154]or Ce(22154,27647,55719)continue end ca=cc[31567]or Ce(31567,48341,65830)else if(Af>=0 and jb>Q)or((Af<0 or Af~=Af)and jb<Q)then ca=cc[-16742]or Ce(-16742,25798,98412)else ca=cc[20750]or Ce(20750,65436,28761)end end elseif ca<=12484 then if ca>=12315 then if ca>12447 then n_+=_b[57381];ca=cc[30583]or Ce(30583,36305,69666)elseif ca<=12315 then Ua(db);cd[N],ca=nil,cc[-32637]or Ce(-32637,10291,111850)else n_+=_b[57381];ca=cc[-31907]or Ce(-31907,25651,19008)end elseif ca>12001 then n_+=_b[57381];ca=cc[285]or Ce(285,58034,112591)else G,W=C[12900],_b[12900];W=Od('}\0.\141\174(','\244\249\208')..W;N='';jb,db,ud,ca=1,70,(#G-1)+70,46624 end elseif ca<12542 then n_+=_b[57381];ca=cc[24561]or Ce(24561,26968,15529)elseif ca<=12542 then G=va[n_+_b[57381]]if cd[G]==nil then ca=cc[25279]or Ce(25279,4906,18565)continue end ca=cc[11219]or Ce(11219,2131,119713)else w_=jb if Q~=Q then ca=cc[9118]or Ce(9118,25969,31318)else ca=45266 end end elseif ca>4230 then if ca<=5204 then if ca<=4896 then if ca<=4812 then if ca>=4795 then if ca>4795 then if t_>158 then ca=cc[25301]or Ce(25301,33955,77274)continue else ca=cc[30066]or Ce(30066,24078,99733)continue end ca=cc[18023]or Ce(18023,36088,69897)else d_,G,W=xe(d_);ca=cc[-29331]or Ce(-29331,57152,127200)end else if t_>69 then ca=cc[-3528]or Ce(-3528,25484,30164)continue else ca=cc[-6895]or Ce(-6895,38821,68533)continue end ca=cc[24078]or Ce(24078,14816,101489)end elseif ca<=4884 then ud=W if N~=N then ca=cc[-20066]or Ce(-20066,59462,114067)else ca=58761 end else d_,G,W=xf if ra(d_)~=Od("5~\185!\'b\184,",'S\v\215B')then ca=cc[9456]or Ce(9456,3493,1828)continue end ca=cc[1554]or Ce(1554,55060,67764)end elseif ca<5094 then if t_>245 then ca=cc[-19138]or Ce(-19138,51358,129880)continue else ca=cc[-22762]or Ce(-22762,29446,38562)continue end ca=cc[24042]or Ce(24042,1861,109206)elseif ca>5094 then n_+=_b[57381];ca=cc[-32410]or Ce(-32410,29280,18417)else n_+=1;ca=cc[-18082]or Ce(-18082,23239,28436)end elseif ca<5735 then if ca<5389 then _e,ca=C+ud-1,cc[18288]or Ce(18288,60117,128520)elseif ca<=5389 then n_-=1;va[n_],ca={[30244]=58,[43810]=We(_b[43810],214),[50330]=We(_b[50330],187),[4292]=0},cc[-32186]or Ce(-32186,2329,105834)else C=H(d_)if C~=nil and C[Od('(\161W\3\155L','w\254>')]~=nil then ca=cc[22396]or Ce(22396,6467,99761)continue elseif ra(d_)==Od('\156$\138)\141','\232E')then ca=cc[-16038]or Ce(-16038,32720,4317)continue end ca=cc[-13557]or Ce(-13557,50578,77577)end elseif ca>7351 then ca=cc[20383]or Ce(20383,65476,14142)continue elseif ca>=6237 then if ca>6237 then if(t_>58)then ca=cc[-5675]or Ce(-5675,31898,19581)continue else ca=cc[-17250]or Ce(-17250,2358,107699)continue end ca=cc[-28921]or Ce(-28921,38003,80256)else jb=N if db~=db then ca=cc[27088]or Ce(27088,38199,68500)else ca=cc[-11781]or Ce(-11781,15339,62631)end end else if(t_>228)then ca=cc[26269]or Ce(26269,48213,24871)continue else ca=cc[-19843]or Ce(-19843,1309,4422)continue end ca=cc[-23687]or Ce(-23687,1730,109343)end elseif ca<=1543 then if ca<=1026 then if ca>531 then if ca>811 then if t_>234 then ca=cc[-12398]or Ce(-12398,30816,46841)continue else ca=cc[-15304]or Ce(-15304,9152,8984)continue end ca=cc[10537]or Ce(10537,63159,121796)else if t_>106 then ca=cc[24702]or Ce(24702,10983,8972)continue else ca=cc[-12249]or Ce(-12249,15680,8127)continue end ca=cc[21560]or Ce(21560,27990,12451)end elseif ca>400 then if(t_>56)then ca=cc[8637]or Ce(8637,13062,30711)continue else ca=cc[6141]or Ce(6141,19555,101972)continue end ca=cc[20387]or Ce(20387,51803,122792)elseif ca<=352 then De={[3]=La[w_[50330]],[1]=3};De[2]=De;db[(Af-12)],ca=De,cc[15786]or Ce(15786,43597,26525)else C,ca,d_=va[n_],12001,nil end elseif ca>1535 then d_[8028],ca=W,cc[28607]or Ce(28607,51958,68934)elseif ca<=1333 then if ca>1050 then ca,W=63219,nil else if(t_>190)then ca=cc[-5025]or Ce(-5025,495,126242)continue else ca=cc[15737]or Ce(15737,4372,14267)continue end ca=cc[16393]or Ce(16393,49151,66060)end else ca,La[_b[4292]]=cc[-596]or Ce(-596,35830,73219),La[_b[43810]]+_b[12900]end elseif ca>3798 then if ca<=3951 then if ca>3886 then ud=ud+Q;Af=ud if ud~=ud then ca=cc[-7948]or Ce(-7948,61486,19530)else ca=cc[30279]or Ce(30279,63319,130633)end else Z'';ca=cc[-371]or Ce(-371,25020,49156)end else ca,La[_b[4292]]=cc[10211]or Ce(10211,11510,28931),La[_b[43810]]-La[_b[50330]]end elseif ca>3461 then if ca>3487 then ca,La[_b[50330]]=cc[-28039]or Ce(-28039,39459,77744),_b[12900]-La[_b[4292]]else if(db==-2)then ca=cc[30402]or Ce(30402,16425,26458)continue else ca=cc[3183]or Ce(3183,21091,11474)continue end ca=cc[32618]or Ce(32618,6739,110496)end elseif ca<2932 then n_-=1;va[n_],ca={[30244]=152,[43810]=We(_b[43810],171),[50330]=We(_b[50330],54),[4292]=0},cc[6361]or Ce(6361,8403,29984)elseif ca>2932 then La[_b[43810]],ca=G,cc[15729]or Ce(15729,63533,99036)else La[C]=N;d_,ca=N,cc[28754]or Ce(28754,15583,24697)end elseif ca>=24757 then if ca<28334 then if ca<26741 then if ca>25383 then if ca>=26177 then if ca<=26177 then Af=ud if jb~=jb then ca=cc[15443]or Ce(15443,49555,120032)else ca=cc[-22681]or Ce(-22681,63947,104535)end else ca,La[_b[50330]]=cc[-19849]or Ce(-19849,50915,125808),La[_b[43810]]*La[_b[4292]]end else ca,La[_b[43810]]=cc[-15117]or Ce(-15117,14596,101717),La[_b[4292]]+La[_b[50330]]end elseif ca<=24997 then if ca<=24890 then if ca>24757 then if t_>230 then ca=cc[-23904]or Ce(-23904,25913,34347)continue else ca=cc[-2221]or Ce(-2221,6301,32090)continue end ca=cc[24447]or Ce(24447,65073,115778)else n_-=1;ca,va[n_]=cc[23594]or Ce(23594,43793,130914),{[30244]=147,[43810]=We(_b[43810],9),[50330]=We(_b[50330],136),[4292]=0}end else ud,ca=ud..Ee(We(Qe(N,(w_-186)+1),Qe(db,(w_-186)%#db+1))),cc[17636]or Ce(17636,48406,71053)end elseif ca<=25315 then jb=jb+Af;w_=jb if jb~=jb then ca=cc[-891]or Ce(-891,10838,106871)else ca=cc[10691]or Ce(10691,45062,66290)end else d_,G,W=C[Od('dz\216O@\195',';%\177')](d_);ca=cc[-13316]or Ce(-13316,5167,19124)end elseif ca>=27265 then if ca>=27988 then if ca>27988 then La[_b[43810]],ca=G[_b[8028]][_b[20040]],cc[2799]or Ce(2799,31524,979)else n_+=1;ca=cc[18279]or Ce(18279,65350,115347)end elseif ca>27265 then if(jb>=0 and db>ud)or((jb<0 or jb~=jb)and db<ud)then ca=cc[-4203]or Ce(-4203,58296,19632)else ca=cc[4865]or Ce(4865,32735,59703)end else Hf(tb[56488],1,d_,C,La);ca=cc[-3427]or Ce(-3427,40785,74402)end elseif ca>26895 then ca,La[_b[43810]]=cc[21274]or Ce(21274,23112,9415),G[_b[8028]]elseif ca>=26774 then if ca<=26774 then W..=La[jb];ca=cc[-29656]or Ce(-29656,23483,55794)else Hf(db,1,d_,C+3,La);La[C+2]=La[C+3];n_+=_b[57381];ca=cc[21378]or Ce(21378,35493,73526)end else if La[_b[43810]]==La[_b[33947]]then ca=cc[27861]or Ce(27861,62621,98955)continue else ca=cc[-16349]or Ce(-16349,59032,18438)continue end ca=cc[-18937]or Ce(-18937,24227,25392)end elseif ca<31186 then if ca<29285 then if ca<29033 then if ca<=28334 then if(La[_b[43810]]<La[_b[33947]])then ca=cc[-25364]or Ce(-25364,47600,102069)continue else ca=cc[-17870]or Ce(-17870,57213,129791)continue end ca=cc[-9593]or Ce(-9593,1238,108835)else n_+=1;ca=cc[-8503]or Ce(-8503,23751,24852)end elseif ca>29033 then if _b[4292]==13 then ca=cc[-16514]or Ce(-16514,16327,102273)continue elseif(_b[4292]==153)then ca=cc[-32607]or Ce(-32607,43241,79939)continue else ca=cc[-10999]or Ce(-10999,51284,71236)continue end ca=cc[-7752]or Ce(-7752,32510,17163)else n_+=_b[57381];ca=cc[20713]or Ce(20713,11162,32503)end elseif ca>=29720 then if ca<=29720 then db,ud=d_[20040],_b[20040];ud=Od('4p\186\196\222\188','\189\137D')..ud;jb='';Q,w_,ca,Af=161,1,cc[13975]or Ce(13975,55910,65626),(#db-1)+161 else n_+=1;ca=cc[24304]or Ce(24304,63587,118256)end elseif ca>29285 then if(t_>49)then ca=cc[-9542]or Ce(-9542,42608,30118)continue else ca=cc[-24512]or Ce(-24512,32771,69336)continue end ca=cc[-10537]or Ce(-10537,14264,105161)else if t_>191 then ca=cc[12038]or Ce(12038,54020,76206)continue else ca=cc[31041]or Ce(31041,6225,64905)continue end ca=cc[-6792]or Ce(-6792,60377,114218)end elseif ca>=31880 then if ca<=32738 then if ca<32050 then w_=Cf(jb)if(w_==nil)then ca=cc[-20593]or Ce(-20593,16078,60958)continue else ca=cc[6502]or Ce(6502,52798,28546)continue end ca=cc[11747]or Ce(11747,16377,7745)elseif ca<=32050 then if W<=d_ then ca=cc[17974]or Ce(17974,48320,118473)continue end ca=cc[-1375]or Ce(-1375,23162,28567)else if(Q>=0 and ud>jb)or((Q<0 or Q~=Q)and ud<jb)then ca=cc[9411]or Ce(9411,33419,71640)else ca=46972 end end else C,d_,G=_b[50330],_b[43810],_b[4292]-1 if G==-1 then ca=cc[-12898]or Ce(-12898,55240,81683)continue end ca=36671 end elseif ca<=31425 then if ca<=31272 then if ca>31186 then C,d_,G=_b[4292],_b[43810],_b[12900];W=La[d_];La[C+1]=W;La[C]=W[G];n_+=1;ca=cc[-31091]or Ce(-31091,52782,119739)else jb=Cf(N)if(jb==nil)then ca=cc[-1036]or Ce(-1036,37293,98073)continue else ca=cc[-29591]or Ce(-29591,522,116466)continue end ca=58054 end else db[(Af-12)],ca=mb[w_[50330]+1],cc[16391]or Ce(16391,14118,690)end else C,d_,G=_b[12900],_b[43368],La[_b[43810]]if(G==C)~=d_ then ca=cc[10440]or Ce(10440,57718,130984)continue else ca=cc[28734]or Ce(28734,2209,13576)continue end ca=cc[-9282]or Ce(-9282,47014,72243)end elseif ca<18262 then if ca<=17235 then if ca<16362 then if ca>15352 then if(db[1]>=_b[43810])then ca=cc[6053]or Ce(6053,63757,117396)continue else ca=cc[23364]or Ce(23364,45706,108767)continue end ca=cc[-19401]or Ce(-19401,940,10037)elseif ca>=15069 then if ca>15069 then if t_>180 then ca=cc[-352]or Ce(-352,17293,12827)continue else ca=cc[29429]or Ce(29429,56016,121608)continue end ca=cc[-31909]or Ce(-31909,29267,18336)else Z(db);ca=cc[-25120]or Ce(-25120,17113,45212)end else d_,G,W=C[Od('\233c\2\194Y\25','\182<k')](d_);ca=cc[25516]or Ce(25516,24182,29138)end elseif ca>=17068 then if ca<=17068 then if(not(d_<=jb))then ca=cc[29418]or Ce(29418,24964,25959)continue else ca=cc[22911]or Ce(22911,48608,65649)continue end ca=cc[-16874]or Ce(-16874,21880,30857)else if t_>102 then ca=cc[-2735]or Ce(-2735,454,103443)continue else ca=cc[15740]or Ce(15740,47905,74036)continue end ca=cc[-5355]or Ce(-5355,32561,17218)end elseif ca<=16362 then La[C+2]=w_;jb,ca=w_,cc[-8274]or Ce(-8274,28960,52908)else d_[8028]=W;ca,N=cc[26944]or Ce(26944,62933,104463),nil end elseif ca<17907 then if ca>=17705 then if ca<=17705 then N,db=d_(G,W);W=N if W==nil then ca=cc[-11155]or Ce(-11155,61072,111585)else ca=cc[-23951]or Ce(-23951,57143,31602)end else n_+=_b[57381];ca=cc[26584]or Ce(26584,38514,80783)end else d_[20040],ca=N,cc[-24327]or Ce(-24327,52789,66041)end elseif ca>=18187 then if ca>18187 then n_-=1;ca,va[n_]=cc[12427]or Ce(12427,65134,115707),{[30244]=142,[43810]=We(_b[43810],183),[50330]=We(_b[50330],85),[4292]=0}else C,d_=_b[50059],_b[12900];G=jc[d_]or L[29580][d_]if(C==1)then ca=cc[12488]or Ce(12488,23652,52033)continue else ca=cc[-9513]or Ce(-9513,11574,31773)continue end ca=cc[-13107]or Ce(-13107,52510,103817)end elseif ca>17907 then ca,La[_b[43810]]=cc[23763]or Ce(23763,6476,109725),La[_b[50330]]else W=(function(...)for pe,ha,m,Wb,pa,_d,uf,if_,Nb,ac,vd,Xe,pb,e_,i_,td,Xa,qc,oe,Dc in...do Qf{pe,ha,m,Wb,pa,_d,uf,if_,Nb,ac,vd,Xe,pb,e_,i_,td,Xa,qc,oe,Dc}end Qf(-2)end);cd[G],ca=Sd(W),cc[-17823]or Ce(-17823,54185,80955)end elseif ca>=21172 then if ca>=23351 then if ca>23578 then Af=ud if jb~=jb then ca=cc[-19060]or Ce(-19060,16974,56746)else ca=cc[-22775]or Ce(-22775,40925,83411)end elseif ca<23563 then N=Cf(d_)if(N==nil)then ca=cc[2827]or Ce(2827,1671,104499)continue else ca=cc[29535]or Ce(29535,4357,3091)continue end ca=cc[26521]or Ce(26521,37635,101917)elseif ca>23563 then if(t_>26)then ca=cc[-28943]or Ce(-28943,14013,60688)continue else ca=cc[-3935]or Ce(-3935,289,13946)continue end ca=cc[16977]or Ce(16977,48376,65801)else n_+=1;ca=cc[-26839]or Ce(-26839,46647,72772)end elseif ca>=21606 then if ca<=21606 then C=mb[_b[50330]+1];ca,C[2][C[1]]=cc[-27670]or Ce(-27670,2299,105736),La[_b[43810]]else C,d_=La[_b[43810]],nil;d_=Lb(C)==Od('\231\"\136M\245>\137@','\129W\230.')if(not d_)then ca=cc[-24088]or Ce(-24088,20097,53285)continue else ca=cc[7022]or Ce(7022,55079,78005)continue end ca=cc[3698]or Ce(3698,61705,72539)end elseif ca<=21172 then n_-=1;ca,va[n_]=cc[24925]or Ce(24925,65025,115794),{[30244]=76,[43810]=We(_b[43810],223),[50330]=We(_b[50330],213),[4292]=0}else N,db=da(cd[_b],G,La[C+1],La[C+2])if not N then ca=cc[29079]or Ce(29079,35401,104142)continue end ca=cc[12458]or Ce(12458,42082,21345)end elseif ca>=20032 then if ca>=20673 then if ca<=20673 then n_+=1;ca=cc[-16668]or Ce(-16668,24792,13609)else db[3]=db[2][db[1]];db[2]=db;db[1]=3;xf[N],ca=nil,cc[11859]or Ce(11859,63958,121458)end elseif ca>20032 then C=_b[43810];d_,G=La[C],nil;W=d_;G=Lb(W)==Od('P\148 \\\132?','>\225M')if(not G)then ca=cc[10912]or Ce(10912,3268,18463)continue else ca=cc[-6444]or Ce(-6444,61927,107329)continue end ca=37636 else C,d_=nil,We(_b[6536],62740);C=if d_<32768 then d_ else d_-65536;G=C;La[We(_b[43810],162)],ca=G,cc[-14526]or Ce(-14526,38995,77216)end elseif ca<=18676 then if ca>=18380 then if ca>18380 then C=_b[12900];La[_b[43810]]=La[_b[4292]][C];n_+=1;ca=cc[-15200]or Ce(-15200,11578,29015)else C[12900]=d_;_b[30244],ca=106,cc[6412]or Ce(6412,26976,15601)end else if(t_>76)then ca=cc[21724]or Ce(21724,44631,127777)continue else ca=cc[-24779]or Ce(-24779,17358,45855)continue end ca=cc[8031]or Ce(8031,25501,14062)end else N,ca=N..Ee(We(Qe(G,(Q-70)+1),Qe(W,(Q-70)%#W+1))),cc[23250]or Ce(23250,44261,84915)end until ca==10584 end return function(...)local fa_,J,v,q,Ma,hd,ib,Ec,Hc,qb,re_;q,Ec=function(x,_a,Oc)Ec[_a]=Fb(x,33545)-Fb(Oc,30401)return Ec[_a]end,{};Ma=Ec[13286]or q(21874,13286,23808)repeat if Ma<43234 then if Ma<=39870 then if Ma<=36296 then if Ma>897 then return Z(J,0)else Hc,re_=V[859]+1,v[Od('\183','\217')]-V[859];fa_[49727]=re_;Hf(v,Hc,Hc+re_-1,1,fa_[56488]);Ma=Ec[-3383]or q(122377,-3383,46979)end else Hc,re_=te(Gf(cf,hd,V[12899],V[46573],fa_))if Hc[1]then Ma=Ec[-27611]or q(120696,-27611,56654)continue else Ma=Ec[13969]or q(16210,13969,28523)continue end Ma=Ec[-23641]or q(126884,-23641,3863)end else J,qb=Hc[2],nil;ib=J;qb=Lb(ib)==Od('\167\155\228\189\129\241','\212\239\150')if qb==false then Ma=Ec[19831]or q(32594,19831,27663)continue end Ma=36296 end elseif Ma<57741 then if Ma<=43234 then return ce(Hc,2,re_)else v,hd,fa_=qa(...),k(V[43036]),{[49727]=0,[56488]={}};Hf(v,1,V[859],0,hd)if V[859]<v[Od('9','W')]then Ma=Ec[-24233]or q(17787,-24233,46128)continue end Ma=Ec[20321]or q(114172,20321,54774)end elseif Ma>57741 then Ma=Ec[3128]or q(111534,3128,14064)continue else J,Ma=Lb(J),Ec[9024]or q(31201,9024,7137)end until Ma==61558 end end return Ef(za,sb)end)local Jb;Jb,Ye={[0]=0},function()Jb[0]=Jb[0]+1 return{[2]=Jb,[1]=Jb[0]}end;Uc=bd return(function()local gb,Vc,Bd,Mc;Bd={[3]=Uc,[1]=3};Bd[2]=Bd;Mc={[3]=Ze,[1]=3};Mc[2]=Mc;Vc={[3]=la,[1]=3};Vc[2]=Vc;gb={[1]=3,[3]=ue};gb[2]=gb return Uc(gf'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',{[3]=Vc,[2]=Mc,[4]=gb,[1]=Bd})end)()(...)
+						
+-- loaders
+--local Conhosted = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ghdtyu190-lab/LuaLibrarys/refs/heads/main/conhosted')))()
+--local keysystemloader = loadstring(game:HttpGet(('')))()
+
+
+-- main init
+local menu_key = "RightShift" -- dont used
+local script_name = "NektoHub"
+local script_name_f9 = "[NektoHub]"
+local script_version = "v1.9951"
+local cfg_folder = "NektoHubRM"
+local sys_folder = "NektoHubRMSys"
+local integrated_lib = "Conhosted"
+
+
+if not isfolder("NektoHubRMSys") then
+	-- main folders && files
+	makefolder("NektoHubRMSys")
+	makefolder("NektoHubRMSys/ms")
+	makefolder("NektoHubRMSys/bind")
+	makefolder("NektoHubRMSys/bind/bind1")
+	makefolder("NektoHubRMSys/bind/bind2")
+	makefolder("NektoHubRMSys/bind/bind3")
+	makefolder("NektoHubRMSys/bind/bind4")
+	makefolder("NektoHubRMSys/bind/function1")
+	makefolder("NektoHubRMSys/bind/function2")
+	makefolder("NektoHubRMSys/bind/function3")
+	makefolder("NektoHubRMSys/bind/function4")
+
+	writefile("NektoHubRMSys/ms/msts.ms", "100ms")
+
+	writefile("NektoHubRMSys/bind/bind1/bind.txt", "nothing")
+	writefile("NektoHubRMSys/bind/bind2/bind.txt", "nothing")
+	writefile("NektoHubRMSys/bind/bind3/bind.txt", "nothing")
+	writefile("NektoHubRMSys/bind/bind4/bind.txt", "nothing")
+	writefile("NektoHubRMSys/bind/function1/function.txt", "nothing")
+	writefile("NektoHubRMSys/bind/function2/function.txt", "nothing")
+	writefile("NektoHubRMSys/bind/function3/function.txt", "nothing")
+	writefile("NektoHubRMSys/bind/function4/function.txt", "nothing")
+
+	-- version folder && file
+	makefolder("NektoHubRMSys/vs")
+	writefile("NektoHubRMSys/vs/vs.txt", "v1.994")
+
+	-- uid folder && file
+	makefolder("NektoHubRMSys/qwkjas/uid")
+	writefile("NektoHubRMSys/qwkjas/uid/u.txt", "x70psq")
+
+	-- keysys
+	
+end
+
+if isfolder("NektoHubRMSys") then 
+	if not isfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt") then
+		writefile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt", "1")
+	end
+	if not isfile("NektoHubRMSys/bind/qo2kdasosjfanvjdoasdhoaPR.txt") then
+		writefile("NektoHubRMSys/bind/qo2kdasosjfanvjdoasdhoaPR.txt", "1")
+	end
+	if not isfile("NektoHubRMSys/bind/sdauwihdawhd91q8u2y3jadfoi.txt") then
+		writefile("NektoHubRMSys/bind/sdauwihdawhd91q8u2y3jadfoi.txt", "0")
+	end
+	if not isfile("NektoHubRMSys/bind/uqhwh197wghdauishdyiagefia.txt") then
+		writefile("NektoHubRMSys/bind/uqhwh197wghdauishdyiagefia.txt", "false")
+	end
+end
+
+local hours = math.ceil((86400 - (os.time() - tonumber(readfile("NektoHubRMSys/bind/sdauwihdawhd91q8u2y3jadfoi.txt")))) / 3600)
+if hours <= 0 then
+	writefile("NektoHubRMSys/bind/uqhwh197wghdauishdyiagefia.txt", "false") 
+	writefile("NektoHubRMSys/bind/sdauwihdawhd91q8u2y3jadfoi.txt", "inf")
+	if readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt") == "1" then
+		writefile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt", "2")
+	elseif readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt") == "2" then
+		writefile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt", "3")
+	elseif readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt") == "3" then
+		writefile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt", "1")
+	end
+else
+	writefile("NektoHubRMSys/bind/uqhwh197wghdauishdyiagefia.txt", "true") 
+end
+
+
+local notification_gui = Instance.new("ScreenGui")
+notification_gui.DisplayOrder = 999999999
+notification_gui.Name = "Notification"
+notification_gui.Parent = game.CoreGui
+-- notification_gui.IgnoreGuiInset = true
+
+local notification_queue = {}
+local can_notify = true
+local notification_frame = Instance.new("Frame")
+notification_frame.Parent = notification_gui
+notification_frame.Position = UDim2.new(0.5, 0, 0.6, 0)
+notification_frame.AnchorPoint = Vector2.new(0.5, 0.5)
+notification_frame.Size = UDim2.new(0.1, 0, 0.1, 0)
+notification_frame.BackgroundTransparency = 1
+notification_frame.Name = "notification_f"
+
+local notification_layout = Instance.new("UIGridLayout")
+notification_layout.Parent = notification_frame
+notification_layout.CellPadding = UDim2.new(0, 5, 0, 5)
+notification_layout.CellSize = UDim2.new(1, 0, 0.25, 0)
+notification_layout.VerticalAlignment = Enum.VerticalAlignment.Top
+
+function show_notification(message)
+	if can_notify then
+		local notification_item = Instance.new("TextLabel")
+		notification_item.Parent = notification_frame
+		notification_item.BackgroundColor3 = Color3.new(0, 0, 0)
+		notification_item.Text = ""
+		notification_item.TextScaled = true
+		notification_item.Font = Enum.Font.SourceSansBold
+		notification_item.TextColor3 = Color3.new(0, 0, 0)
+		notification_item.Transparency = 1
+		notification_item.Size = UDim2.new(0.2, 0, 1, 0)
+		notification_item.Position = UDim2.new(0.5, 0, 0.5, 0)
+		notification_item.AnchorPoint = Vector2.new(0.5, 0.5)
+		notification_item.Visible = true
+
+		local notif_text = Instance.new("TextLabel")
+		notif_text.Parent = notification_item
+		notif_text.Text = message
+		notif_text.TextScaled = true
+		notif_text.Font = Enum.Font.SourceSansBold
+		notif_text.TextColor3 = Color3.new(1, 1, 1)
+		notif_text.Size = UDim2.new(1, 0, 1, 0)
+		notif_text.BackgroundTransparency = 1
+
+
+
+		Instance.new("UICorner", notification_item)
+
+		game:GetService("TweenService"):Create(notification_item,
+			TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Transparency = 0 }):Play()
+
+
+		local children = notification_frame:GetChildren()
+		local count = #children
+		if count > 2 then
+
+		end
+
+		task.spawn(function()
+			task.wait(5)
+			game:GetService("TweenService"):Create(notification_item,
+				TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Transparency = 1 }):Play()
+			task.wait(0.5)
+			notification_item:Destroy()
+		end)
+	end
+end
+
+
+-- exec list
+local exec_free_list = {
+	"Xeno",
+	"Solara",
+	"Velocity",
+	"Madium",
+	"Ronix",
+	"Drift",
+	"Real"
+}
+
+local exec_moba_list = {
+	"Delta",
+	"Krnl"
+
+}
+
+local exec_paid_list = {
+	"Seliware",
+	"Potassium",
+	"Volt",
+	"Cosmic",
+	"Volcano"
+}
+
+
+local function MainUI()
+
+	if game.PlaceId ~= 124095328182831 and game.PlaceId ~= 14908286297 then
+		s_bypass = true
+		local AnimationsHandler = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("AnimationsHandler")
+		if AnimationsHandler then
+			AnimationsHandler.Enabled = false
+		end
+		local DeathHandler = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("DeathHandler")
+		if DeathHandler then
+			DeathHandler.Enabled = false
+		end
+		local RbxCharacterSounds = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("RbxCharacterSounds")
+		if RbxCharacterSounds then
+			RbxCharacterSounds.Enabled = false
+		end
+		wait(0.02)
+		local Anticheat = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("LocalScript")
+		if Anticheat then
+			Anticheat.Enabled = false
+		end
+		wait(0.02)
+		local AnimationsHandler = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("AnimationsHandler")
+		if AnimationsHandler then
+			AnimationsHandler.Enabled = true
+		end
+		local DeathHandler = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("DeathHandler")
+		if DeathHandler then
+			DeathHandler.Enabled = true
+		end
+		local RbxCharacterSounds = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("RbxCharacterSounds")
+		if RbxCharacterSounds then
+			RbxCharacterSounds.Enabled = true
+		end
+	end
+
+	-- f9
+	local executor_name = identifyexecutor()
+	print(script_name_f9 .. " Your Executor: " .. executor_name)
+	print(script_name_f9 .. " Current Script Version: " .. script_version)
+
+
+
+	-- binds
+	local function read_keybind_file(path)
+		local ok, content = pcall(readfile, path)
+		if ok and content and content ~= "nothing" then return content end
+		return nil
+	end
+
+	local function read_function_file(path)
+		local ok, content = pcall(readfile, path)
+		if ok and content and content ~= "nothing" then return content end
+		return nil
+	end
+
+	local bind1_key = read_keybind_file("NektoHubRMSys/bind/bind1/bind.txt")
+	local bind2_key = read_keybind_file("NektoHubRMSys/bind/bind2/bind.txt")
+	local bind3_key = read_keybind_file("NektoHubRMSys/bind/bind3/bind.txt")
+	local bind4_key = read_keybind_file("NektoHubRMSys/bind/bind4/bind.txt")
+	local func1 = read_function_file("NektoHubRMSys/bind/function1/function.txt")
+	local func2 = read_function_file("NektoHubRMSys/bind/function2/function.txt")
+	local func3 = read_function_file("NektoHubRMSys/bind/function3/function.txt")
+	local func4 = read_function_file("NektoHubRMSys/bind/function4/function.txt")
+
+
+
+	-- проверка на нужное значение uid в файле
+	function css_client_uid(uid, key)
+		local list = {}
+		local currentScriptUid = "x70psq"
+		local customScriptUid = uid
+		local key = key
+		if readfile("NektoHubRMSys/qwkjas/uid/u.txt") ~= currentScriptUid and customScriptUid then
+			warn(customScriptUid .. " - warning")
+			wait(3)
+			error(customScriptUid .. " - error:script closing - eternal uid error;90xxoiw")
+			wait(1)
+			game.CoreGui.NektoUI:Destroy()
+		else
+			if readfile("NektoHubRMSys/qwkjas/uid/u.txt") == currentScriptUid and customScriptUid then
+				print(currentScriptUid .. " - 1.0")
+				print(key)
+			end
+		end
+	end
+	
+	function syntax()
+		local syntaxFloat = 9951
+	end
+	
+	function getgenvsyntax()
+		local genv = getgenv().NEKTOHUB
+		if genv == "RM" then
+			print("Script id: RM9951")
+		else
+			game.Players.LocalPlayer:Kick("Error to get getgenv()")
+		end
+	end
+
+
+	-- old method esp
+	local ESPLib = {}
+
+	function ESPLib:CreateESPTag(params)
+		local RunService = game:GetService("RunService")
+		local player = game.Players.LocalPlayer
+		local camera = game:GetService("Workspace").CurrentCamera
+
+		local Text = params.Text
+		local Part = params.Part
+		local TextSize = params.TextSize
+		local TextColor = params.TextColor
+		local BoxColor = params.BoxColor
+		local TracerColor = params.TracerColor or Color3.new(255, 255, 255)
+		local TracerWidth = params.TracerWidth or 3
+		local TrailMode = params.TrailMode or false
+		local TrailColor = params.TrailColor or { Color3.new(255, 0, 0) }
+		local TrailWidth = params.TrailWidth or { 2 }
+
+		local isActive = true
+		local renderConnection = nil
+
+		if #TrailColor < 2 then
+			TrailColor[2] = TrailColor[1]
+		end
+
+		if #TrailWidth < 2 then
+			TrailWidth[2] = TrailWidth[1] -- Duplicate the width if only one is provided
+		end
+
+		local esp = Instance.new("BillboardGui")
+		esp.Name = "esp"
+		esp.Size = UDim2.new(0, 200, 0, 50)
+		esp.StudsOffset = Vector3.new(0, Part.Size.Y + 2, 0) -- Adjusted offset for the label above the head
+		esp.Adornee = Part
+		esp.Parent = Part
+		esp.AlwaysOnTop = true
+
+		local esplabelfr = Instance.new("TextLabel")
+		esplabelfr.Name = "esplabelfr"
+		esplabelfr.Size = UDim2.new(1, 0, 0, 70)
+		esplabelfr.BackgroundColor3 = Color3.new(0, 0, 0)
+		esplabelfr.TextColor3 = TextColor or Color3.fromRGB(255, 255, 255)
+		esplabelfr.BackgroundTransparency = 1
+		esplabelfr.TextStrokeTransparency = 0
+		esplabelfr.TextStrokeColor3 = Color3.new(0, 0, 0)
+		esplabelfr.TextSize = TextSize
+		esplabelfr.TextScaled = false
+		esplabelfr.Font = "Arcade"
+		esplabelfr.Parent = esp
+
+		local box = Instance.new("BoxHandleAdornment")
+		box.Name = "box"
+		box.Size = Part.Size + Vector3.new(0.5, 0.5, 0.5)
+		box.Adornee = Part
+		box.AlwaysOnTop = true
+		box.Transparency = 0.6
+		box.Color3 = BoxColor or Color3.new(0, 0, 255)
+		box.ZIndex = 0
+		box.Parent = Part
+
+		local tracerLine = Drawing.new("Line")
+		tracerLine.Visible = false
+
+		local trail = Instance.new("Trail")
+		trail.Texture = "rbxassetid://188166667"
+		trail.Enabled = false
+		trail.Color = ColorSequence.new(TrailColor[1], TrailColor[2])
+		trail.WidthScale = NumberSequence.new(TrailWidth[1], TrailWidth[2])
+		trail.Parent = Part
+		trail.Lifetime = 0.5
+
+		local function updateesplabelfr()
+			if not Part or not Part:IsA("BasePart") or not Part.Parent then
+				-- Part no longer exists, delete ESP elements
+				esp:Destroy()
+				tracerLine:Destroy()
+				trail:Destroy()
+				return
+			end
+
+			local playerPosition = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+			if playerPosition then
+				local distance = (playerPosition.Position - Part.Position).Magnitude
+				esplabelfr.Text = string.format(Text .. ": %.2f", distance)
+
+
+
+				local headPosition = Part.Position + Vector3.new(0, Part.Size.Y / 2, 0)
+				local screenPosition, onScreen = camera:WorldToScreenPoint(headPosition)
+
+				if onScreen or playerPosition.Position.Y > Part.Position.Y then
+					esp.Adornee = Part
+					esp.Enabled = true
+					box.Adornee = Part
+					box.Visible = true
+
+					-- Update tracer line points
+					local tracerStart = camera:WorldToViewportPoint(player.Character.Head.Position)
+					local tracerEnd = camera:WorldToViewportPoint(Part.Position)
+					tracerLine.From = Vector2.new(tracerStart.X, tracerStart.Y)
+					tracerLine.To = Vector2.new(tracerEnd.X, tracerEnd.Y)
+					tracerLine.Color = TracerColor
+					tracerLine.Thickness = TracerWidth -- Adjust the thickness of the line (increased from 1)
+					tracerLine.Visible = not TrailMode
+
+					-- Update trail
+					trail.Attachment1 = Part.Attachment
+					trail.Lifetime = 0.3
+					trail.Enabled = TrailMode
+					trail.Color = ColorSequence.new(TrailColor[1], TrailColor[2])
+					trail.WidthScale = NumberSequence.new(TrailWidth[1], TrailWidth[2])
+				else
+					esp.Enabled = false
+					box.Visible = false
+					tracerLine.Visible = false
+					trail.Enabled = false
+				end
+			else
+				esp.Enabled = false
+				box.Visible = false
+				tracerLine.Visible = false
+				trail.Enabled = false
+			end
+		end
+
+		RunService.RenderStepped:Connect(updateesplabelfr)
+	end
+
+	-- new method esp
+	local Screen1489 = Instance.new("ScreenGui")
+	Screen1489.IgnoreGuiInset = true
+	Screen1489.Parent = game.Players.LocalPlayer.PlayerGui
+	local player = game.Players.LocalPlayer
+	local camera = game:GetService("Workspace").CurrentCamera
+	local workspace = game.Workspace
+
+	local function isDescendantOf(child, ancestor)
+		if not child or not ancestor then return false end
+
+		local current = child
+
+		while current do
+			if current == ancestor then
+				return true
+			end
+
+			if not current.Parent then
+				break
+			end
+			current = current.Parent
+		end
+		return false
+	end
+
+	local function new_esp(value, color, name, value_gui, fill)
+		if not value or not color or not name then
+			return
+		end
+		local FIRST_VALUE = value
+		if value:IsA("Model") then
+			if value.PrimaryPart then
+				value = value.PrimaryPart
+			else
+				for i, v in pairs(value:GetChildren()) do
+					if v:IsA("BasePart") then
+						value = v
+					end
+				end
+			end
+		end
+		local framedagg = Instance.new("Frame")
+		framedagg.Parent = Screen1489
+		framedagg.Name = name
+		framedagg.BackgroundColor3 = color
+		framedagg.AnchorPoint = Vector2.new(0.5, 0.5)
+		framedagg.Position = UDim2.new(0.5, 0, 0.5, 0)
+		framedagg.Size = UDim2.new(0.01, 0, 0.01, 0)
+		framedagg.Visible = true
+		local dot = Instance.new("Frame")
+		dot.Parent = Screen1489
+		dot.AnchorPoint = Vector2.new(0.5, 0.5)
+		dot.Position = UDim2.new(0.5, 0, 0.5, 0)
+		dot.BackgroundTransparency = 1
+		local dot2 = Instance.new("Frame")
+		dot2.Parent = Screen1489
+		dot2.AnchorPoint = Vector2.new(0.5, 0.5)
+		dot2.Position = UDim2.new(0.5, 0, 0.5, 0)
+		dot2.BackgroundTransparency = 1
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if value then
+				if FIRST_VALUE then
+					if value_gui == true then
+						local targetPart = value
+						if targetPart then
+							local isChildOfWorkspace = isDescendantOf(targetPart, workspace)
+							if isChildOfWorkspace then
+								if not FIRST_VALUE:FindFirstChild("ScriptHighlight") then
+									local Highlight = Instance.new("Highlight")
+									Highlight.Name = "ScriptHighlight"
+									Highlight.FillColor = color
+									Highlight.FillTransparency = fill
+									Highlight.OutlineTransparency = 1
+									Highlight.Parent = FIRST_VALUE
+								end
+								if not FIRST_VALUE:FindFirstChild("ScriptNameTag") then
+									local NameTag = Instance.new("BillboardGui")
+									NameTag.Name = "ScriptNameTag"
+									NameTag.Size = UDim2.new(5, 0, 2, 0)
+									NameTag.AlwaysOnTop = true
+									NameTag.StudsOffset = Vector3.new(0, 6, 0)
+									NameTag.Parent = FIRST_VALUE
+									local TextLabel = Instance.new("TextLabel")
+									TextLabel.Size = UDim2.new(1, 0, 1, 0)
+									TextLabel.BackgroundTransparency = 1
+									TextLabel.Text = name
+									local playerPosition = player.Character and
+										player.Character:FindFirstChild("HumanoidRootPart")
+									if playerPosition then
+										local distance = (playerPosition.Position - targetPart.Position).Magnitude
+										TextLabel.Text = string.format(name .. ": %.2f", distance)
+									end
+									TextLabel.TextColor3 = color
+									TextLabel.TextScaled = true
+									TextLabel.Parent = NameTag
+								end
+								framedagg.Transparency = 0.4
+								if targetPart:IsA("Model") and not targetPart.PrimaryPart then
+									local foundPart = targetPart:FindFirstChildWhichIsA("BasePart", true)
+									if foundPart then
+										targetPart.PrimaryPart = foundPart
+									end
+								end
+								if targetPart:IsA("Model") and targetPart.PrimaryPart then
+									targetPart = targetPart.PrimaryPart
+								else
+								end
+								if FIRST_VALUE then
+									if FIRST_VALUE:FindFirstChild("ScriptHighlight") then
+										FIRST_VALUE:FindFirstChild("ScriptHighlight").Enabled = true
+									end
+									if FIRST_VALUE:FindFirstChild("ScriptNameTag") then
+										local tage = FIRST_VALUE:FindFirstChild("ScriptNameTag")
+										FIRST_VALUE:FindFirstChild("ScriptNameTag").Enabled = true
+										local playerPosition = player.Character and
+											player.Character:FindFirstChild("HumanoidRootPart")
+										if playerPosition then
+											local distance = (playerPosition.Position - targetPart.Position).Magnitude
+											tage.TextLabel.Text = string.format(name .. ": %.2f", distance)
+										end
+									end
+								end
+								if targetPart:IsA("BasePart") then
+									local worldPos = targetPart.Position
+									local vector, onScreen = camera:WorldToViewportPoint(worldPos)
+									if onScreen then
+										framedagg.Visible = true
+										local frameA = dot
+										local frameB = dot2
+										local centerA = frameA.AbsolutePosition + (frameA.AbsoluteSize / 2)
+										local centerB = frameB.AbsolutePosition + (frameB.AbsoluteSize / 2)
+										local parentPos = framedagg.Parent.AbsolutePosition
+										local posA = centerA - parentPos
+										local posB = centerB - parentPos
+										local delta = centerB - centerA
+										local distance = delta.Magnitude
+										local angle = math.atan2(delta.Y, delta.X)
+										local pisuntrans = 0.2
+										framedagg.Size = UDim2.new(0, distance, 0, 1)
+										framedagg.Position = UDim2.new(0, (posA.X + posB.X) / 2, 0, (posA.Y + posB.Y) / 2)
+										framedagg.Rotation = math.deg(angle)
+										framedagg.AnchorPoint = Vector2.new(0.5, 0.5)
+										framedagg.BorderSizePixel = 0
+										dot.Position = UDim2.new(0, vector.X, 0, vector.Y)
+									else
+										framedagg.Visible = false
+									end
+								end
+							else
+								framedagg.Visible = false
+							end
+						else
+							framedagg.Visible = false
+						end
+					else
+						framedagg.Visible = false
+						if FIRST_VALUE then
+							if FIRST_VALUE:FindFirstChild("ScriptHighlight") then
+								FIRST_VALUE:FindFirstChild("ScriptHighlight").Enabled = false
+							end
+							if FIRST_VALUE:FindFirstChild("ScriptNameTag") then
+								FIRST_VALUE:FindFirstChild("ScriptNameTag").Enabled = false
+							end
+						end
+					end
+				end
+			end
+		end)
+	end
+
+
+
+	local function noclip()
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA "Part" then
+				v.CanCollide = false
+			end
+		end
+	end
+
+	local is_mobile = false
+	local user_input = game:GetService("UserInputService")
+	if user_input.TouchEnabled then
+		is_mobile = true
+	end
+	
+	local function FogR()
+		while wait() do
+			local Lighting = game:GetService("Lighting")
+			Lighting.FogEnd = 100000
+			Lighting.Brightness = 5
+			Lighting.GlobalShadows = false
+			Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+		end
+	end
+
+
+	-- GITHUB API
+	function update_checker(link)
+		local current_version = script_version
+		local pidorAS = game:HttpGet(link)
+		pidorAS = string.gsub(pidorAS, "^%s+", "")
+		pidorAS = string.gsub(pidorAS, "%s+$", "")
+		pidorAS = string.gsub(pidorAS, "[\r\n]+", "")
+		if current_version ~= pidorAS then
+			warn(script_name_f9 .. " New update available! Pls reload script or wait for update")
+			wait(1)
+			game.Players.LocalPlayer:Kick("NektoHub: New update available! Check discord")
+		else
+			print(script_name_f9 .. " New update dont found!")
+		end
+	end
+	
+	
+	
+	function exec_iden() 
+		local iden = identifyexecutor()
+		if iden == "Xeno" and iden == "Drift" then
+			wait(0.5)
+			game.CoreGui.NektoUI:Destroy()
+			error(script_name_f9 .. " Unsupported executor detected")
+		end
+	end
+	
+	
+	
+	local NotifUpdLib = {}
+	function NotifUpdLib:CreateNotificationUpdate()
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Update Info",
+			Text = "Update time: 21.07.2026 - 23:21(GMT+3)",
+			Duration = 15
+		})
+	end
+
+
+	-- ping + fps
+	local FrameMainLib = {}
+	function FrameMainLib:FrameStart()
+		local player = game.Players.LocalPlayer
+		local gui = Instance.new("ScreenGui")
+		gui.Name = "PerformanceDisplay"
+		gui.Parent = game.CoreGui
+		gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+
+		local frame = Instance.new("Frame")
+		frame.Name = "FPSFrame"
+		frame.Size = UDim2.new(0, 100, 0, 50)
+		frame.Position = UDim2.new(0, 0, 0.109, 0)
+		frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		frame.BackgroundTransparency = 0.1
+		frame.BorderSizePixel = 1
+		frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		frame.Parent = gui
+		--frame.IgnoreGuiInset = true
+
+		local framePING = Instance.new("Frame")
+		framePING.Name = "PingFrame"
+		framePING.Size = UDim2.new(0, 100, 0, 50)
+		framePING.Position = UDim2.new(0, 0, 0.109, -52)
+		framePING.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		framePING.BackgroundTransparency = 0.1
+		framePING.BorderSizePixel = 1
+		framePING.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		framePING.Parent = gui
+		--framePING.IgnoreGuiInset = true
+
+		local frameU = Instance.new("Frame")
+		frameU.Name = "MainFrameU"
+		frameU.Size = UDim2.new(0, 200, 0, 37)
+		frameU.Position = UDim2.new(0, 0, 0.163, 0)
+		frameU.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		frameU.BackgroundTransparency = 0.1
+		frameU.BorderSizePixel = 1
+		frameU.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		frameU.Parent = gui
+		--frameU.IgnoreGuiInset = true
+
+
+		local corners = Instance.new("UICorner")
+		corners.CornerRadius = UDim.new(0, 5)
+		corners.Parent = frame
+
+		local cornersU = Instance.new("UICorner")
+		cornersU.CornerRadius = UDim.new(0, 5)
+		cornersU.Parent = frameU
+
+		local cornersPING = Instance.new("UICorner")
+		cornersPING.CornerRadius = UDim.new(0, 5)
+		cornersPING.Parent = framePING
+
+
+		local fpsLabel = Instance.new("TextLabel")
+		fpsLabel.Name = "FPSLabel"
+		fpsLabel.Size = UDim2.new(1, 0, 0.649, 0)
+		fpsLabel.Position = UDim2.new(0, 0, 0.162, 0)
+		fpsLabel.BackgroundTransparency = 1
+		fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+		fpsLabel.TextSize = 16
+		fpsLabel.Font = Enum.Font.SourceSansBold
+		fpsLabel.Text = "FPS: 0"
+		fpsLabel.TextXAlignment = Enum.TextXAlignment.Center
+		fpsLabel.Parent = frame
+
+		local pingLabel = Instance.new("TextLabel")
+		pingLabel.Name = "PINGLabel"
+		pingLabel.Size = UDim2.new(1, 0, 0.649, 0)
+		pingLabel.Position = UDim2.new(0, 0, 0.162, 0)
+		pingLabel.BackgroundTransparency = 1
+		pingLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+		pingLabel.TextSize = 16
+		pingLabel.Font = Enum.Font.SourceSansBold
+		pingLabel.TextXAlignment = Enum.TextXAlignment.Center
+		pingLabel.Parent = framePING
+
+		local UpdLabel = Instance.new("TextLabel")
+		UpdLabel.Name = "UPDLabel"
+		UpdLabel.Size = UDim2.new(1, 0, 0.649, 0)
+		UpdLabel.Position = UDim2.new(-0.016, 0, 0.164, 0)
+		UpdLabel.BackgroundTransparency = 1
+		UpdLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+		UpdLabel.TextSize = 16
+		UpdLabel.Font = Enum.Font.SourceSansBold
+		UpdLabel.Text = "Last Update Time: 21.07.2026"
+		UpdLabel.TextXAlignment = Enum.TextXAlignment.Center
+		UpdLabel.Parent = frameU
+
+
+
+		local frames = 0
+		local lastTime = tick()
+
+
+		local function updateFPS()
+			frames = frames + 1
+			local currentTime = tick()
+			local delta = currentTime - lastTime
+
+			if delta >= 1 then
+				local fps = frames / delta
+				frames = 0
+				lastTime = currentTime
+
+
+				fpsLabel.Text = string.format("FPS: %.1f", fps)
+
+
+				if fps >= 60 then
+					fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+				elseif fps >= 30 then
+					fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+				else
+					fpsLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+				end
+			end
+		end
+
+
+		local function updateWT() -- не юзабельно, хз когда оптимизирую
+			local speed = 0.5
+			local lastUpdate = 0
+			local updateInterval = 0.05
+
+
+			while true do
+				local currentTime = tick()
+
+				if currentTime - lastUpdate >= updateInterval then
+					lastUpdate = currentTime
+
+					local time = os.clock() * speed
+
+
+					local sinVal = math.sin
+					local floorVal = math.floor
+
+					local r = floorVal((sinVal(time) + 1) * 127.5)
+					local g = floorVal((sinVal(time + 2) + 1) * 127.5)
+					local b = floorVal((sinVal(time + 4) + 1) * 127.5)
+
+
+					local newColor = Color3.fromRGB(r, g, b)
+					if WatermarkLabel.TextColor3 ~= newColor then
+						WatermarkLabel.TextColor3 = newColor
+					end
+				end
+
+
+				task.wait(0.024) -- ~240 FPS
+			end
+		end
+
+		local function updatePing()
+			local currentPing2 = player:GetNetworkPing()
+			local currentPing1 = currentPing2 * 1000
+			local currentPing = math.floor(currentPing1)
+			pingLabel.Text = string.format("Ping: %dms", currentPing)
+			if currentPing >= 20 then
+				pingLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif currentPing >= 120 then
+				pingLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+			else
+				pingLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+			end
+		end
+
+
+
+
+		game:GetService("RunService").RenderStepped:Connect(function()
+			updateFPS()
+		end)
+
+		game:GetService("RunService").RenderStepped:Connect(function()
+			updatePing()
+		end)
+	end
+
+
+	update_checker("https://raw.githubusercontent.com/werumZov/nthubupd/refs/heads/main/npthubsd")
+	getgenvsyntax()
+
+	-- main onload
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/werumZov/nektoui/refs/heads/main/source')))()
+	local Window = OrionLib:MakeWindow({ Name = "NektoHub-v1.9951", HidePremium = false, SaveConfig = true, ConfigFolder = "NektoHubRM", IntroText = "Nekto Hub v1.9951" })
+	
+	css_client_uid("x70psq", "nekto-12jahauhdbafjb8972geha")
+	exec_iden()
+	
+	-- ui loads
+	FrameMainLib:FrameStart()
+	NotifUpdLib:CreateNotificationUpdate()
+
+
+	-- tabs and etc
+	local Tab = Window:MakeTab({ Name = "Global - 1", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+	local TabChar = Window:MakeTab({ Name = "Character", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+	local Night2 = Window:MakeTab({ Name = "Night 2", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+	local Night3 = Window:MakeTab({ Name = "Night 3", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+	
+	local Mansion = Window:MakeTab({ Name = "Mansion", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+	
+	local Spirit = Window:MakeTab({ Name = "Spirit", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+	local Bunker = Window:MakeTab({ Name = "Bunker", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+	local Tab2 = Window:MakeTab({ Name = "Teleports", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+	local modif = Window:MakeTab({ Name = "Modifers", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+
+	local misc = Window:MakeTab({
+		Name = "Misc",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+	local plr = Window:MakeTab({
+		Name = "Players",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+
+	local mn = Window:MakeTab({
+		Name = "Monster Gamemode",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+	local RandomTab = Window:MakeTab({
+		Name = "Visual",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+	local cfgTab = Window:MakeTab({
+		Name = "Config",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+	local ChangeLogTab = Window:MakeTab({
+		Name = "Change Log",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+	local AboutTab = Window:MakeTab({
+		Name = "About",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+
+
+
+
+	-- Mansion + MansionW
+	Mansion:AddParagraph("Information about this tab", "*Auto FlashLight Battery can contains bugs")
+
+	local SectionE = Mansion:AddSection({
+		Name = "Esp"
+	})
+
+	Mansion:AddButton({
+		Name = "Kid ESP",
+		Default = true,
+		Callback = function()
+			local a = true
+			new_esp(game.ReplicatedStorage.Kid, Color3.new(255, 255, 255), "KID-EPSTEIN", a, 0.8)
+			wait(0.05)
+			show_notification("Kid Esp enabled")
+		end
+	})
+
+	local SectionM = Mansion:AddSection({
+		Name = "Main"
+	})
+
+	Mansion:AddToggle({
+		Name = "Zero Danger",
+		Default = false,
+		Save = true,
+		Flag = "toggleZero",
+		Callback = function()
+			game:GetService("RunService").RenderStepped:Connect(function()
+				if game.PlaceId == 124095328184825 - 109 - 1885 then
+					local danger = game.Players.LocalPlayer.Character:FindFirstChild("Danger")
+					if danger then danger.Value = 0 end
+				end
+			end)
+		end
+	})
+
+    local cand_bowl = false
+	local support_fire_click_detector = true
+	Mansion:AddToggle({
+		Name = "Auto Candy Bowl",
+		Save = true,
+		Default = false,
+		Flag = "toggleCandy",
+		Callback = function(v)
+			cand_bowl = v
+			local auto_candy_boil_cd = false
+			if game.PlaceId == 124095328182831 then
+				game:GetService("RunService").RenderStepped:Connect(function()
+					if auto_candy_boil_cd == false then
+						if support_fire_click_detector == true then
+							local player = game.Players.LocalPlayer
+							if not player then return end
+							local character = player.Character
+							if not character then return end
+							local humanoidrootpart412 = character:FindFirstChild("HumanoidRootPart")
+							if not humanoidrootpart412 then return end
+							local CandyBowl = workspace:FindFirstChild("CandyBowl")
+							if CandyBowl then
+								local FakeCandyBag = workspace:FindFirstChild("FakeCandyBag")
+								if not FakeCandyBag then return end
+								local CandyBag = workspace:FindFirstChild("CandyBag")
+								if not CandyBag then
+									local po1 = CandyBowl:FindFirstChild("1")
+									local po2 = CandyBowl:FindFirstChild("2")
+									local po3 = CandyBowl:FindFirstChild("3")
+									if not po1 or not po2 or not po3 then return end
+									local po1v2 = po1:FindFirstChild("Decal")
+									local po2v2 = po2:FindFirstChild("Decal")
+									local po3v2 = po3:FindFirstChild("Decal")
+									if not po1v2 or not po2v2 or not po3v2 then return end
+									if po1v2.Transparency == 1 and po2v2.Transparency == 1 and po3v2.Transparency == 1 then
+										auto_candy_boil_cd = true
+										fireclickdetector(FakeCandyBag.ClickDetector)
+										wait(0.6)
+										while CandyBowl.ClickDetector.MaxActivationDistance == 0 do
+											task.wait()
+										end
+										fireclickdetector(CandyBowl.ClickDetector)
+										wait(1)
+										auto_candy_boil_cd = false
+									end
+								end
+							end
+
+						end
+					end
+				end)
+			end
+		end
+	})
+
+    local btt_enabled = false
+	Mansion:AddToggle({
+		Name = "Auto FlashLight Battery",
+		Save = true,
+		Flag = "toggleFlash",
+		Callback = function(v)
+			btt_enabled = v 
+				if game.PlaceId == 124095328182831 then
+					game:GetService("RunService").RenderStepped:Connect(function()
+						wait(0.05)
+						local frameBt = game:GetService("Players").LocalPlayer.PlayerGui.FlashlightUI.Battery.Frame
+						local clcBt = game.Workspace.BatteryCrate:FindFirstChild("ClickDetector")
+						if frameBt.Size.X.Scale == 0 then
+							fireclickdetector(clcBt)
+						end
+					end)
+				end
+			end
+	})
+
+
+	-- Bunker
+	Bunker:AddParagraph("Information about this tab",
+		"PowerGrids & JerryCan esp works on old method")
+
+
+	local SectionM = Bunker:AddSection({
+		Name = "Main"
+	})
+
+	_G.InfO2B = false
+	Bunker:AddButton({
+		Name = "Abomination ESP",
+		Default = true,
+		Callback = function()
+			local a = true
+			new_esp(game.Workspace.BunkerRat, Color3.new(255, 255, 255), "Abomination", a, 0.8)
+			wait(0.05)
+			show_notification("Abomination Esp enabled")
+		end
+	})
+
+	Bunker:AddButton({
+		Name = "Kill Abomination",
+		Callback = function()
+			local ReplicatedStorage = game:GetService("ReplicatedStorage")
+			local killEvent = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("KillPlayer")
+			killEvent:FireServer()
+			wait(0.05)
+			show_notification("Abomination succesfully killed")
+		end
+	})
+
+
+	local SectionG = Bunker:AddSection({
+		Name = "Power Grids"
+	})
+
+	Bunker:AddButton({
+		Name = "Power Grid 1 ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "Grid 1",
+				Part = game.Workspace.PowerGrids:WaitForChild("1").Tally,
+				TextSize = 9,
+				TextColor = Color3.new(255, 0, 0),
+				BoxColor = Color3.new(255, 0, 0),
+				TracerColor = Color3.new(255, 0, 0),
+				TracerWidth = 1
+			})
+		end
+	})
+
+	Bunker:AddButton({
+		Name = "Power Grid 2 ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "Grid 2",
+				Part = game.Workspace.PowerGrids:WaitForChild("2").Tally,
+				TextSize = 9,
+				TextColor = Color3.new(255, 0, 0),
+				BoxColor = Color3.new(255, 0, 0),
+				TracerColor = Color3.new(255, 0, 0),
+				TracerWidth = 1
+			})
+		end
+	})
+
+	Bunker:AddButton({
+		Name = "Power Grid 3 ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "Grid 3",
+				Part = game.Workspace.PowerGrids:WaitForChild("3").Tally,
+				TextSize = 9,
+				TextColor = Color3.new(255, 0, 0),
+				BoxColor = Color3.new(255, 0, 0),
+				TracerColor = Color3.new(255, 0, 0),
+				TracerWidth = 1
+			})
+		end
+	})
+
+	Bunker:AddButton({
+		Name = "Power Grid 4 ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "Grid 4",
+				Part = game.Workspace.PowerGrids:WaitForChild("4").Tally,
+				TextSize = 9,
+				TextColor = Color3.new(255, 0, 0),
+				BoxColor = Color3.new(255, 0, 0),
+				TracerColor = Color3.new(255, 0, 0),
+				TracerWidth = 1
+			})
+		end
+	})
+
+
+	local SectionO = Bunker:AddSection({
+		Name = "Other"
+	})
+
+
+	Bunker:AddButton({
+		Name = "JerryCan ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "JerryCan",
+				Part = game.Workspace.JerryCans.JerryCan:WaitForChild("Wedge"),
+				TextSize = 9,
+				TextColor = Color3.new(0, 0, 255),
+				BoxColor = Color3.new(0, 0, 255),
+				TracerColor = Color3.new(0, 0, 255),
+				TracerWidth = 2
+			})
+		end
+	})
+
+	Bunker:AddButton({
+		Name = "Generator ESP",
+		Callback = function()
+			local a = true
+			new_esp(game.Workspace.Generator.Main, Color3.new(0, 255, 0), "Generator", a, 0.6)
+			wait(0.05)
+			show_notification("Generator Esp enabled")
+		end
+	})
+
+	-- Spirit
+	local pidor_spirit = false
+	Spirit:AddToggle({
+		Name = "Auto Spirit Helper",
+		Save = true,
+		Default = true,
+		Flag = "toggleAutoSpirit",
+		Callback = function(v)
+			pidor_spirit = v
+				if game.PlaceId == 14908286297 then
+						local IS_MONSTER = false
+						local monsterFolder = workspace:WaitForChild("Monster")
+						local previousProgress = {}
+						local activeTrigger = {}
+						local pendingChecks = {}
+						local function check_monster()
+							local anyActiveTrigger = false
+							for _, model in pairs(monsterFolder:GetChildren()) do
+								if not model:IsA("Model") or model.Name == "Closet" then
+									continue
+								end
+								local progressValue = model:FindFirstChild("Progress")
+								if not (progressValue and progressValue:IsA("NumberValue")) then
+									continue
+								end
+								local current = progressValue.Value
+								local prev = previousProgress[model.Name] or 0
+								previousProgress[model.Name] = current
+								if pendingChecks[model.Name] then
+									continue
+								end
+								if activeTrigger[model.Name] then
+									if current ~= 3 then
+										activeTrigger[model.Name] = nil
+									else
+										anyActiveTrigger = true
+									end
+								else
+									if prev == 2 and current == 3 then
+										pendingChecks[model.Name] = true
+										task.spawn(function()
+											task.wait(0.2)
+											local modelCheck = monsterFolder:FindFirstChild(model.Name)
+											if not modelCheck then
+												pendingChecks[model.Name] = nil
+												return
+											end
+											local progressCheck = modelCheck:FindFirstChild("Progress")
+											local now = (progressCheck and progressCheck:IsA("NumberValue")) and progressCheck.Value or -1
+											if now == 3 then
+												activeTrigger[model.Name] = true
+												anyActiveTrigger = true
+											else
+												activeTrigger[model.Name] = nil
+											end
+											pendingChecks[model.Name] = nil
+										end)
+									end
+								end
+							end
+							IS_MONSTER = anyActiveTrigger
+						end
+						local spirit_rs_cd = false
+						game:GetService("RunService").RenderStepped:Connect(function()
+							if spirit_rs_cd == false then
+								spirit_rs_cd = true
+								check_monster()
+							local plr = game.Players.LocalPlayer.Character
+							local lamp = game.Workspace.Lamp
+							local bed = game.Workspace.Bed
+							local tbear = game.Workspace:FindFirstChild("Teddy bear")
+							local clock = game.Workspace.Radio
+							local sanity = plr.Sanity
+
+							local window = game.Workspace.Monster.Window.Progress.Value
+							local door = game.Workspace.Monster.Door.Progress.Value
+							local vent = game.Workspace.Monster.Vent.Progress.Value
+
+							local heat = lamp.Heat.Value
+							local light = lamp.Bulb.PointLight.Enabled
+
+							local clc_lamp = lamp.ClickDetector
+							local clc_bed = bed.Detectors.Detector1.ClickDetector
+							local clc_bed2 = bed.Detectors.Detector2.ClickDetector
+							local clc_tbear = tbear.ClickDetector
+							local clc_clock = clock.ClickDetector
+								if IS_MONSTER == false and bed.Hidden.Value == false then 
+									if clc_clock.MaxActivationDistance > 0 then	
+										game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-10.4044113, 5.00000334, 16.6453609, -0.0674342215, -7.93165071e-08, 0.997723699, 1.08398401e-08, 1, 8.02301088e-08, -0.997723699, 1.6225421e-08, -0.0674342215)
+										fireclickdetector(clc_clock)
+									else
+										if heat <= 30 and light == false then
+											game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9.89709663, 5.00000334, 18.5351982, 0.00391950598, -1.26934052e-09, 0.999992311, 1.08748999e-07, 1, 8.43104642e-10, -0.999992311, 1.08744857e-07, 0.00391950598)
+											fireclickdetector(clc_lamp)
+										elseif heat >= 70 and light == true then
+											game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9.89709663, 5.00000334, 18.5351982, 0.00391950598, -1.26934052e-09, 0.999992311, 1.08748999e-07, 1, 8.43104642e-10, -0.999992311, 1.08744857e-07, 0.00391950598)
+											fireclickdetector(clc_lamp)
+										elseif heat > 30 and heat < 70 then
+											game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9.89709663, 5.00000334, 18.5351982, 0.00391950598, -1.26934052e-09, 0.999992311, 1.08748999e-07, 1, 8.43104642e-10, -0.999992311, 1.08744857e-07, 0.00391950598)
+											if clc_tbear.MaxActivationDistance > 0 then
+												game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8.32593918, 5.00000334, -9.43118858, 0.999313593, 2.59117634e-08, 0.0370455198, -2.71939431e-08, 1, 3.41070141e-08, -0.0370455198, -3.50910163e-08, 0.999313593)
+												fireclickdetector(clc_tbear)
+											else		
+												game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9.89709663, 5.00000334, 18.5351982, 0.00391950598, -1.26934052e-09, 0.999992311, 1.08748999e-07, 1, 8.43104642e-10, -0.999992311, 1.08744857e-07, 0.00391950598)
+											end
+										else
+											game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9.89709663, 5.00000334, 18.5351982, 0.00391950598, -1.26934052e-09, 0.999992311, 1.08748999e-07, 1, 8.43104642e-10, -0.999992311, 1.08744857e-07, 0.00391950598)
+										end
+									end
+								elseif IS_MONSTER == false and bed.Hidden.Value == true then
+									fireclickdetector(clc_bed)
+								elseif IS_MONSTER == true and bed.Hidden.Value == false then
+									if light == true then
+										fireclickdetector(clc_lamp)
+									end
+									wait(0.05)
+									fireclickdetector(clc_bed)
+								end
+								wait(0.05)
+								spirit_rs_cd = false
+					end
+				end)
+			end
+		end
+	})
+	
+
+
+	-- Night 3
+
+	Night3:AddButton({
+		Name = "Worker ESP",
+		Default = true,
+		Callback = function()
+			if game.PlaceId == 140260816701736 then
+				local a = true
+				new_esp(game.ReplicatedStorage.Mutant, Color3.new(255, 0, 0), "Worker", a, 0.8)
+				wait(0.05)
+				show_notification("Worker Esp enabled")
+			end
+		end
+	})
+
+	Night3:AddButton({
+		Name = "Spider ESP",
+		Default = true,
+		Callback = function()
+			if game.PlaceId == 140260816701736 then
+				local a = true
+				new_esp(game.ReplicatedStorage.WorkerHead, Color3.new(255, 255, 255), "Spider", a, 0.8)
+				wait(0.05)
+				show_notification("Spider Esp enabled")
+			end
+		end
+	})
+
+	local SectionO2 = Night3:AddSection({
+		Name = "Ammo Piles"
+	})
+
+	Night3:AddButton({
+		Name = "Ammo ESP",
+		Default = true,
+		Callback = function()
+			local a = true
+			local AmmoPiles = workspace:FindFirstChild("AmmoPiles")
+			wait(0.05)
+			show_notification("Ammo Esp enabled")
+			if AmmoPiles then
+				for _, v in pairs(AmmoPiles:GetChildren()) do
+					local Detector = v:FindFirstChild("Detector")
+					if Detector then
+						local Log = v:FindFirstChild("Log")
+						if Log then
+							new_esp(Log, Color3.new(0.870588, 0.686275, 0.94902), "Ammo", a, 0.5)
+						end
+					end
+				end
+			end
+		end
+	})
+
+
+	local SectionO3 = Night3:AddSection({
+		Name = "Removes"
+	})
+
+	Night3:AddButton({
+		Name = "Remove Shotgun Blur",
+		Default = true,
+		Callback = function()
+			game.Lighting.ShotgunBlur.Enabled = false
+			show_notification("Remove Shotgun Blur enabled")
+		end
+	})
+
+	Night3:AddButton({
+		Name = "Remove Heartbeat Blur",
+		Default = true,
+		Callback = function()
+			game.Lighting.HeartBeatBlur.Enabled = false
+			show_notification("Remove Heartbeat Blur enabled")
+		end
+	})
+
+	Night3:AddButton({
+		Name = "Remove Hit Blur",
+		Default = true,
+		Callback = function()
+			game.Lighting.HitBlur.Enabled = false
+			show_notification("Remove Hit Blur enabled")
+		end
+	})
+
+
+	local Clip = false
+	_G.Noclip = false
+
+	local function NoclipLoop()
+		local speaker = game.Players.LocalPlayer
+
+
+		if speaker.Character ~= nil then
+			for _, child in pairs(speaker.Character:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= floatName then
+					child.CanCollide = false
+				end
+			end
+		end
+	end
+
+
+
+	local mainsec = TabChar:AddSection({
+		Name = "Main"
+	})
+	TabChar:AddToggle({
+		Name = "Noclip[GLOBAL] (jump after disabling)",
+		Flag = "toggleNoclip",
+		Default = false,
+		Save = true,
+		Callback = function(v)
+			_G.Noclip = v
+		end	
+	})
+	spawn(function()
+		while wait() do
+			if _G.Noclip then
+				NoclipLoop()
+			end
+		end
+	end)
+
+
+	local SpeedHackEnabled = false
+	local connection = nil
+
+	local function startSpeedHack()
+		if connection then return end
+		local tp_walk_cd = false
+		connection = game:GetService("RunService").RenderStepped:Connect(function()
+			if SpeedHackEnabled and game.Players.LocalPlayer.Character then
+				if tp_walk_cd == false then
+					tp_walk_cd = true
+					local character = game.Players.LocalPlayer.Character
+					local hrp = character:FindFirstChild("HumanoidRootPart")
+					local humanoid = character:FindFirstChild("Humanoid")
+
+					if hrp and humanoid then
+						local tp = hrp.CFrame + humanoid.MoveDirection -- 7/2 = 3.5 - значение не используется
+						hrp.CFrame = tp
+					end
+					task.wait(0.02)
+					tp_walk_cd = false
+				end
+			end
+		end)
+	end
+
+	local function stopSpeedHack()
+		if connection then
+			connection:Disconnect()
+			connection = nil
+		end
+	end
+
+	TabChar:AddToggle({
+		Name = "Speed Hack[GLOBAL]",
+		Flag = "toggleSp",
+		Save = true,
+		Default = false,
+		Callback = function(v)
+			SpeedHackEnabled = v
+			if v then
+				startSpeedHack()
+			else
+				stopSpeedHack()
+			end
+		end
+	})
+
+	_G.InfStam = false
+	_G.InfSanity = false
+	_G.InfO2 = false
+	_G.InfFood = false
+
+	TabChar:AddToggle({
+		Name = "Infinite Stam[GLOBAL]",
+		Default = true,
+		Flag = "toggleSt",
+		Save = true,
+		Callback = function(v)
+			_G.InfStam = v
+		end
+	})
+
+	TabChar:AddToggle({
+		Name = "Infinite Oxygen[GLOBAL - DONT WORKS IN BUNKER]",
+		Default = false,
+		Flag = "toggleOxmain",
+		Save = true,
+		Callback = function(v)
+			_G.InfO2 = v
+		end
+	})
+
+	TabChar:AddButton({
+		Name = "Anti Freeze",
+		Default = true,
+		Callback = function()
+			local pidaras = game.ReplicatedStorage.GameState.Blizzard
+			pidaras.Value = false
+			show_notification("Anti Freeze enabled")
+		end
+	})
+
+
+
+	-- Modifers
+	modif:AddButton({
+		Name = "Anti BloodMoon",
+		Default = true,
+		Callback = function()
+			local sasynn1 = game.ReplicatedStorage.GameState
+			sasynn1.Bloodmoon.Value = false
+		end
+	})
+
+	modif:AddButton({
+		Name = "Anti Graves",
+		Default = true,
+		Callback = function()
+			local sasynn2 = game.ReplicatedStorage.GameState
+			sasynn2.Zombies.Value = false
+		end
+	})
+
+	modif:AddButton({
+		Name = "Anti Thunderstorm",
+		Default = true,
+		Callback = function()
+			local sasynn3 = game.ReplicatedStorage.GameState
+			sasynn3.Thunderstorm.Value = false
+		end
+	})
+
+
+
+
+
+
+
+
+	-- Night 2
+	local SectionESP2 Night2:AddSection ({
+		Name = "Esp"
+	})
+
+	Night2:AddButton({
+		Name = "Mutant ESP",
+		Default = true,
+		Callback = function()
+			if game.PlaceId == 16667550979 then
+				local a = true
+				new_esp(game.ReplicatedStorage.Mutant, Color3.new(255, 0, 0), "Mutant", a, 0.8)
+				wait(0.05)
+				show_notification("Mutant Esp enabled")
+			end
+		end
+	})
+
+	Night2:AddButton({
+		Name = "Stalker ESP",
+		Default = true,
+		Callback = function()
+			local a = true
+			new_esp(game.ReplicatedStorage.Stalker, Color3.new(255, 255, 255), "Stalker", a, 0.8)
+			wait(0.05)
+			show_notification("Stalker Esp enabled")
+		end
+	})
+
+	local SectionMISC2 Night2:AddSection ({
+		Name = "Misc"
+	})
+
+	Night2:AddButton({
+		Name = "ReviveCharacter[ESP WILL BROKE - WORK ONLY IN NIGHT 2]",
+		Default = true,
+		Callback = function()
+			game:GetService("ReplicatedStorage").Remotes.LoadCharacter:FireServer()
+			show_notification("Succesfully revived character")
+		end
+	})
+
+
+
+	Tab:AddParagraph("Information about this tab",
+		"In the Multiversal section esp works on old method and dont works globaly(works only in multiversal modificator)\n*Now this modificator removed from game")
+
+	local Section = Tab:AddSection({
+		Name = "Main - GLOBAL FUNCTIONS"
+	})
+
+
+	-- Default(Night 1)
+	Tab:AddButton({
+		Name = "Larry ESP",
+		Callback = function()
+			local a = true
+			if game.PlaceId == 14896802601 then
+			new_esp(game.ReplicatedStorage.Mutant, Color3.new(255, 0, 0), "Larry", a, 0.8)
+			wait(0.05)
+			show_notification("Larry Esp enabled")
+			end
+		end
+	})
+
+	local items_cure = {}
+	Tab:AddButton({
+		Name = "Item ESP[GLOBAL]",
+		Callback = function()
+			local a = true
+			if game.PlaceId == 14896802601 or game.PlaceId == 16667550979 or game.PlaceId == 140260816701736 or game.PlaceId == 100255403764514 then
+				game:GetService("RunService").RenderStepped:Connect(function()
+					local itemsContainer = workspace:FindFirstChild("ItemSpots")
+					if itemsContainer then
+						local allItems = itemsContainer:GetChildren()
+						for _, targetItems in ipairs(allItems) do
+							local allChildren = targetItems:GetChildren()
+							for _, item in ipairs(allChildren) do
+								if item:IsA("Tool") or item:IsA("Model") then
+									if not table.find(items_cure, item) then
+										table.insert(items_cure, item)
+										if item:IsA("Tool") then
+											new_esp(item, Color3.new(0.647059, 0.505882, 1), item.Name, a, 0.7)
+										else
+											new_esp(item, Color3.new(0.647059, 0.505882, 1), item.Name, a, 0.7)
+										end
+									end
+								end
+							end
+						end
+					end
+				end)
+			end
+			wait(0.05)
+			show_notification("Item Esp enabled")
+		end
+	})
+
+	Tab:AddButton({
+		Name = "AutoWin (night 1)",
+		Callback = function()
+			if game.PlaceId == 14896802601 then
+			noclip()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5.88350201, 27.5749683, -70.5206757, 0, 0,
+				1, 0, 1, -0, -1, 0, 0)
+			end
+		end
+	})
+
+
+	local repair_cd = false
+	Tab:AddToggle({
+		Name = "Auto Fuse Box[NIGHT 1-2 ONLY]",
+		Flag = "toggleFuse1",
+		Save = true,
+		Callback = function()
+			if game.PlaceId == 14896802601 or game.PlaceId == 16667550979 then
+				game:GetService("RunService").Heartbeat:Connect(function()
+					if repair_cd == false then
+						local FuseBox = workspace:FindFirstChild("FuseBox")
+						if FuseBox then
+							local WarningSign = FuseBox:FindFirstChild("WarningSign")
+							if WarningSign then
+								if WarningSign.BillboardGui.Enabled == true then
+									local a = nil
+									if FuseBox.Wires["1"].Highlight.Enabled == true then
+										a = FuseBox.Wires["1"]
+									end
+									if FuseBox.Wires["2"].Highlight.Enabled == true then
+										a = FuseBox.Wires["2"]
+									end
+									if FuseBox.Wires["3"].Highlight.Enabled == true then
+										a = FuseBox.Wires["3"]
+									end
+									if FuseBox.Wires["4"].Highlight.Enabled == true then
+										a = FuseBox.Wires["4"]
+									end
+									if a ~= nil then
+										local Wrench = nil
+										local Wrench1 = game.Players.LocalPlayer.Character:FindFirstChild("Wrench")
+										local Wrench2 = game.Players.LocalPlayer.Backpack:FindFirstChild("Wrench")
+										if Wrench1 then
+											Wrench = Wrench1
+										end
+										if Wrench2 then
+											Wrench = Wrench2
+										end
+										if Wrench ~= nil then
+											local Item = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+											if Item then
+												if Item.Name ~= "Wrench" then
+													Item.Parent = game.Players.LocalPlayer.Backpack
+												end
+											end
+											local Wrench14 = game.Players.LocalPlayer.Backpack:FindFirstChild("Wrench")
+											if Wrench14 then
+												repair_cd = true
+												Wrench14.Parent = game.Players.LocalPlayer.Character
+												game.ReplicatedStorage.Remotes.ClickWire:FireServer(a)
+												wait(0.05)
+												if Item then
+													if Item.Name ~= "Wrench" then
+														Wrench14.Parent = game.Players.LocalPlayer.Backpack
+														Item.Parent = game.Players.LocalPlayer.Character
+													else
+
+													end
+												else
+													Wrench14.Parent = game.Players.LocalPlayer.Backpack
+												end
+												wait(1.95)
+												repair_cd = false
+											else
+												local Wrench14 = game.Players.LocalPlayer.Character:FindFirstChild("Wrench")
+												if Wrench14 then
+													repair_cd = true
+													Wrench14.Parent = game.Players.LocalPlayer.Character
+													game.ReplicatedStorage.Remotes.ClickWire:FireServer(a)
+													wait(0.05)
+													if Item then
+														if Item.Name ~= "Wrench" then
+															Wrench14.Parent = game.Players.LocalPlayer.Backpack
+															Item.Parent = game.Players.LocalPlayer.Character
+														else
+
+														end
+													else
+														Wrench14.Parent = game.Players.LocalPlayer.Backpack
+													end
+													wait(1.95)
+													repair_cd = false
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end)
+			end
+		end
+	})
+
+
+
+
+
+
+	Tab:AddButton({
+		Name = "Fullbright[GLOBAL]",
+		Callback = function()
+			local RunService = game:GetService("RunService")
+			game:GetService("RunService").Heartbeat:Connect(function()
+				game.Lighting.Atmosphere.Density = 0
+				game.Lighting.Atmosphere.Color = Color3.fromRGB(255, 255, 255)
+				game.Lighting.Ambient = Color3.fromRGB(255, 255, 255)
+			end)
+		end
+
+	})
+
+	Tab:AddButton({
+		Name = "Remove Fog(TEST) - [GLOBAL]",
+		Callback = function()
+			FogR()
+		end
+	})
+
+	Tab:AddButton({
+		Name = "Fov Changer - [GLOBAL]",
+		Callback = function()
+			game:GetService("RunService").Heartbeat:Connect(function()
+				game:GetService("TweenService"):Create(workspace.Camera,
+					TweenInfo.new(0.02, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), { FieldOfView = 120 }):Play()
+			end)
+		end
+	})
+
+
+	local ThirdPerson = false
+	local connection = nil
+
+	local function cameraPidor()
+		if connection then return end
+		connection = game:GetService("RunService").RenderStepped:Connect(function()
+			if ThirdPerson then
+				game.Players.LocalPlayer.CameraMode = Enum.CameraMode.Classic
+			end
+		end)
+	end
+
+	Tab:AddToggle({
+		Name = "3rd Person View In-House[GLOBAL]",
+		Flag = "toggle3rd",
+		Save = true,
+		Default = true,
+		Callback = function(v)
+			ThirdPerson = v
+			if v then
+				cameraPidor()
+			end
+		end
+	})
+
+
+	Tab:AddButton({
+		Name = "Unlimited FlashLight battery[GLOBAL]",
+		Callback = function()
+			game:GetService("RunService").RenderStepped:Connect(function()
+			local plr = game.Players.LocalPlayer.Character
+
+			plr.Flashlight.Battery.Value = 999999
+			plr.Flashlight.Charges.Value = 999999
+			show_notification("Unlimited FlashLight battery enabled")
+			end)
+		end
+	})
+
+
+
+	local SectionVisual = Tab:AddSection({
+		Name = "Removes"
+	})
+
+
+	Tab:AddButton({
+		Name = "Remove Vignette[GLOBAL]",
+		Default = true,
+		Callback = function()
+			game:GetService("RunService").Heartbeat:Connect(function()
+				local DialogueUI = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("DialogueUI")
+				if DialogueUI then
+					local Vignette = DialogueUI:FindFirstChild("Vignette")
+					if Vignette then
+						Vignette.Visible = false
+					end
+				end
+			end)
+			wait(0.05)
+			show_notification("Remove Vignette enabled")
+		end
+	})
+
+	Tab:AddButton({
+		Name = "Remove Statics[GLOBAL - 1,2 NIGHTS]",
+		Default = true,
+		Callback = function()
+			game:GetService("RunService").Heartbeat:Connect(function()
+				local DialogueUI = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("DialogueUI")
+				if DialogueUI then
+					local Static = DialogueUI:FindFirstChild("Static")
+					if Static then
+						Static.Visible = false
+					end
+				end
+			end)
+			wait(0.05)
+			show_notification("Remove Statics enabled")
+		end
+	})
+
+	Tab:AddButton({
+		Name = "Remove Monochrome[GLOBAL-GRAVES]",
+		Default = true,
+		Callback = function()
+			game.Lighting.Monochrome.Enabled = false
+			wait(0.05)
+			show_notification("Remove Monochrome enabled")
+		end
+	})
+
+	--Tab:AddButton({
+	--	Name = "Remove Tutorial[GLOBAL]",
+	--	Callback = function()
+	--	game.StarterGui.DialogueUI.TutorialFrame.Visible = false
+	--	end
+	--})
+
+
+
+
+	local SectionMulti = Tab:AddSection({
+		Name = "Multiversal"
+	})
+
+	Tab:AddButton({
+		Name = "Dad ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "DAD IS HERE",
+				Part = game.Workspace:WaitForChild("WeirdDad").HumanoidRootPart,
+				TextSize = 10,
+				TextColor = Color3.new(255, 255, 0),
+				BoxColor = Color3.new(255, 255, 0),
+				TracerColor = Color3.new(255, 255, 0),
+				TracerWidth = 3
+			})
+		end
+	})
+
+	Tab:AddButton({
+		Name = "Winterhorn ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "Winterhorn",
+				Part = game.Workspace:WaitForChild("Winterhorn").HumanoidRootPart,
+				TextSize = 9,
+				TextColor = Color3.new(255, 250, 0),
+				BoxColor = Color3.new(255, 250, 0),
+				TracerColor = Color3.new(255, 250, 0),
+				TracerWidth = 3
+			})
+		end
+	})
+
+	Tab:AddButton({
+		Name = "Intruder ESP",
+		Callback = function()
+			ESPLib:CreateESPTag({
+				Text = "INTRUDER",
+				Part = game.Workspace:WaitForChild("Intruder").Head,
+				TextSize = 9,
+				TextColor = Color3.new(0, 0, 0),
+				BoxColor = Color3.new(0, 0, 0),
+				TracerColor = Color3.new(0, 0, 0),
+				TracerWidth = 3
+			})
+		end
+	})
+
+
+
+	spawn(function()
+		while wait() do
+			if _G.InfO2 then
+				game.Players.LocalPlayer.Character.Breath.Value = 9999
+			elseif not _G.InfO2 then
+
+			end
+		end
+	end)
+
+
+	spawn(function()
+		while wait() do
+			if _G.InfStam then
+				game.Players.LocalPlayer.Character.Sprint.Overdrive.Value = 9999
+			elseif not _G.InfStam then
+
+			end
+		end
+	end)
+
+
+
+
+	local Section1 = Tab2:AddSection({
+		Name = "Night 1"
+	})
+
+	local function b(t, c)
+		Tab2:AddButton({
+			Name = t,
+			Callback = c
+		})
+	end
+
+	local function tp(cframe)
+		game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(cframe)
+	end
+
+	b("TP to Bedroom", function()
+		if game.PlaceId == 14896802601 then
+			tp(CFrame.new(-26.4822197, 25.2999763, -70.1086578, 0.0224343352, -3.52125333e-08, 0.999748349, 1.10617968e-08, 1,
+				3.49731728e-08, -0.999748349, 1.02744133e-08, 0.0224343352))
+		end
+	end)
+
+	b("TP to Bathroom", function()
+		if game.PlaceId == 14896802601 then
+			tp(CFrame.new(-30.7616272, 25.2665825, -52.872654, -0.88530308, -0.00215160637, -0.46500957, -9.70951419e-07,
+				0.999989271, -0.00462511973, 0.465014547, -0.00409418205, -0.885293603))
+		end
+	end)
+
+	b("TP to Ladder", function()
+		if game.PlaceId == 14896802601 then
+			tp(CFrame.new(-0.173666388, 9.29997444, -81.3216171, 0.71976018, 4.61229028e-08, -0.694222808, 2.05241513e-08, 1,
+				8.7717325e-08, 0.694222808, -7.73837669e-08, 0.71976018))
+		end
+	end)
+
+	b("TP to Living room", function()
+		if game.PlaceId == 14896802601 then
+			tp(CFrame.new(-30.4597397, 9.54158783, -48.7385521, -0.716877401, -3.08829655e-08, -0.697199285, 5.5513663e-08, 1,
+				-1.01376258e-07, 0.697199285, -1.11378434e-07, -0.716877401))
+		end
+	end)
+
+	b("TP to generator", function()
+		if game.PlaceId == 14896802601 then
+			tp(CFrame.new(-79.0926361, 6.17452288, -132.726837, 0.999816597, 1.17400432e-05, 0.0191521458, -1.32483137e-07,
+				0.999999821, -0.000605979934, -0.0191521496, 0.000605866197, 0.999816418))
+		end
+	end)
+
+	b("TP to power console", function()
+		if game.PlaceId == 14896802601 then
+			tp(CFrame.new(-2.41564226, 6.19921589, -92.5593948, -0.98161006, 0.000280018401, -0.190896764, -1.27568831e-06,
+				0.999998927, 0.00147344405, 0.190896958, 0.00144659204, -0.981608987))
+		end
+	end)
+
+	local Section2 = Tab2:AddSection({
+		Name = "Night 3"
+	})
+
+	b("TP to cabin 1(enter in invis wall)", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(103.196289, 1.32511044, -257.749939, -1, 0, 0, 0, 1, 0, 0, 0, -1))
+		end
+	end)
+
+	b("TP to cabin 1", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(102.19632, 11.1778259, -243.749954, -1.1920929e-07, -0, -1.00000012, 0, 1, -0, 1.00000012, 0,
+				-1.1920929e-07))
+		end
+	end)
+
+	b("TP to cabin 2", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(-34.0536728, 11.1778269, 67.7500153, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+		end
+	end)
+
+	b("TP to cabin 3", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(-39.053688, 11.1778278, 267.694946, -1, 0, 0, 0, 1, 0, 0, 0, -1))
+		end
+	end)
+
+	b("TP to right ammo 1(cabin 1)", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(-46.8036766, 2.4266336, -68.25, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+		end
+	end)
+
+	b("TP to right ammo 2(cabin 1)", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(-6.80367327, 2.4266336, -153.25, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+		end
+	end)
+
+	b("TP to left ammo 1(cabin 2)", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(96.9999847, 2.4266336, 178, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+		end
+	end)
+
+	b("TP to left ammo 2(cabin 3)", function()
+		if game.PlaceId == 140260816701736 then
+			tp(CFrame.new(48.6963272, 2.4266336, 282.75, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+		end
+	end)
+
+
+	local Section3 = Tab2:AddSection({
+		Name = "Bunker"
+	})
+
+	b("TP to the generator", function()
+		if game.PlaceId == 100255403764514 then
+			tp(CFrame.new(-33.9844055, 16.7331085, -154.5, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+		end
+	end)
+
+	b("TP to the ventelation", function()
+		if game.PlaceId == 100255403764514 then
+			tp(CFrame.new(63.8999825, 20.5001945, 65.5, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+		end
+	end)
+
+
+
+
+	local InfBlood = false
+
+	mn:AddToggle({
+		Name = "Infinite Blood",
+		Default = false,
+		Callback = function(v)
+			InfBlood = v
+		end
+	})
+
+	spawn(function()
+		game.RunService.RenderStepped:Connect(function()
+			if InfBlood then
+				task.wait()
+				game.Players.LocalPlayer.Character:WaitForChild("Blood").Value = 999998927
+			end
+		end)
+	end)
+
+	mn:AddButton({
+		Name = "Large Hitbox",
+		Callback = function()
+			for i, v in pairs(game.Players:GetChildren()) do
+				if v:IsA("Player") and v.Name ~= game.Players.LocalPlayer.Name then
+					v.Character.HumanoidRootPart.Size = Vector3.new(100, 100, 100)
+				end
+			end
+		end
+	})
+
+
+	misc:AddParagraph("Information about this tab",
+		"GrabItem Aura dont works on executors which dont have fireclickdetector support")
+	local itemgrab = false
+
+	misc:AddToggle({
+		Name = "GrabItem Aura",
+		Default = false,
+		Callback = function(v)
+			itemgrab = v
+		end
+	})
+
+	spawn(function()
+		game.RunService.RenderStepped:Connect(function()
+			if itemgrab then
+				task.wait(1)
+				for i, v in pairs(game.Workspace:GetDescendants()) do
+					if v:IsA("Tool") or table.find({ "Flashlight", "Wrench", "Battery", "BloxyCola" }, v.Name) then
+						fireclickdetector(v:FindFirstChild("ClickDetector"))
+					end
+				end
+			end
+		end)
+	end)
+
+
+	plr:AddParagraph("Information about this tab",
+		"This tab for pvp mode")
+	local players = {}
+
+	local playersDropdown = plr:AddDropdown({
+		Name = "Players",
+		Default = "PlayerName",
+		Options = players,
+		Callback = function(selectedPlayer)
+			targ = selectedPlayer
+		end
+	})
+
+	function UpdatePlayersTable()
+		players = {}
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player ~= game.Players.LocalPlayer then
+				table.insert(players, player.Name)
+			end
+		end
+
+		playersDropdown:Refresh(players, true)
+	end
+
+	spawn(function()
+		while wait(0.5) do
+			UpdatePlayersTable()
+		end
+	end)
+
+	plr:AddButton({
+		Name = "TP to Player",
+		Callback = function()
+			if targ == nil or targ == "" or targ == " " then
+				game.StarterGui:SetCore("SendNotification", {
+					Title = "Player is nil!",
+					Text = "Target not selected",
+					Duration = 5
+				})
+			else
+				game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players[targ].Character.PrimaryPart.CFrame)
+			end
+		end
+	})
+
+	plr:AddButton({
+		Name = "ESP to Player",
+		Callback = function()
+			if targ == "" or targ == " " then
+				game.StarterGui:SetCore("SendNotification", {
+					Title = "Player is nil!",
+					Text = "Target not selected",
+					Duration = 5
+				})
+			else
+				local bi = Instance.new("BillboardGui", game.Players[targ].Character.HumanoidRootPart)
+				bi.Name = "ESP"
+				bi.StudsOffset = Vector3.new(0, game.Players[targ].Character.HumanoidRootPart.Size.Y + 6, 0)
+				bi.Adornee = game.Players[targ].Character.HumanoidRootPart
+				bi.AlwaysOnTop = true
+				bi.Size = UDim2.new(0, 200, 0, 50)
+
+				local esplabelfr = Instance.new("TextLabel")
+				esplabelfr.Name = "esplabelfr"
+				esplabelfr.Text = targ
+				esplabelfr.Size = UDim2.new(1, 0, 0, 70)
+				esplabelfr.BackgroundColor3 = Color3.new(0, 0, 0)
+				esplabelfr.TextColor3 = TextColor or Color3.fromRGB(255, 255, 255)
+				esplabelfr.BackgroundTransparency = 1
+				esplabelfr.TextStrokeTransparency = 0
+				esplabelfr.TextStrokeColor3 = Color3.new(0, 0, 0)
+				esplabelfr.TextSize = 12
+				esplabelfr.TextScaled = false
+				esplabelfr.Font = "Arcade"
+				esplabelfr.Parent = bi
+			end
+		end
+	})
+
+	plr:AddButton({
+		Name = "Tween to Player",
+		Callback = function()
+			if targ == "" or targ == " " then
+				game.StarterGui:SetCore("SendNotification", {
+					Title = "Player is nil!",
+					Text = "Target not selected",
+					Duration = 5
+				})
+			else
+				local ts = game:GetService("TweenService")
+
+				local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+				local targetHumanoidRootPart = game.Players[targ].Character.HumanoidRootPart
+
+				local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+
+				local propertyGoals = {
+					CFrame = targetHumanoidRootPart.CFrame
+				}
+
+				local tween = ts:Create(humanoidRootPart, tweenInfo, propertyGoals)
+				tween:Play()
+			end
+		end
+	})
+
+	local cbring = false
+
+	plr:AddToggle({
+		Name = "Client-Bring Player",
+		Default = false,
+		Callback = function(v)
+			cbring = v
+
+			if targ == nil or targ == "" or targ == " " then
+				game.StarterGui:SetCore("SendNotification", {
+					Title = "Player is nil!",
+					Text = "Target not selected",
+					Duration = 5
+				})
+			else
+				while task.wait(.1) do
+					if cbring then
+						game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character
+							.PrimaryPart.CFrame
+					end
+				end
+			end
+		end
+	})
+
+	plr:AddButton({
+		Name = "Increase Player Hitbox",
+		Callback = function()
+			if targ == nil or targ == "" or targ == " " then
+				game.StarterGui:SetCore("SendNotification", {
+					Title = "Player is nil!",
+					Text = "Target not selected",
+					Duration = 5
+				})
+			else
+				while task.wait(.1) do
+					game.Players[targ].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.PrimaryPart
+						.CFrame
+				end
+			end
+		end
+	})
+
+	--VISUAL
+
+	RandomTab:AddParagraph("Information about this tab",
+		"All functions here just visual, dont works in real\n *Works only Aspect Ratio and Kill Abomination in Bunker tab")
+
+	local sectionvisual = RandomTab:AddSection({
+		Name = "Main Visuals"
+	})
+
+	
+	local ascpt = false
+	RandomTab:AddButton({
+		Name = "Aspect Ratio(4:3)",
+		Callback = function()
+			if ascpt == false then
+				ascpt = true	
+				local Camera = workspace.CurrentCamera
+				local Resolution = 0.80
+				game:GetService("RunService").RenderStepped:Connect(function()
+					Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, Resolution, 0, 0, 0, 1)
+				end)
+	end
+			
+		end
+	})
+
+	local sectiondumb = RandomTab:AddSection({
+		Name = "Dumb"
+	})
+	RandomTab:AddButton({
+		Name = "Destroy Doors(click it 6 times)", --Only you see that
+		Callback = function()
+			game.Workspace.Doors.Door:Destroy()
+		end
+	})
+	RandomTab:AddButton({
+		Name = "Destroy Jeeps(works in lobby)",
+		Callback = function()
+			game.Workspace.Jeep:Destroy()
+		end
+	})
+	RandomTab:AddButton({
+		Name = "Destroy Upd Board(works in lobby)",
+		Callback = function()
+			game.Workspace.UpdateBoard:Destroy()
+		end
+	})
+	RandomTab:AddButton({
+		Name = "Destroy Larry",
+		Callback = function()
+			game.ReplicatedStorage.Mutant:Destroy()
+		end
+	})
+
+
+	-- binds window
+	local keybind_window_visible = false
+	local keybind_window = nil
+
+	function open_keybinds_window()
+		if keybind_window_visible then return end
+		keybind_window_visible = true
+		local bindgui = Instance.new("ScreenGui")
+		bindgui.Parent = game:GetService("CoreGui")
+
+		keybind_window = Instance.new("Frame")
+		keybind_window.Parent = bindgui
+		keybind_window.Size = UDim2.new(0, 500, 0, 400)
+		keybind_window.Position = UDim2.new(0.5, -250, 0.5, -200)
+		keybind_window.AnchorPoint = Vector2.new(0.5, 0.5)
+		keybind_window.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		keybind_window.BackgroundTransparency = 0
+		keybind_window.BorderSizePixel = 0
+		Instance.new("UICorner", keybind_window)
+		Instance.new("UIStroke", keybind_window).Color = Color3.fromRGB(255, 255, 255)
+
+		local title = Instance.new("TextLabel")
+		title.Parent = keybind_window
+		title.Size = UDim2.new(1, 0, 0.1, 0)
+		title.Position = UDim2.new(0, 0, 0, 0)
+		title.Text = "Keybinds Menu"
+		title.TextColor3 = Color3.fromRGB(0, 255, 0)
+		title.TextScaled = true
+		title.Font = Enum.Font.SourceSansBold
+		title.BackgroundTransparency = 1
+
+		local close_btn = Instance.new("TextButton")
+		close_btn.Parent = keybind_window
+		close_btn.Size = UDim2.new(0.1, 0, 0.1, 0)
+		close_btn.Position = UDim2.new(0.9, 0, 0, 0)
+		close_btn.Text = "X"
+		close_btn.TextScaled = true
+		close_btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		close_btn.TextColor3 = Color3.fromRGB(0, 255, 0)
+		close_btn.BorderSizePixel = 0
+		Instance.new("UICorner", close_btn)
+		close_btn.MouseButton1Click:Connect(function()
+			keybind_window:Destroy()
+			keybind_window_visible = false
+		end)
+
+		local function create_keybind_row(parent, index, label_text)
+			local row = Instance.new("Frame")
+			row.Parent = parent
+			row.Size = UDim2.new(0.95, 0, 0.13, 0)
+			row.Position = UDim2.new(0.5, 0, index * 0.15 + 0.05, 0)
+			row.AnchorPoint = Vector2.new(0.5, 0.5)
+			row.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			row.BackgroundTransparency = 0.3
+			Instance.new("UICorner", row)
+
+			local label = Instance.new("TextButton")
+			label.Parent = row
+			label.Size = UDim2.new(0.4, 0, 1, 0)
+			label.BackgroundTransparency = 1
+			label.Text = "Keybind " .. index .. " (Click to reset)"
+			label.TextColor3 = Color3.fromRGB(0, 255, 0)
+			label.TextScaled = true
+			label.TextXAlignment = Enum.TextXAlignment.Left
+			label.Font = Enum.Font.SourceSansBold
+
+			local key_btn = Instance.new("TextButton")
+			key_btn.Parent = row
+			key_btn.Size = UDim2.new(0.27, 0, 1, 0)
+			key_btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			key_btn.BorderSizePixel = 0
+			key_btn.Position = UDim2.new(0.35, 0, 0, 0)
+			key_btn.AnchorPoint = Vector2.new(0.5, 0)
+			key_btn.Text = "Keybind: " .. readfile("NektoHubRMSys/bind/bind" .. index .. "/bind.txt")
+			key_btn.TextColor3 = Color3.fromRGB(0, 255, 0)
+			key_btn.TextScaled = true
+			key_btn.Font = Enum.Font.SourceSansBold
+			Instance.new("UICorner", key_btn)
+
+			local func_box = Instance.new("TextBox")
+			func_box.Parent = row
+			func_box.Size = UDim2.new(0.27, 0, 1, 0)
+			func_box.Position = UDim2.new(0.75, 0, 0, 0)
+			func_box.AnchorPoint = Vector2.new(0.5, 0)
+			func_box.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			func_box.BorderSizePixel = 0
+			func_box.PlaceholderText = "Function (Click to write)"
+			func_box.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+			func_box.Text = readfile("NektoHubRMSys/bind/function" .. index .. "/function.txt") ~= "nothing" and
+				readfile("NektoHubRMSys/bind/function" .. index .. "/function.txt") or ""
+			func_box.TextColor3 = Color3.fromRGB(0, 255, 0)
+			func_box.TextScaled = true
+			func_box.Font = Enum.Font.SourceSansBold
+			Instance.new("UICorner", func_box)
+
+			label.MouseButton1Click:Connect(function()
+				writefile("NektoHubRMSys/bind/bind" .. index .. "/bind.txt", "nothing")
+				writefile("NektoHubRMSys/bind/function" .. index .. "/function.txt", "nothing")
+				key_btn.Text = "Keybind: nothing"
+				func_box.Text = ""
+			end)
+
+			func_box.Changed:Connect(function()
+				if func_box.Text ~= "" then
+					writefile("NektoHubRMSys/bind/function" .. index .. "/function.txt", func_box.Text)
+				end
+			end)
+
+			if not is_mobile then
+				local listening = false
+				key_btn.MouseButton1Click:Connect(function()
+					if listening then return end
+					listening = true
+					key_btn.Text = "Listen..."
+					local connection
+					connection = user_input.InputBegan:Connect(function(input, game_processed)
+						if game_processed then return end
+						if input.KeyCode ~= Enum.KeyCode.Unknown then
+							writefile("NektoHubRMSys/bind/bind" .. index .. "/bind.txt", input.KeyCode.Name)
+							key_btn.Text = "Keybind: " .. input.KeyCode.Name
+							connection:Disconnect()
+							listening = false
+						end
+					end)
+				end)
+			end
+
+
+
+			local save_btn = Instance.new("TextButton")
+			save_btn.Parent = keybind_window
+			save_btn.Size = UDim2.new(0.3, 0, 0.1, 0)
+			save_btn.Position = UDim2.new(0.5, 0, 0.95, 0)
+			save_btn.AnchorPoint = Vector2.new(0.5, 0.5)
+			save_btn.Text = "Save And Close"
+			save_btn.TextScaled = true
+			save_btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			save_btn.TextColor3 = Color3.fromRGB(0, 255, 0)
+			save_btn.BorderSizePixel = 0
+			Instance.new("UICorner", save_btn)
+			save_btn.MouseButton1Click:Connect(function()
+				keybind_window:Destroy()
+				keybind_window_visible = false
+			end)
+		end
+		for i = 1, 4 do
+			create_keybind_row(keybind_window, i, i)
+		end
+	end
+
+	-- Config && binds
+	cfgTab:AddParagraph("Information about this tab",
+		"Now this tab is exprerimental! All here functions on tests and have bugs or visual errors!\n *If you see bugs in all script sections(this is functions and etc), please tell it to me /discord: werumov")
+
+	cfgTab:AddButton({
+		Name = "Open binds window",
+		Callback = function()
+			warn(script_name_f9 .. " KeyBinds Window have errors!")
+			wait(0.5)
+			print(script_name_f9 .. " KeyBinds Window open in 1.5 seconds")
+			wait(1.5)
+			open_keybinds_window()
+		end
+	})
+
+	cfgTab:AddButton({
+		Name = "Save buttons toggle config",
+		Callback = function()
+			show_notification("Dont working now :P")
+		end
+	})
+
+	cfgTab:AddButton({
+		Name = "Save custom binds",
+		Callback = function()
+			show_notification("Dont working now :P")
+		end
+	})
+
+
+	-- change log
+	ChangeLogTab:AddParagraph("Change Log", "Version 1.9951 addctions:\n-Old key system returned\n-Changed hud data\n-Changed some features in update_checker()")
+
+
+
+	-- About
+	AboutTab:AddButton({
+		Name = "Telegram",
+		Callback = function()
+			game.StarterGui:SetCore("SendNotification", {
+				Title = "@",
+				Text = "This is telegram :D",
+				Duration = 7
+			})
+		end
+	})
+
+	AboutTab:AddButton({
+		Name = "Developer Discord",
+		Callback = function()
+			show_notification("Discord username: werumov")
+		end
+	})
+
+	AboutTab:AddButton({
+		Name = "Discord Server",
+		Callback = function()
+			show_notification("Discord server link: https://discord.gg/U65StBRNr2")
+		end
+	})
+	
+	AboutTab:AddButton({	
+		Name = "About Menu",
+		Callback = function()
+			
+		end
+	})
+
+	OrionLib:Init()
+
+end
+
+if readfile("NektoHubRMSys/bind/uqhwh197wghdauishdyiagefia.txt") == "false" then
+	local variation_k = 0
+	local prem_variation_k = 0
+
+	if tonumber(readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt")) == 1 then
+		variation_k = 1
+	elseif tonumber(readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt")) == 2 then
+		variation_k = 2
+	elseif tonumber(readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt")) == 3 then
+		variation_k = 3
+	end
+
+	local nickLength = #game.Players.LocalPlayer.Name
+	local need_v_key = 1
+
+	local encryptedPlayerName = "KEY_00000000000000001"
+	if variation_k == 1 then
+		if nickLength <= 5 then
+			-- Nekto Hub Residence Massacre Script -  Key 1
+			-- https://link-hub.net/7250219/LG23VsGiEUia
+			encryptedPlayerName = "nektorm_mcoettqlxu"
+		end
+		if nickLength >= 6 and nickLength <= 8 then
+			-- Nekto Hub Residence Massacre Script -  Key 2
+			-- https://link-target.net/7250219/xyZU9r9nPLAJ
+			encryptedPlayerName = "nektorm_zadrhxmdbq"
+		end
+		if nickLength >= 9 and nickLength <= 13 then
+			-- Nekto Hub Residence Massacre Script -  Key 3
+			-- https://direct-link.net/7250219/oT7I1nvZDb26
+			encryptedPlayerName = "nektorm_furmzzprtx"
+		end
+		if nickLength >= 14 then
+			-- Nekto Hub Residence Massacre Script -  Key 4
+			-- https://link-target.net/7250219/shQeHxKaDn77
+			encryptedPlayerName = "nektorm_ofpxivbaok"
+		end
+	elseif variation_k == 2 then
+		if nickLength <= 5 then
+			-- Nekto Hub Residence Massacre Script -  Key 5
+			-- https://link-target.net/7250219/VpEJ1G4rzwbo
+			encryptedPlayerName = "nektorm_ghouzdxill"
+		end
+		if nickLength >= 6 and nickLength <= 8 then
+			-- Nekto Hub Residence Massacre Script -  Key 6
+			-- https://link-target.net/7250219/Ymi58drzkFWb
+			encryptedPlayerName = "nektorm_mrqkqkwjcu"
+		end
+		if nickLength >= 9 and nickLength <= 13 then
+			-- Nekto Hub Residence Massacre Script -  Key 7
+			-- https://direct-link.net/7250219/nTuh4eZGPE2v
+			encryptedPlayerName = "nektorm_gxmwddsuxs"
+		end
+		if nickLength >= 14 then
+			-- Nekto Hub Residence Massacre Script -  Key 8
+			-- https://link-target.net/7250219/dGqTnn0YAP5u
+			encryptedPlayerName = "nektorm_rftfutczxe"
+		end
+	elseif variation_k == 3 then
+		if nickLength <= 5 then
+			-- Nekto Hub Residence Massacre Script -  Key 9
+			-- https://direct-link.net/7250219/VanuaBkeuQyn
+			encryptedPlayerName = "nektorm_bbxaomrkor"
+		end
+		if nickLength >= 6 and nickLength <= 8 then
+			-- Nekto Hub Residence Massacre Script -  Key 10
+			-- https://direct-link.net/7250219/jCLoNktsSTtQ
+			encryptedPlayerName = "nektorm_lldgrtylyk"
+		end
+		if nickLength >= 9 and nickLength <= 13 then
+			-- Nekto Hub Residence Massacre Script -  Key 11
+			-- https://link-target.net/7250219/s8r0iTeTz9fC
+			encryptedPlayerName = "nektorm_nnrqnukepo"
+		end
+		if nickLength >= 14 then
+			-- Nekto Hub Residence Massacre Script -  Key 12
+			-- https://link-center.net/7250219/CB9oWsM0lUNF
+			encryptedPlayerName = "nektorm_xisjzoixhi"
+		end
+	end
+
+
+	-- keygui
+	local player = game.Players.LocalPlayer
+	local keygui = Instance.new("ScreenGui")
+	keygui.Name = "KeyGui"
+	keygui.Parent = game.CoreGui
+	keygui.IgnoreGuiInset = true
+	keygui.DisplayOrder = 999999999
+
+	local frame = Instance.new("Frame")
+	frame.Name = "PIDOR"
+	frame.Parent = keygui
+	frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	frame.Size = UDim2.new(0.3, 0, 0.3, 0)
+	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+	local aspectratio = Instance.new("UIAspectRatioConstraint")
+	aspectratio.Parent = frame
+	aspectratio.AspectRatio = 1.38
+
+	local uicorner = Instance.new("UICorner")
+	uicorner.Parent = frame
+
+	local texboxkey = Instance.new("TextBox")
+	texboxkey.Parent = frame
+	texboxkey.AnchorPoint = Vector2.new(0.5, 0.5)
+	texboxkey.Position = UDim2.new(0.5, 0, 0.5, 0)
+	texboxkey.Size = UDim2.new(0.5, 0, 0.15, 0)
+	texboxkey.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	texboxkey.Font = Enum.Font.SourceSansBold
+	texboxkey.TextScaled = true
+	texboxkey.TextColor3 = Color3.fromRGB(22, 255, 5)
+	texboxkey.PlaceholderText = "key here"
+	texboxkey.PlaceholderColor3 = Color3.fromRGB(127, 127, 127)
+	texboxkey.Text = ""
+	local maxLength = 18
+	local function filterInput(input)
+		local filteredText = string.gsub(input, "[^a-zA-Z_]", "")
+		return filteredText
+	end
+	texboxkey.Changed:Connect(function()
+		local originalText = texboxkey.Text
+		local filteredText = filterInput(originalText)
+		if #filteredText > maxLength then
+			filteredText = string.sub(filteredText, 1, maxLength)
+		end
+		if texboxkey.Text ~= filteredText then
+			texboxkey.Text = filteredText
+		end
+	end)
+
+	local uicornertext = Instance.new("UICorner")
+	uicornertext.Parent = texboxkey
+	local uiborder = Instance.new("UIStroke")
+	uiborder.Parent = texboxkey
+	uiborder.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	uiborder.Thickness = 2.5
+	uiborder.Color = Color3.fromRGB(255, 255, 255)
+
+	local textlabelkey = Instance.new("TextLabel")
+	textlabelkey.Parent = frame
+	textlabelkey.AnchorPoint = Vector2.new(0.5, 0.5)
+	textlabelkey.Position = UDim2.new(0.5, 0, 0.15, 0)
+	textlabelkey.Size = UDim2.new(0.5, 0, 0.2, 0)
+	textlabelkey.BackgroundTransparency = 1
+	textlabelkey.Font = Enum.Font.SourceSansBold
+	textlabelkey.TextScaled = true
+	textlabelkey.TextColor3 = Color3.fromRGB(22, 255, 5)
+	textlabelkey.Text = "Key System"
+
+
+	local buttonenter = Instance.new("TextButton")
+	buttonenter.Parent = frame
+	buttonenter.AnchorPoint = Vector2.new(0.5, 0.5)
+	buttonenter.Position = UDim2.new(0.5, 0, 0.72, 0)
+	buttonenter.Size = UDim2.new(0.5, 0, 0.15, 0)
+	buttonenter.BackgroundColor3 = Color3.fromRGB(0,0,0)
+	buttonenter.Font = Enum.Font.SourceSansBold
+	buttonenter.TextScaled = true
+	buttonenter.TextColor3 = Color3.fromRGB(22, 255, 5)
+	buttonenter.Text = "Enter"
+
+	local cancheck = false
+	buttonenter.MouseButton1Click:Connect(function()
+		if cancheck == true then return end
+		if texboxkey.Text == "" then return end
+		if texboxkey.Text == encryptedPlayerName then
+			keygui:Destroy()
+			writefile("NektoHubRMSys/bind/uqhwh197wghdauishdyiagefia.txt", "true")
+			local correctTime = tostring(os.time())
+			writefile("NektoHubRMSys/bind/sdauwihdawhd91q8u2y3jadfoi.txt", correctTime)
+			show_notification("You have 24 hours before the key changes")
+			wait(1.5)
+			MainUI()
+		else
+			cancheck = true
+			buttonenter.Text = "Wrong Key"
+			wait(1.5)
+			player:Kick("KeySystem: Wrong Key")
+			buttonenter.Text = "Enter"
+			cancheck = false
+		end
+	end)
+
+	local uicornertextb = Instance.new("UICorner")
+	uicornertextb.Parent = buttonenter
+	local uiborderb = Instance.new("UIStroke")
+	uiborderb.Parent = buttonenter
+	uiborderb.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	uiborderb.Thickness = 2.5
+	uiborderb.Color = Color3.fromRGB(255, 255, 255)
+
+	local buttonx = Instance.new("TextButton")
+	buttonx.Parent = frame
+	buttonx.AnchorPoint = Vector2.new(1, 0)
+	buttonx.Position = UDim2.new(1, 0, 0, 0)
+	buttonx.Size = UDim2.new(0.12, 0, 0.12, 0)
+	buttonx.BackgroundTransparency = 1
+	buttonx.Font = Enum.Font.SourceSansBold
+	buttonx.TextScaled = true
+	buttonx.TextColor3 = Color3.fromRGB(68, 255, 0)
+	buttonx.Text = "X"
+	local uixascpect = Instance.new("UIAspectRatioConstraint")
+	uixascpect.Parent = buttonx
+	uixascpect.AspectRatio = 1
+
+	buttonx.MouseButton1Click:Connect(function()
+		keygui:Destroy()
+	end)
+
+	local buttonget = Instance.new("TextButton")
+	buttonget.Parent = frame
+	buttonget.AnchorPoint = Vector2.new(0.5, 0.5)
+	buttonget.Position = UDim2.new(0.5, 0, 0.9, 0)
+	buttonget.Size = UDim2.new(0.5, 0, 0.15, 0)
+	buttonget.BackgroundColor3 = Color3.fromRGB(0,0,0)
+	buttonget.Font = Enum.Font.SourceSansBold
+	buttonget.TextScaled = true
+	buttonget.TextColor3 = Color3.fromRGB(22, 255, 5)
+	buttonget.Text = "Copy Link"
+
+	local waitbeforenew = false
+	buttonget.MouseButton1Click:Connect(function()
+		if waitbeforenew == true then return end
+		waitbeforenew = true
+		buttonget.Text = "Copied"
+		local nameLength = #game.Players.LocalPlayer.Name
+		local variation_k = 0
+
+		if tonumber(readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt")) == 1 then
+			variation_k = 1
+		elseif tonumber(readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt")) == 2 then
+			variation_k = 2
+		elseif tonumber(readfile("NektoHubRMSys/bind/aihdafjasbfd9yuqt3gryqgaef.txt")) == 3 then
+			variation_k = 3
+		end
+
+		local nickLength = #game.Players.LocalPlayer.Name
+		local need_v_key = 1
+
+
+		if variation_k == 1 then
+			if nickLength <= 5 then
+				-- Nekto Hub Residence Massacre Script -  Key 1
+				setclipboard("https://link-hub.net/7250219/LG23VsGiEUia")
+			end
+			if nickLength >= 6 and nickLength <= 8 then
+				-- Nekto Hub Residence Massacre Script -  Key 2
+				setclipboard("https://link-target.net/7250219/xyZU9r9nPLAJ")
+			end
+			if nickLength >= 9 and nickLength <= 13 then
+				-- Nekto Hub Residence Massacre Script -  Key 3
+				setclipboard("https://direct-link.net/7250219/oT7I1nvZDb26")
+			end
+			if nickLength >= 14 then
+				-- Nekto Hub Residence Massacre Script -  Key 4
+				setclipboard("https://link-target.net/7250219/shQeHxKaDn77")
+			end
+		elseif variation_k == 2 then
+			if nickLength <= 5 then
+				-- Nekto Hub Residence Massacre Script -  Key 5
+				setclipboard("https://link-target.net/7250219/VpEJ1G4rzwbo")
+			end
+			if nickLength >= 6 and nickLength <= 8 then
+				-- Nekto Hub Residence Massacre Script -  Key 6
+				setclipboard("https://link-target.net/7250219/Ymi58drzkFWb")
+			end
+			if nickLength >= 9 and nickLength <= 13 then
+				-- Nekto Hub Residence Massacre Script -  Key 7
+				setclipboard("https://direct-link.net/7250219/nTuh4eZGPE2v")
+			end
+			if nickLength >= 14 then
+				-- Nekto Hub Residence Massacre Script -  Key 8
+				setclipboard("https://link-target.net/7250219/dGqTnn0YAP5u")
+			end
+		elseif variation_k == 3 then
+			if nickLength <= 5 then
+				-- Nekto Hub Residence Massacre Script -  Key 9
+				setclipboard("https://direct-link.net/7250219/VanuaBkeuQyn")
+			end
+			if nickLength >= 6 and nickLength <= 8 then
+				-- Nekto Hub Residence Massacre Script -  Key 10
+				setclipboard("https://direct-link.net/7250219/jCLoNktsSTtQ")
+			end
+			if nickLength >= 9 and nickLength <= 13 then
+				-- Nekto Hub Residence Massacre Script -  Key 11
+				setclipboard("https://link-target.net/7250219/s8r0iTeTz9fC")
+			end
+			if nickLength >= 14 then
+				-- Nekto Hub Residence Massacre Script -  Key 12
+				setclipboard("https://link-center.net/7250219/CB9oWsM0lUNF")
+			end
+		end
+		wait(3)
+		buttonget.Text = "Copy Link"
+		waitbeforenew = false
+	end)
+
+	local uicornertextb1 = Instance.new("UICorner")
+	uicornertextb1.Parent = buttonget
+	local uiborderb1 = Instance.new("UIStroke")
+	uiborderb1.Parent = buttonget
+	uiborderb1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	uiborderb1.Thickness = 2.5
+	uiborderb1.Color = Color3.fromRGB(255, 255, 255)
+else 
+	wait(1)
+	MainUI()
+end
+
+
+
+
+
